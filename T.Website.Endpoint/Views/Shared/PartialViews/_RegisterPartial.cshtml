@@ -1,0 +1,48 @@
+﻿@model T.Application.Dtos.Account.RegisterDto
+
+<form method="post" asp-controller="Account" asp-action="Register" data-ajax="true"
+      data-ajax-success="RegisterSubmitted">
+    <div class="input-box">
+        <label asp-for="Fullname" class="label-text"></label>
+        <div class="form-group">
+            <span class="la la-user form-icon"></span>
+            <input class="form-control" asp-for="Fullname" placeholder="نام و نام خانوادگیت رو وارد کن">
+            <span asp-validation-for="Fullname" class="text-danger"></span>
+        </div>
+    </div><!-- end input-box -->
+    <div class="input-box">
+        <label asp-for="Email" class="label-text"></label>
+        <div class="form-group">
+            <span class="la la-envelope form-icon"></span>
+            <input asp-for="Email" class="form-control" placeholder="ایمیلت رو وارد کن">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div><!-- end input-box -->
+    <div class="input-box">
+        <label asp-for="PhoneNumber" class="label-text"></label>
+        <div class="form-group">
+            <span class="la la-mobile form-icon"></span>
+            <input id="registerPhoneNumber" asp-for="PhoneNumber" class="form-control" placeholder="شماره موبایلت رو وارد کن">
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div><!-- end input-box -->
+    <div class="input-box">
+        <label asp-for="Password" class="label-text">رمز عبور</label>
+        <div class="form-group">
+            <span class="la la-lock form-icon"></span>
+            <input asp-for="Password" class="form-control" placeholder="رمز عبور رو وارد کن">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div><!-- end input-box -->
+    <div class="input-box">
+        <label asp-for="RePassword" class="label-text">تکرار رمز عبور</label>
+        <div class="form-group">
+            <span class="la la-lock form-icon"></span>
+            <input asp-for="RePassword" class="form-control"  placeholder="رمز عبورت رو دوباره وارد کن">
+            <span asp-validation-for="RePassword" class="text-danger"></span>
+        </div>
+    </div><!-- end input-box -->
+    <div class="btn-box pt-3 pb-4">
+        <input type="submit" value="ثبت حساب" class="theme-btn w-100" />
+    </div>
+</form>

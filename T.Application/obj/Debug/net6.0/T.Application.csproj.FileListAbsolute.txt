@@ -1,0 +1,15 @@
+E:\Trizen\T.Application\bin\Debug\net6.0\T.Application.deps.json
+E:\Trizen\T.Application\bin\Debug\net6.0\T.Application.dll
+E:\Trizen\T.Application\bin\Debug\net6.0\T.Application.pdb
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.csproj.AssemblyReference.cache
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.AssemblyInfoInputs.cache
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.AssemblyInfo.cs
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.csproj.CoreCompileInputs.cache
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.dll
+E:\Trizen\T.Application\obj\Debug\net6.0\refint\T.Application.dll
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.pdb
+E:\Trizen\T.Application\obj\Debug\net6.0\ref\T.Application.dll
+E:\Trizen\T.Application\bin\Debug\net6.0\T.Domain.dll
+E:\Trizen\T.Application\bin\Debug\net6.0\T.Domain.pdb
+E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.csproj.CopyComplete
