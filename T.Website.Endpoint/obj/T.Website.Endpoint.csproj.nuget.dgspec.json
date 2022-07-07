@@ -49,6 +49,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.6, )"
@@ -330,6 +334,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "E:\\Trizen\\T.Application\\T.Application.csproj": {
+                "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
+              },
               "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
                 "projectPath": "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
               }
@@ -349,6 +356,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.6, )"
             }

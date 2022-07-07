@@ -1,3 +1,4 @@
+using T.Application.Services.Account;
 using T.Infrastructure.IdentityConfigs;
 using T.Infrastructure.SetupServices;
 
@@ -9,6 +10,11 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("SqlServer");
 SqlServerSetup.Configure(builder.Services, connectionString);
 builder.Services.AddIdentityService(builder.Configuration);
+builder.Services.AddTransient<IAccountService, AccountService>();
+builder.Services.AddTransient<ISmsService, SmsService>();
+builder.Services.AddAuthentication();
+
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -24,8 +30,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
