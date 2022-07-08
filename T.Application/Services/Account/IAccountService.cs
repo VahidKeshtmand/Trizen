@@ -17,6 +17,7 @@ namespace T.Application.Services.Account
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        
         public AccountService(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
@@ -69,7 +70,5 @@ namespace T.Application.Services.Account
             var result = _userManager.UpdateAsync(user).Result;
             
         }
-
-
     }
 }

@@ -1,6 +1,10 @@
+using T.Application.Interfaces.Contexts;
 using T.Application.Services.Account;
+using T.Application.Services.Visitor;
 using T.Infrastructure.IdentityConfigs;
 using T.Infrastructure.SetupServices;
+using T.Persistence.Contexts.MongoDb;
+using T.Website.Endpoint.Utilities.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +16,11 @@ SqlServerSetup.Configure(builder.Services, connectionString);
 builder.Services.AddIdentityService(builder.Configuration);
 builder.Services.AddTransient<IAccountService, AccountService>();
 builder.Services.AddTransient<ISmsService, SmsService>();
+
+builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
+builder.Services.AddTransient<IVisitorService, VisitorService>();
+builder.Services.AddScoped<SaveVisitorInfoFilter>();
+
 builder.Services.AddAuthentication();
 
 builder.Services.AddAuthorization();

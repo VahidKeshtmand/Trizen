@@ -41,6 +41,7 @@ namespace T.Persistence.Contexts.SqlServerDb
             builder.Entity<IdentityUserClaim<string>>()
                 .HasKey(ul => ul.Id);
         }
+
     }
 
 }

@@ -48,15 +48,15 @@
                 <div class="form-box">
                     <div class="form-title-wrap">
                         <h3 class="title">تأیید شماره موبایل</h3>
-                        <p class="font-size-15 pt-2">ابتدا شماره موبایل خود را وارد کنید. سپس کدی که برای شماره موبایل
-                            شما پیامک شد وارد کنید.
-                            <a href="contact.html" class="text-color"> تماس </a> بگیر .
+                        <p class="font-size-15 pt-2"> با زدن دکمه ارسال پیامک کدی برای موبایل شما
+                            پیامک می شود. کد را وارد کنید تا شماره موبایل شما تأیید شود.
                         </p>
                     </div><!-- form-title-wrap -->
                     <div class="form-content ">
                         <div class="contact-form-action">
-                            <form method="post" asp-action="VerifyPhoneNumber" asp-controller="Account"
-                                data-ajax="true" data-ajax-success="VerifyPhoneNumberSubmitted">
+                            <form method="post" asp-action="VerifyPhoneNumber" asp-controller="Account" data-ajax="true"
+                                data-ajax-success="VerifyPhoneNumberSubmitted">
+
                                 <div class="input-box">
                                     <label class="label-text">کد ارسال شده را وارد کنید.</label>
                                     <div class="form-group">
@@ -65,9 +65,12 @@
                                         <span asp-validation-for="Token" class="text-danger"></span>
                                         <input asp-for="PhoneNumber" value="@ViewBag.PhoneNumber" type="hidden" />
                                     </div>
+
                                 </div>
 
                                 <div class="btn-box">
+                                    <a href="#" class="theme-btn theme-btn-transparent mr-1" onclick="SendToken()"
+                                        id="btn-send-sms">ارسال پیامک</a>
                                     <input type="submit" value="تأیید" class="theme-btn" />
                                 </div>
                             </form>

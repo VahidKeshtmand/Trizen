@@ -1,0 +1,36 @@
+@model T.Application.Dtos.Account.LoginDto
+
+<form method="post" asp-action="Login" asp-controller="Account" data-ajax="true"
+      data-ajax-success="LoginSubmitted">
+    <div class="input-box">
+        <label class="label-text">آدرس ایمیل</label>
+        <div class="form-group">
+            <span class="la la-user form-icon"></span>
+            <input id="loginEmail" asp-for="Email" class="form-control" placeholder="ایمیلت رو وارد کن">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div><!-- end input-box -->
+    <div class="input-box">
+        <label class="label-text">رمز عبور</label>
+        <div class="form-group mb-2">
+            <span class="la la-lock form-icon"></span>
+            <input id="loginPassword" asp-for="Password" class="form-control" placeholder="رمزعبورت رو وارد کن">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="custom-checkbox mb-0">
+                <input asp-for="RememberMe" type="checkbox" id="rememberchb">
+                <label for="rememberchb">منو یادت باشه</label>
+            </div>
+            <p class="forgot-password">
+                <a asp-action="ForgetPassword" asp-controller="Account">رمزت رو فراموش کردی ؟</a>
+            </p>
+        </div>
+    </div><!-- end input-box -->
+    <div class="btn-box pt-3 pb-4">
+        <input type="submit" value="ورود" class="theme-btn w-100" />
+    </div>
+    <div class="btn-box pt-3 pb-4">
+        
+    </div>
+</form>

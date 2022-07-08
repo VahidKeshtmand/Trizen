@@ -1,0 +1,360 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col-lg-7 responsive-column--m">
+    <div class="form-box">
+        <div class="form-title-wrap">
+            <div class="d-flex align-items-center justify-content-between">
+                <ul class="chart-pagination d-flex">
+                    <li><a href="#" class="theme-btn theme-btn-small mr-2">روز</a></li>
+                    <li><a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-2">هفته</a></li>
+                    <li><a href="#" class="theme-btn theme-btn-small theme-btn-transparent">امسال</a></li>
+                </ul>
+                <div class="select-contain">
+                    <select class="select-contain-select">
+                        <option value="فروردین">فروردین</option>
+                        <option value="اردیبهشت">اردیبهشت</option>
+                        <option value="خرداد">خرداد</option>
+                        <option value="تیر">تیر</option>
+                        <option value="مرداد">مرداد</option>
+                        <option value="شهریور">شهریور</option>
+                        <option value="مهر">مهر</option>
+                        <option value="آبان">آبان</option>
+                        <option value="آذر">آذر</option>
+                        <option value="دی">دی</option>
+                        <option value="بهمن">بهمن</option>
+                        <option value="اسفند">اسفند</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-content">
+            <canvas id="line-chart"></canvas>
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-7-->
+<div class="col-lg-5 responsive-column--m">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="title">اعلان ها</h3>
+                <button type="button" class="icon-element mark-as-read-btn ml-auto mr-0" data-toggle="tooltip"
+                    data-placement="left" title="علامت زدن همه به عنوان خوانده شده">
+                    <i class="la la-check-square"></i>
+                </button>
+            </div>
+        </div>
+        <div class="form-content p-0">
+            <div class="list-group drop-reveal-list">
+                <a href="#" class="list-group-item list-group-item-action border-top-0">
+                    <div class="msg-body d-flex align-items-center">
+                        <div class="icon-element flex-shrink-0 mr-3 ml-0"><i class="la la-bell"></i></div>
+                        <div class="msg-content w-100">
+                            <h3 class="title pb-1">وضعیت آپدیت شد</h3>
+                            <p class="msg-text">2 دقیقه قبل</p>
+                        </div>
+                        <span class="icon-element mark-as-read-btn flex-shrink-0 ml-auto mr-0" data-toggle="tooltip"
+                            data-placement="left" title="علامت زدن به عنوان خوانده شده">
+                            <i class="la la-check-square"></i>
+                        </span>
+                    </div><!-- end msg-body -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="msg-body d-flex align-items-center">
+                        <div class="icon-element bg-1 flex-shrink-0 mr-3 ml-0"><i class="la la-bell"></i></div>
+                        <div class="msg-content w-100">
+                            <h3 class="title pb-1">پیشنهاد تخفیف 50 %</h3>
+                            <p class="msg-text">2 دقیقه قبل</p>
+                        </div>
+                        <span class="icon-element mark-as-read-btn flex-shrink-0 ml-auto mr-0" data-toggle="tooltip"
+                            data-placement="left" title="علامت زدن به عنوان خوانده شده">
+                            <i class="la la-check-square"></i>
+                        </span>
+                    </div><!-- end msg-body -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="msg-body d-flex align-items-center">
+                        <div class="icon-element bg-2 flex-shrink-0 mr-3 ml-0"><i class="la la-check"></i></div>
+                        <div class="msg-content w-100">
+                            <h3 class="title pb-1">حساب شما ایجاد شد</h3>
+                            <p class="msg-text">1 روز قبل</p>
+                        </div>
+                        <span class="icon-element mark-as-read-btn flex-shrink-0 ml-auto mr-0" data-toggle="tooltip"
+                            data-placement="left" title="علامت زدن به عنوان خوانده شده">
+                            <i class="la la-check-square"></i>
+                        </span>
+                    </div><!-- end msg-body -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="msg-body d-flex align-items-center">
+                        <div class="icon-element bg-3 flex-shrink-0 mr-3 ml-0"><i class="la la-user"></i></div>
+                        <div class="msg-content w-100">
+                            <h3 class="title pb-1">حساب شما آپدیت شد</h3>
+                            <p class="msg-text">2 ساعت قبل</p>
+                        </div>
+                        <span class="icon-element mark-as-read-btn flex-shrink-0 ml-auto mr-0" data-toggle="tooltip"
+                            data-placement="left" title="علامت زدن به عنوان خوانده شده">
+                            <i class="la la-check-square"></i>
+                        </span>
+                    </div><!-- end msg-body -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="msg-body d-flex align-items-center">
+                        <div class="icon-element bg-4 flex-shrink-0 mr-3 ml-0"><i class="la la-lock"></i></div>
+                        <div class="msg-content w-100">
+                            <h3 class="title pb-1">رمزعبور شما تغییر کرد</h3>
+                            <p class="msg-text">دیروز</p>
+                        </div>
+                        <span class="icon-element mark-as-read-btn flex-shrink-0 ml-auto mr-0" data-toggle="tooltip"
+                            data-placement="left" title="علامت زدن به عنوان خوانده شده">
+                            <i class="la la-check-square"></i>
+                        </span>
+                    </div><!-- end msg-body -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="msg-body d-flex align-items-center">
+                        <div class="icon-element bg-5 flex-shrink-0 mr-3 ml-0"><i class="la la-user"></i></div>
+                        <div class="msg-content w-100">
+                            <h3 class="title pb-1">حساب شما آپدیت شد</h3>
+                            <p class="msg-text">2 ساعت قبل</p>
+                        </div>
+                        <span class="icon-element mark-as-read-btn flex-shrink-0 ml-auto mr-0" data-toggle="tooltip"
+                            data-placement="left" title="علامت زدن به عنوان خوانده شده">
+                            <i class="la la-check-square"></i>
+                        </span>
+                    </div><!-- end msg-body -->
+                </a>
+            </div>
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-5 -->
+<div class="col-lg-12">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <h3 class="title">درآمد این ماه برای هر سرویس</h3>
+        </div>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-lg-3 responsive-column-l">
+                    <div class="icon-box icon-layout-2 dashboard-icon-box dashboard--icon-box bg-1 pb-0">
+                        <div class="d-flex pb-3 justify-content-between">
+                            <div class="info-content">
+                                <p class="info__desc">هتل ها</p>
+                                <h4 class="info__title">1,500,000 تومان </h4>
+                            </div><!-- end info-content -->
+                            <div class="info-icon icon-element bg-white text-color-2">
+                                <i class="la la-hotel"></i>
+                            </div><!-- end info-icon-->
+                        </div>
+                        <div class="section-block"></div>
+                        <a href="#" class="d-flex align-items-center justify-content-between view-all">مشاهده جزئیات
+                            <i class="la la-arrow-left"></i></a>
+                    </div>
+                </div><!-- end col-lg-3 -->
+                <div class="col-lg-3 responsive-column-l">
+                    <div class="icon-box icon-layout-2 dashboard-icon-box dashboard--icon-box bg-2 pb-0">
+                        <div class="d-flex pb-3 justify-content-between">
+                            <div class="info-content">
+                                <p class="info__desc">خودرو ها</p>
+                                <h4 class="info__title">420,000 تومان</h4>
+                            </div><!-- end info-content -->
+                            <div class="info-icon icon-element bg-white text-color-3">
+                                <i class="la la-car"></i>
+                            </div><!-- end info-icon-->
+                        </div>
+                        <div class="section-block"></div>
+                        <a href="#" class="d-flex align-items-center justify-content-between view-all">مشاهده جزئیات
+                            <i class="la la-arrow-left"></i></a>
+                    </div>
+                </div><!-- end col-lg-3 -->
+                <div class="col-lg-3 responsive-column-l">
+                    <div class="icon-box icon-layout-2 dashboard-icon-box dashboard--icon-box bg-3 pb-0">
+                        <div class="d-flex pb-3 justify-content-between">
+                            <div class="info-content">
+                                <p class="info__desc">سفرهای دریایی</p>
+                                <h4 class="info__title">820,000 تومان</h4>
+                            </div><!-- end info-content -->
+                            <div class="info-icon icon-element bg-white text-color-4">
+                                <i class="la la-ship"></i>
+                            </div><!-- end info-icon-->
+                        </div>
+                        <div class="section-block"></div>
+                        <a href="#" class="d-flex align-items-center justify-content-between view-all">مشاهده جزئیات
+                            <i class="la la-arrow-left"></i></a>
+                    </div>
+                </div><!-- end col-lg-3 -->
+                <div class="col-lg-3 responsive-column-l">
+                    <div class="icon-box icon-layout-2 dashboard-icon-box dashboard--icon-box bg-4 pb-0">
+                        <div class="d-flex pb-3 justify-content-between">
+                            <div class="info-content">
+                                <p class="info__desc">پروازها</p>
+                                <h4 class="info__title">320,000 تومان</h4>
+                            </div><!-- end info-content -->
+                            <div class="info-icon icon-element bg-white text-color-5">
+                                <i class="la la-plane"></i>
+                            </div><!-- end info-icon-->
+                        </div>
+                        <div class="section-block"></div>
+                        <a href="#" class="d-flex align-items-center justify-content-between view-all">مشاهده جزئیات
+                            <i class="la la-arrow-left"></i></a>
+                    </div>
+                </div><!-- end col-lg-3 -->
+            </div><!-- end row -->
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-12 -->
+<div class="col-lg-6 responsive-column--m">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <h3 class="title">مجموع سفارشات</h3>
+        </div>
+        <div class="form-content">
+            <canvas id="bar-chart"></canvas>
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-6 -->
+<div class="col-lg-6 responsive-column--m">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <h3 class="title">آمار سرور</h3>
+        </div>
+        <div class="form-content pb-0">
+            <div class="dashboard-progressbar pb-4">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%"
+                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="font-size-14 pt-1">فضای مصرفی دیسک: 1746.5 / 50000 مگابایت</p>
+            </div><!-- end dashboard-progressbar -->
+            <div class="dashboard-progressbar pb-4">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="font-size-14 pt-1">انتقال ماهانه پهنای باند: 14706.1 / 30.000</p>
+            </div><!-- end dashboard-progressbar -->
+            <div class="dashboard-progressbar pb-4">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%"
+                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="font-size-14 pt-1">زیر دامنه ها: 7/15</p>
+            </div><!-- end dashboard-progressbar -->
+            <div class="dashboard-progressbar pb-4">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="font-size-14 pt-1">تمام پایگاه های داده : 6/8</p>
+            </div><!-- end dashboard-progressbar -->
+            <div class="dashboard-progressbar pb-4">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%"
+                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="font-size-14 pt-1">حساب های ایمیل: 8/10</p>
+            </div><!-- end dashboard-progressbar -->
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-6 -->
+<div class="col-lg-6 responsive-column--m">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <h3 class="title">7273 نفر از سایت بازدید کردن</h3>
+        </div>
+        <div class="form-content pb-0">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="sparkline-chart-item">
+                        <span class="font-size-15">بازدید</span>
+                        <h3 class="title font-size-16">9,080</h3>
+                        <div class="visits-chart mt-2"></div>
+                    </div>
+                </div><!-- end col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="sparkline-chart-item">
+                        <span class="font-size-15">بازدید کنندگان یونیک</span>
+                        <h3 class="title font-size-16">4,080</h3>
+                        <div class="visits-chart mt-2"></div>
+                    </div>
+                </div><!-- end col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="sparkline-chart-item">
+                        <span class="font-size-15">پیش نمایش ها</span>
+                        <h3 class="title font-size-16">12,080</h3>
+                        <div class="previews-chart mt-2"></div>
+                    </div>
+                </div><!-- end col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="sparkline-chart-item">
+                        <span class="font-size-15">صفحات/بازدید</span>
+                        <h3 class="title font-size-16">1.54</h3>
+                        <div class="visits-chart-2 mt-2"></div>
+                    </div>
+                </div><!-- end col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="sparkline-chart-item">
+                        <span class="font-size-15">میانگین مدت بازدید</span>
+                        <h3 class="title font-size-16">00:01:39</h3>
+                        <div class="previews-chart mt-2"></div>
+                    </div>
+                </div><!-- end col-lg-4 -->
+            </div><!-- end row -->
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-6 -->
+<div class="col-lg-3 responsive-column--m">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <h3 class="title">بازدید از طریق مرورگر</h3>
+        </div>
+        <div class="form-content py-0">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    كروم
+                    <span class="badge bg-info text-white badge-pill">3,506</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    فایرفاکس
+                    <span class="badge bg-info text-white badge-pill">2,405</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    سافاری
+                    <span class="badge bg-info text-white badge-pill">300</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    اینترنت اکسپلورر
+                    <span class="badge bg-info text-white badge-pill">200</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    اوپرا
+                    <span class="badge bg-info text-white badge-pill">111</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-3 -->
+<div class="col-lg-3 responsive-column--m">
+    <div class="form-box dashboard-card">
+        <div class="form-title-wrap">
+            <h3 class="title">نمای کلی موبایل</h3>
+        </div>
+        <div class="form-content py-0">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    دسکتاپ
+                    <span class="badge bg-info text-white badge-pill">6,506</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    تلفن همراه
+                    <span class="badge bg-info text-white badge-pill">222</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                    تبلت
+                    <span class="badge bg-info text-white badge-pill">65</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end form-box -->
+</div><!-- end col-lg-3 -->
