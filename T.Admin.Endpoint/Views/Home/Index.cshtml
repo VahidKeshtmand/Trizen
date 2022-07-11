@@ -1,4 +1,5 @@
-﻿@{
+﻿@model T.Application.Dtos.Visitor.ResultTodayReportDto
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -217,87 +218,43 @@
 <div class="col-lg-6 responsive-column--m">
     <div class="form-box dashboard-card">
         <div class="form-title-wrap">
-            <h3 class="title">آمار سرور</h3>
+            <h3 class="title">آمار بازدید 30 روز گذشته</h3>
         </div>
-        <div class="form-content pb-0">
-            <div class="dashboard-progressbar pb-4">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%"
-                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="font-size-14 pt-1">فضای مصرفی دیسک: 1746.5 / 50000 مگابایت</p>
-            </div><!-- end dashboard-progressbar -->
-            <div class="dashboard-progressbar pb-4">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
-                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="font-size-14 pt-1">انتقال ماهانه پهنای باند: 14706.1 / 30.000</p>
-            </div><!-- end dashboard-progressbar -->
-            <div class="dashboard-progressbar pb-4">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%"
-                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="font-size-14 pt-1">زیر دامنه ها: 7/15</p>
-            </div><!-- end dashboard-progressbar -->
-            <div class="dashboard-progressbar pb-4">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%"
-                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="font-size-14 pt-1">تمام پایگاه های داده : 6/8</p>
-            </div><!-- end dashboard-progressbar -->
-            <div class="dashboard-progressbar pb-4">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%"
-                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="font-size-14 pt-1">حساب های ایمیل: 8/10</p>
-            </div><!-- end dashboard-progressbar -->
+        <div class="form-content">
+            <canvas id="bar-chart-visitstats"></canvas>
         </div>
     </div><!-- end form-box -->
 </div><!-- end col-lg-6 -->
 <div class="col-lg-6 responsive-column--m">
     <div class="form-box dashboard-card">
         <div class="form-title-wrap">
-            <h3 class="title">7273 نفر از سایت بازدید کردن</h3>
+            <h3 class="title"> آمار بازدید از سایت</h3>
         </div>
         <div class="form-content pb-0">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="sparkline-chart-item">
-                        <span class="font-size-15">بازدید</span>
-                        <h3 class="title font-size-16">9,080</h3>
-                        <div class="visits-chart mt-2"></div>
+                        <span class="font-size-15">تعداد بازدید از صفحات امروز</span>
+                        <h3 class="title font-size-16">@Model.Today.PageViews</h3>
+                        <div id=visitorCount class="visits-chart mt-2"></div>
                     </div>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4">
                     <div class="sparkline-chart-item">
-                        <span class="font-size-15">بازدید کنندگان یونیک</span>
-                        <h3 class="title font-size-16">4,080</h3>
-                        <div class="visits-chart mt-2"></div>
+                        <span class="font-size-15"></span>تعداد بازدیدکنندگان امروز</span>
+                        <h3 class="title font-size-16">@Model.Today.Visitors</h3>
                     </div>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4">
                     <div class="sparkline-chart-item">
-                        <span class="font-size-15">پیش نمایش ها</span>
-                        <h3 class="title font-size-16">12,080</h3>
-                        <div class="previews-chart mt-2"></div>
+                        <span class="font-size-15"></span>تعداد کاربران آنلاین سایت</span>
+                        <h3 id="online-visitor-count" class="title font-size-16"></h3>
                     </div>
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4">
                     <div class="sparkline-chart-item">
-                        <span class="font-size-15">صفحات/بازدید</span>
-                        <h3 class="title font-size-16">1.54</h3>
-                        <div class="visits-chart-2 mt-2"></div>
-                    </div>
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="sparkline-chart-item">
-                        <span class="font-size-15">میانگین مدت بازدید</span>
-                        <h3 class="title font-size-16">00:01:39</h3>
-                        <div class="previews-chart mt-2"></div>
+                        <span class="font-size-15"></span>تعداد بازدیدکنندگان کل</span>
+                        <h3 class="title font-size-16">@Model.GeneralStats.TotalVisitors</h3>
                     </div>
                 </div><!-- end col-lg-4 -->
             </div><!-- end row -->
@@ -311,50 +268,118 @@
         </div>
         <div class="form-content py-0">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    كروم
-                    <span class="badge bg-info text-white badge-pill">3,506</span>
-                </li>
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    فایرفاکس
-                    <span class="badge bg-info text-white badge-pill">2,405</span>
-                </li>
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    سافاری
-                    <span class="badge bg-info text-white badge-pill">300</span>
-                </li>
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    اینترنت اکسپلورر
-                    <span class="badge bg-info text-white badge-pill">200</span>
-                </li>
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    اوپرا
-                    <span class="badge bg-info text-white badge-pill">111</span>
-                </li>
+                @foreach (var item in Model.BrowserVisitCount)
+                {
+                    <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                        @item.Name
+                        <span class="badge bg-info text-white badge-pill">@item.VisitCount</span>
+                    </li>
+                }
             </ul>
         </div>
     </div><!-- end form-box -->
 </div><!-- end col-lg-3 -->
-<div class="col-lg-3 responsive-column--m">
-    <div class="form-box dashboard-card">
-        <div class="form-title-wrap">
-            <h3 class="title">نمای کلی موبایل</h3>
-        </div>
-        <div class="form-content py-0">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    دسکتاپ
-                    <span class="badge bg-info text-white badge-pill">6,506</span>
-                </li>
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    تلفن همراه
-                    <span class="badge bg-info text-white badge-pill">222</span>
-                </li>
-                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                    تبلت
-                    <span class="badge bg-info text-white badge-pill">65</span>
-                </li>
-            </ul>
-        </div>
-    </div><!-- end form-box -->
-</div><!-- end col-lg-3 -->
+@section Scripts{
+<script>
+    var valueHour = @Html.Raw(Json.Serialize(Model.Today.VisitCount.Values));
+    $("#visitorCount").sparkline(valueHour
+        , {
+            type: "line",
+            width: "90px",
+            height: "25px",
+            lineColor: "#287dfa",
+            fillColor: "#ebf5f9",
+            spotColor: "#2273e5",
+            minSpotColor: "#2273e5",
+            maxSpotColor: "#2273e5",
+            highlightSpotColor: "#808996",
+            highlightLineColor: "#808996",
+            spotRadius: 0,
+            chartRangeMin: 5,
+            chartRangeMax: 10,
+            chartRangeMinX: 5,
+            chartRangeMaxX: 5,
+            normalRangeMin: 5,
+            normalRangeMax: 5,
+            normalRangeColor: "#ebf5f9",
+            drawNormalOnTop: !0
+        });
+    var ctx = document.getElementById("bar-chart-visitstats");
+    Chart.defaults.global.defaultFontFamily = "yekan",
+        Chart.defaults.global.defaultFontSize = 14,
+        Chart.defaults.global.defaultFontStyle = "500",
+        Chart.defaults.global.defaultFontColor = "#808996";
+
+    var days = @Html.Raw(Json.Serialize(Model.GeneralStats.VisitPerDay.Display));
+    var values = @Html.Raw(Json.Serialize(Model.GeneralStats.VisitPerDay.Values));
+    var chart = new Chart(ctx,
+        {
+            type: "bar",
+            data: {
+                labels: days,
+                datasets: [{
+                    label: "بازدید",
+                    data: values,
+                    backgroundColor: "#287dfa",
+                    hoverBackgroundColor: "#2273e5",
+                    pointBackgroundColor: "#fff",
+                    borderWidth: 0,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                tooltips: {
+                    backgroundColor: "#1c2540"
+                },
+                legend: {
+                    display: !1
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontFamily: "yekan"
+                        },
+                        barPercentage: .4,
+                        barThickness: 15,
+                        display: !0,
+                        gridLines: {
+                            offsetGridLines: !1,
+                            display: !1
+                        }
+                    }],
+                    yAxes: [{
+                        display: !0,
+                        gridLines: {
+                            color: "#eee"
+                        },
+                        ticks: {
+                            fontSize: 14,
+                            fontFamily: "yekan"
+                        }
+                    }]
+                }
+            }
+        });
+    $(document).ready(function () {
+        var interval = 1000;  // 1000 = 1 second, 3000 = 3 seconds
+        function doAjax() {
+
+            $.ajax({
+                type: 'POST',
+                url: '/Home/GetOnlineVisitorCount',
+                success: function (data) {
+                    $("#online-visitor-count")
+                        .html(data.count);
+                },
+                complete: function (data) {
+                    // Schedule the next
+                    setTimeout(doAjax, interval);
+                }
+            });
+
+
+        }
+        setTimeout(doAjax, interval);
+    });
+</script>
+}

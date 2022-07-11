@@ -4,7 +4,9 @@ using T.Application.Services.Visitor;
 using T.Infrastructure.IdentityConfigs;
 using T.Infrastructure.SetupServices;
 using T.Persistence.Contexts.MongoDb;
+using T.Website.Endpoint.Hubs;
 using T.Website.Endpoint.Utilities.Filters;
+using T.Website.Endpoint.Utilities.Middlewares.cs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +22,12 @@ builder.Services.AddTransient<ISmsService, SmsService>();
 builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
 builder.Services.AddTransient<IVisitorService, VisitorService>();
 builder.Services.AddScoped<SaveVisitorInfoFilter>();
+builder.Services.AddTransient<IOnlineVisitorService, OnlineVisitorService>();
 
 builder.Services.AddAuthentication();
 
 builder.Services.AddAuthorization();
-
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +37,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseSetVisitorId();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -46,5 +50,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<OnlineVisitorHub>("/onlinevisitorhub");
 
 app.Run();

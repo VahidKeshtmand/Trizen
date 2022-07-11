@@ -10,10 +10,10 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            // "program": "${workspaceFolder}/T.Website.Endpoint/bin/Debug/net6.0/T.Website.Endpoint.dll",
+            //"program": "${workspaceFolder}/T.Website.Endpoint/bin/Debug/net6.0/T.Website.Endpoint.dll",
             "program": "${workspaceFolder}/T.Admin.Endpoint/bin/Debug/net6.0/T.Admin.Endpoint.dll",
             "args": [],
-            // "cwd": "${workspaceFolder}/T.Website.Endpoint",
+            //"cwd": "${workspaceFolder}/T.Website.Endpoint",
             "cwd": "${workspaceFolder}/T.Admin.Endpoint",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser

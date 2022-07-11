@@ -727,7 +727,6 @@
     <!-- ================================
     END DASHBOARD AREA
 ================================= -->
-
     <!-- start scroll top -->
     <div id="back-to-top">
         <i class="la la-angle-up" title="برو بالا"></i>
@@ -748,14 +747,15 @@
     <script src="~/Theme/js/jquery.countTo.min.js"></script>
     <script src="~/Theme/js/animated-headline.js"></script>
     <script src="~/Theme/js/jquery.sparkline.js"></script>
-    <script src="~/Theme/js/dashboard.js"></script>
+    @* <script src="~/js/site.js"></script> *@
     <script src="~/Theme/js/chart.js"></script>
     <script src="~/Theme/js/chart.extension.js"></script>
-    <script src="~/Theme/js/bar-chart.js"></script>
+    @* <script src="~/Theme/js/bar-chart.js"></script> *@
     <script src="~/Theme/js/line-chart.js"></script>
     <script src="~/Theme/js/jquery.filer.min.js"></script>
     <script src="~/Theme/js/jquery.ripples-min.js"></script>
     <script src="~/Theme/js/main-rtl.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>

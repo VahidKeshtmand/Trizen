@@ -531,11 +531,15 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/js/sweetalert2.all.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/SignalrOnlineVisitorService.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 
 </html>
