@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Trizen\\T.Application\\T.Application.csproj": {}
+    "e:\\Trizen\\T.Application\\T.Application.csproj": {}
   },
   "projects": {
-    "E:\\Trizen\\T.Application\\T.Application.csproj": {
+    "e:\\Trizen\\T.Application\\T.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Application\\T.Application.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Application\\T.Application.csproj",
         "projectName": "T.Application",
-        "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj",
+        "projectPath": "e:\\Trizen\\T.Application\\T.Application.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Application\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -49,6 +49,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.1.2, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -81,14 +89,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
+    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "projectName": "T.Domain",
-        "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Domain\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

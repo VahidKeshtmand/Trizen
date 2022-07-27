@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="~/Theme/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/Theme/css/style.css">
     <link rel="stylesheet" href="~/Theme/css/style-rtl.css">
+    @await RenderSectionAsync("Css", required: false)
+
 </head>
 
 <body>
@@ -163,8 +165,10 @@
                                         <a href="#" class="theme-btn theme-btn-small" data-toggle="modal"
                                         data-target="#loginPopupForm">ورود</a>
                                     }
-                                    else{
-                                        <a asp-action="Profile" asp-controller="Account" class="theme-btn theme-btn-small theme-btn-transparent">
+                                    else
+                                    {
+                                        <a asp-action="Profile" asp-controller="Account"
+                                        class="theme-btn theme-btn-small theme-btn-transparent">
                                             ورود به پنل کاربری</a>
                                     }
                                 </div>
@@ -367,7 +371,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="contact-form-action">
-                            <partial name="PartialViews/_RegisterPartial"></partial>
+                            @* <partial name="PartialViews/_RegisterPartial"></partial> *@
                         </div><!-- end contact-form-action -->
                     </div>
                 </div>
@@ -390,7 +394,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="contact-form-action">
-                            <partial name="PartialViews/_LoginPartial"></partial>
+                            @* <partial name="PartialViews/_LoginPartial"></partial> *@
                         </div><!-- end contact-form-action -->
                     </div>
                 </div>
@@ -534,12 +538,12 @@
     <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
     <script src="~/js/SignalrOnlineVisitorService.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     @await RenderSectionAsync("Scripts", required: false)
-    
+
 </body>
 
 </html>

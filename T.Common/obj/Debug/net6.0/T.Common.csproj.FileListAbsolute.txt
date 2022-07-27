@@ -1,0 +1,12 @@
+E:\Trizen\T.Common\bin\Debug\net6.0\T.Common.deps.json
+E:\Trizen\T.Common\bin\Debug\net6.0\T.Common.dll
+E:\Trizen\T.Common\bin\Debug\net6.0\T.Common.pdb
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.csproj.AssemblyReference.cache
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.AssemblyInfoInputs.cache
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.AssemblyInfo.cs
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.csproj.CoreCompileInputs.cache
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.dll
+E:\Trizen\T.Common\obj\Debug\net6.0\refint\T.Common.dll
+E:\Trizen\T.Common\obj\Debug\net6.0\T.Common.pdb
+E:\Trizen\T.Common\obj\Debug\net6.0\ref\T.Common.dll

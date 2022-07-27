@@ -295,3 +295,9 @@ E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\runtimes\win\native\snappy64.dll
 E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\AutoMapper.dll
+E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\FluentValidation.dll
+E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+E:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\T.Website.Endpoint.MvcApplicationPartsAssemblyInfo.cs

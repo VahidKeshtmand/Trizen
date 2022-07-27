@@ -3,6 +3,11 @@
   <ItemGroup>
     <ProjectReference Include="..\T.Application\T.Application.csproj" />
     <ProjectReference Include="..\T.Persistence\T.Persistence.csproj" />
+    <ProjectReference Include="..\T.Infrastructure\T.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
   <PropertyGroup>

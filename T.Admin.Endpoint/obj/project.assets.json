@@ -2,6 +2,31 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/11.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "DnsClient/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -12,6 +37,92 @@
         },
         "runtime": {
           "lib/net5.0/DnsClient.dll": {}
+        }
+      },
+      "FluentValidation/11.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/11.1.2": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.1.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.1.0"
+        },
+        "compile": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.1.0",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+        }
+      },
+      "LiteDB/5.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/LiteDB.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.dll": {}
+        }
+      },
+      "LiteDB.Async/0.0.11": {
+        "type": "package",
+        "dependencies": {
+          "LiteDB": "5.0.11"
+        },
+        "compile": {
+          "lib/netstandard2.0/litedbasync.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/litedbasync.dll": {}
+        }
+      },
+      "LiteDB.Identity/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "LiteDB": "5.0.8",
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.Extensions.Identity.Stores": "3.1.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/LiteDB.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.Identity.dll": {}
+        }
+      },
+      "LiteDB.Identity.Async/1.0.2.3": {
+        "type": "package",
+        "dependencies": {
+          "LiteDB.Async": "0.0.11",
+          "LiteDB.Identity": "1.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/LiteDB.Identity.Async.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.Identity.Async.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -246,7 +357,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -1106,6 +1217,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AutoMapper": "11.0.1",
+          "FluentValidation.AspNetCore": "11.1.2",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.6",
           "MongoDB.Driver": "2.16.1",
@@ -1132,6 +1245,24 @@
           "bin/placeholder/T.Domain.dll": {}
         }
       },
+      "T.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "LiteDB.Identity.Async": "1.0.2.3",
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "T.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T.Infrastructure.dll": {}
+        }
+      },
       "T.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1153,6 +1284,35 @@
     }
   },
   "libraries": {
+    "AutoMapper/11.0.1": {
+      "sha512": "WIadGC1pIwbnyTubvI577p3F++Bsj9q2Q3OaAc1I0QS+JhupN1xkdrPBhI9bPIeg63zM81tZplUNYkqU1HE5jQ==",
+      "type": "package",
+      "path": "automapper/11.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "sha512": "0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "DnsClient/1.6.1": {
       "sha512": "4H/f2uYJOZ+YObZjpY9ABrKZI+JNw3uizp6oMzTXwDw6F+2qIPhpRl/1t68O/6e98+vqNiYGu+lswmwdYUy3gg==",
       "type": "package",
@@ -1175,6 +1335,119 @@
         "lib/netstandard2.0/DnsClient.xml",
         "lib/netstandard2.1/DnsClient.dll",
         "lib/netstandard2.1/DnsClient.xml"
+      ]
+    },
+    "FluentValidation/11.1.0": {
+      "sha512": "Ld7w+2jOmnhQqFkngEGuEWTRa5j6u4Xzli7jKxRtbA5PtuHHcpin01qxvxYL0LomeJuzRMGAOURu2rKONdjKQA==",
+      "type": "package",
+      "path": "fluentvalidation/11.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.1.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/11.1.2": {
+      "sha512": "Lw/8btATvMYW9QYR75CAw1Wp0AJhr9f7cxs1IyklQo6emvy+JaM27BCUe2MZKDOQTLpP4fmVVppPQHHc7HOEjQ==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/11.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.aspnetcore.11.1.2.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/net5.0/FluentValidation.AspNetCore.dll",
+        "lib/net5.0/FluentValidation.AspNetCore.xml",
+        "lib/net6.0/FluentValidation.AspNetCore.dll",
+        "lib/net6.0/FluentValidation.AspNetCore.xml",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.1.0": {
+      "sha512": "M9U2hLZc8bx0JthQKsN9SVgQSHJeLMcSV/uCmJ23U+/7HCSeOYD4OXoF+p5U3bLGz6Yp7h0/0XbSL+Qv2S38EQ==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
+    "LiteDB/5.0.11": {
+      "sha512": "6cL4bOmVCUB0gIK+6qIr68HeqjjHZicPDGQjvJ87mIOvkFsEsJWkIps3yoKNeLpHhJQur++yoQ9Q8gxsdos0xQ==",
+      "type": "package",
+      "path": "litedb/5.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "AppVeyorSettings.json",
+        "LICENSE",
+        "icon_64x64.png",
+        "lib/net45/LiteDB.dll",
+        "lib/net45/LiteDB.xml",
+        "lib/netstandard1.3/LiteDB.dll",
+        "lib/netstandard1.3/LiteDB.xml",
+        "lib/netstandard2.0/LiteDB.dll",
+        "lib/netstandard2.0/LiteDB.xml",
+        "litedb.5.0.11.nupkg.sha512",
+        "litedb.nuspec"
+      ]
+    },
+    "LiteDB.Async/0.0.11": {
+      "sha512": "j66SC1GhKgVCXFBdJj6q7XELF8AK4M9m7zvUEwVu9Pt7IyuBOeEeOXQp6yNAeql9knXF37p8v29fm66/7+6MXQ==",
+      "type": "package",
+      "path": "litedb.async/0.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/litedbasync.dll",
+        "litedb.async.0.0.11.nupkg.sha512",
+        "litedb.async.nuspec"
+      ]
+    },
+    "LiteDB.Identity/1.0.3": {
+      "sha512": "23UknJrMvNfSrqiTtbyZFcrD7cfeKz961uvfbMEIPkc0VhvhMxDOJHA3wyxmmtQj0HUzhRzuc2y2yIwJWYRhjA==",
+      "type": "package",
+      "path": "litedb.identity/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/LiteDB.Identity.dll",
+        "litedb.identity.1.0.3.nupkg.sha512",
+        "litedb.identity.nuspec"
+      ]
+    },
+    "LiteDB.Identity.Async/1.0.2.3": {
+      "sha512": "P+9dMmQLCVF3a7JFbjgcXEr2yO7PlTqPNTcSuR/RBvZjLLVtV8XkfV+uBB6+aV9q9ieiI8kkuI/w+c/B5rYeqg==",
+      "type": "package",
+      "path": "litedb.identity.async/1.0.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/LiteDB.Identity.Async.dll",
+        "litedb.identity.async.1.0.2.3.nupkg.sha512",
+        "litedb.identity.async.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -1412,10 +1685,10 @@
         "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1428,6 +1701,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -1437,7 +1711,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -2932,6 +3206,11 @@
       "path": "../T.Domain/T.Domain.csproj",
       "msbuildProject": "../T.Domain/T.Domain.csproj"
     },
+    "T.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../T.Infrastructure/T.Infrastructure.csproj",
+      "msbuildProject": "../T.Infrastructure/T.Infrastructure.csproj"
+    },
     "T.Persistence/1.0.0": {
       "type": "project",
       "path": "../T.Persistence/T.Persistence.csproj",
@@ -2940,7 +3219,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "T.Application >= 1.0.0",
+      "T.Infrastructure >= 1.0.0",
       "T.Persistence >= 1.0.0"
     ]
   },
@@ -2951,11 +3232,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Trizen\\T.Admin.Endpoint\\T.Admin.Endpoint.csproj",
+      "projectUniqueName": "e:\\Trizen\\T.Admin.Endpoint\\T.Admin.Endpoint.csproj",
       "projectName": "T.Admin.Endpoint",
-      "projectPath": "E:\\Trizen\\T.Admin.Endpoint\\T.Admin.Endpoint.csproj",
+      "projectPath": "e:\\Trizen\\T.Admin.Endpoint\\T.Admin.Endpoint.csproj",
       "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-      "outputPath": "E:\\Trizen\\T.Admin.Endpoint\\obj\\",
+      "outputPath": "e:\\Trizen\\T.Admin.Endpoint\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2977,11 +3258,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Trizen\\T.Application\\T.Application.csproj": {
-              "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
+            "e:\\Trizen\\T.Application\\T.Application.csproj": {
+              "projectPath": "e:\\Trizen\\T.Application\\T.Application.csproj"
             },
-            "E:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
-              "projectPath": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj"
+            "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
+              "projectPath": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
+            },
+            "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+              "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj"
             }
           }
         }
@@ -2995,6 +3279,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[11.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

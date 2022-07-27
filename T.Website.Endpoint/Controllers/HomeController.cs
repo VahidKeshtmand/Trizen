@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using T.Website.Endpoint.Models;
+using T.Application.Dtos.Hotels;
+using T.Application.Services.Hotels;
 using T.Website.Endpoint.Utilities.Filters;
 
 namespace T.Website.Endpoint.Controllers
@@ -9,26 +9,49 @@ namespace T.Website.Endpoint.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHotelService _hotelService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHotelService hotelService)
         {
             _logger = logger;
+            _hotelService = hotelService;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Privacy()
+       
+        public IActionResult RegisterHotel()
         {
-            return View();
+            var jobsTitle = _hotelService.GetJobsTitleList();
+            var countriesName = _hotelService.GetCountriesNameList();
+            var countriesCode = _hotelService.GetCountriesCodeList();
+            var currencies = _hotelService.GetCurrenciesList();
+            var amenities = _hotelService.GetAmenitiesList();
+            var model = new RegisterHotelDto
+            {
+                JobsTitle = jobsTitle,
+                CountriesName = countriesName,
+                CountriesCode = countriesCode,
+                Currencies = currencies,
+                Amenities = amenities
+            };
+            return View(model);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPost]
+        public IActionResult RegisterHotel(RegisterHotelDto model)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (!ModelState.IsValid)
+                return new JsonResult(new { Status = false, Message = "لطفاً فرم را به درستی پر کنید." });
+            var result = _hotelService.Register(model);
+            if (!result.IsSuccess)
+                return new JsonResult(new { Status = false, Message = "فرم ارسال نشد." });
+            return new JsonResult(new { Status = true, Message = "فرم با موفقیت ارسال شد." });
         }
+
+
+
     }
 }

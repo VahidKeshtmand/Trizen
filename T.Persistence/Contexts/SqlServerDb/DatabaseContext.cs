@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
 using T.Domain.Attributes;
+using T.Domain.Common;
+using T.Domain.Hotels;
+using T.Persistence.ConfigTables.Common;
+using T.Persistence.ConfigTables.Hotels;
 
 namespace T.Persistence.Contexts.SqlServerDb
 {
@@ -8,9 +12,22 @@ namespace T.Persistence.Contexts.SqlServerDb
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Amenity> Amenities { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<PersonalInformation> PersonalInformations { get; set; }
+        public DbSet<JobTitle> JobTitles { get; set; }
+        public DbSet<AmenityHotel> AmenityHotels { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             AddShadowPropertyToEachTable(modelBuilder);
+            modelBuilder.ApplyConfiguration(new HotelConfig());
+            modelBuilder.ApplyConfiguration(new PersonalInformationConfig());
+            modelBuilder.ApplyConfiguration(new AmenityHotelConfig());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -21,10 +38,10 @@ namespace T.Persistence.Contexts.SqlServerDb
             {
                 if (!entityType.ClrType.GetCustomAttributes(typeof(AuditableAttribute), true).Any())
                     continue;
-                modelBuilder.Entity(entityType.Name).Property<DateTime>("InsertDate");
+                modelBuilder.Entity(entityType.Name).Property<DateTime>("InsertDate").HasDefaultValue(DateTime.Now); ;
                 modelBuilder.Entity(entityType.Name).Property<DateTime?>("UpdateDate");
                 modelBuilder.Entity(entityType.Name).Property<DateTime?>("RemoveDate");
-                modelBuilder.Entity(entityType.Name).Property<bool>("IsRemoved");
+                modelBuilder.Entity(entityType.Name).Property<bool>("IsRemoved").HasDefaultValue(false);
             }
         }
 

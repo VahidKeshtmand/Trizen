@@ -73,12 +73,54 @@ function VerifyPhoneNumberSubmitted(response) {
     }
 }
 
+function RegisterHotelSubmitted(response) {
+    if (response.status === "Success") {
+        toastr["success"]("فرم ثبت شما با موفقیت ارسال شد. بعد از بررسی با شما تماس گرفته خواهد شد.")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    } else {
+        toastr["error"]("ً ارسال فرم ناموفق بود لطفاً دوباره تلاش کنید!")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    }
+}
+
 function SendToken() {
     $.ajax({
         url: "/Account/SendToken",
         type: "post"
         , success: function (response) {
-            if(response.status === "Warning"){
+            if (response.status === "Warning") {
                 Swal.fire({
                     icon: 'warning',
                     title: 'هشدار',
@@ -90,7 +132,7 @@ function SendToken() {
                     }
                 });
             }
-            
+
         }
     });
     $('#btn-send-sms').css({

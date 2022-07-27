@@ -84,3 +84,15 @@ E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\Syst
 E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\T.Persistence.dll
 E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\T.Persistence.pdb
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\AutoMapper.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\FluentValidation.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\Trizen\T.Admin.Endpoint\obj\Debug\net6.0\T.Admin.Endpoint.MvcApplicationPartsAssemblyInfo.cs
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\LiteDB.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\litedbasync.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\LiteDB.Identity.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\LiteDB.Identity.Async.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\T.Infrastructure.dll
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\T.Infrastructure.pdb
+E:\Trizen\T.Admin.Endpoint\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

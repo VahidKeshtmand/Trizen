@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj": {}
+    "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj": {}
   },
   "projects": {
-    "E:\\Trizen\\T.Application\\T.Application.csproj": {
+    "e:\\Trizen\\T.Application\\T.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Application\\T.Application.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Application\\T.Application.csproj",
         "projectName": "T.Application",
-        "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj",
+        "projectPath": "e:\\Trizen\\T.Application\\T.Application.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Application\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -49,6 +49,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.1.2, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -81,14 +89,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
+    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "projectName": "T.Domain",
-        "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Domain\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -150,14 +158,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
+    "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
         "projectName": "T.Infrastructure",
-        "projectPath": "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
+        "projectPath": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Infrastructure\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -179,8 +187,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
-                "projectPath": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj"
+              "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+                "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj"
               }
             }
           }
@@ -195,6 +203,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
             "LiteDB.Identity.Async": {
               "target": "Package",
               "version": "[1.0.2.3, )"
@@ -231,14 +243,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+    "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj",
         "projectName": "T.Persistence",
-        "projectPath": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj",
+        "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Persistence\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -260,11 +272,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Application\\T.Application.csproj": {
-                "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
+              "e:\\Trizen\\T.Application\\T.Application.csproj": {
+                "projectPath": "e:\\Trizen\\T.Application\\T.Application.csproj"
               },
-              "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -321,14 +333,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj": {
+    "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
         "projectName": "T.Website.Endpoint",
-        "projectPath": "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
+        "projectPath": "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Website.Endpoint\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Website.Endpoint\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -350,11 +362,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Application\\T.Application.csproj": {
-                "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
+              "e:\\Trizen\\T.Application\\T.Application.csproj": {
+                "projectPath": "e:\\Trizen\\T.Application\\T.Application.csproj"
               },
-              "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
-                "projectPath": "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
+              "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
+                "projectPath": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
               }
             }
           }
@@ -369,6 +381,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
