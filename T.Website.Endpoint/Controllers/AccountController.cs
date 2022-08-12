@@ -6,7 +6,7 @@ using T.Website.Endpoint.Utilities.Filters;
 
 namespace T.Website.Endpoint.Controllers
 {
-    [ServiceFilter(typeof(SaveVisitorInfoFilter))]
+    // [ServiceFilter(typeof(SaveVisitorInfoFilter))]
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;

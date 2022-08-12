@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="~/Theme/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/Theme/css/style.css">
     <link rel="stylesheet" href="~/Theme/css/style-rtl.css">
+    @await RenderSectionAsync("Css", required: false)
 </head>
 
 <body class="section-bg">
@@ -307,12 +308,9 @@
                         <span class="side-menu-icon toggle-menu-icon">
                             <i class="la la-angle-down"></i>
                         </span>
-                        <a href="admin-dashboard-orders.html"><i class="la la-list mr-2 text-color-2"></i>مدیریت هتل
-                            ها</a>
+                        <a href="#"><i class="la la-hotel mr-2 text-color-2"></i>مدیریت هتل ها</a>
                         <ul class="toggle-drop-menu">
-                            <li><a asp-controller="HotelManagement" asp-action="RequestHotelList">لیست درخواست ثبت
-                                    هتل</a></li>
-                            <li><a href="admin-dashboard-orders-details.html">لیست هتل های ثبت شده</a></li>
+                            <li><a asp-controller="HotelManagement" asp-action="Index">لیست هتل ها</a></li>
                         </ul>
                     </li>
                     <li>
@@ -639,6 +637,7 @@
     <script src="~/Theme/js/jquery.countTo.min.js"></script>
     <script src="~/Theme/js/animated-headline.js"></script>
     <script src="~/Theme/js/jquery.sparkline.js"></script>
+
     @* <script src="~/js/site.js"></script> *@
     <script src="~/Theme/js/chart.js"></script>
     <script src="~/Theme/js/chart.extension.js"></script>
@@ -646,7 +645,10 @@
     <script src="~/Theme/js/line-chart.js"></script>
     <script src="~/Theme/js/jquery.filer.min.js"></script>
     <script src="~/Theme/js/jquery.ripples-min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Theme/js/main-rtl.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

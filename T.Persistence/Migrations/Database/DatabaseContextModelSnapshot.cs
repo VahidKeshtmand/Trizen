@@ -22,6 +22,169 @@ namespace T.Persistence.Migrations.Database
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("T.Domain.Account.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 52, DateTimeKind.Local).AddTicks(2612));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("T.Domain.Comments.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FacilityRate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LocationRate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ServiceRate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ValueForMoneyService")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("T.Domain.Common.Amenity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AmenityType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Display")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 52, DateTimeKind.Local).AddTicks(5167));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Amenities");
+                });
+
             modelBuilder.Entity("T.Domain.Common.Contact", b =>
                 {
                     b.Property<int>("Id")
@@ -35,13 +198,12 @@ namespace T.Persistence.Migrations.Database
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Facebook")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 369, DateTimeKind.Local).AddTicks(2749));
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 52, DateTimeKind.Local).AddTicks(7543));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -49,7 +211,6 @@ namespace T.Persistence.Migrations.Database
                         .HasDefaultValue(false);
 
                     b.Property<string>("Linkedin")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -60,7 +221,6 @@ namespace T.Persistence.Migrations.Database
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Twitter")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdateDate")
@@ -90,7 +250,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 369, DateTimeKind.Local).AddTicks(5438));
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 52, DateTimeKind.Local).AddTicks(9406));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -123,7 +283,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 369, DateTimeKind.Local).AddTicks(7716));
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 53, DateTimeKind.Local).AddTicks(855));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -145,6 +305,49 @@ namespace T.Persistence.Migrations.Database
                     b.ToTable("Currencies");
                 });
 
+            modelBuilder.Entity("T.Domain.Common.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 53, DateTimeKind.Local).AddTicks(2506));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Src")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("T.Domain.Common.JobTitle", b =>
                 {
                     b.Property<int>("Id")
@@ -156,7 +359,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 370, DateTimeKind.Local).AddTicks(156));
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 53, DateTimeKind.Local).AddTicks(4191));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -193,7 +396,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 370, DateTimeKind.Local).AddTicks(2736));
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 53, DateTimeKind.Local).AddTicks(5865));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -215,47 +418,9 @@ namespace T.Persistence.Migrations.Database
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JobTitleId")
-                        .IsUnique();
+                    b.HasIndex("JobTitleId");
 
                     b.ToTable("PersonalInformations");
-                });
-
-            modelBuilder.Entity("T.Domain.Hotels.Amenity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Display")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("InsertDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 370, DateTimeKind.Local).AddTicks(5656));
-
-                    b.Property<bool>("IsRemoved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
-                    b.Property<DateTime?>("RemoveDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Amenities");
                 });
 
             modelBuilder.Entity("T.Domain.Hotels.AmenityHotel", b =>
@@ -281,6 +446,29 @@ namespace T.Persistence.Migrations.Database
                     b.ToTable("AmenityHotels");
                 });
 
+            modelBuilder.Entity("T.Domain.Hotels.AmenityRoom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AmenityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AmenityId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("AmenityRooms");
+                });
+
             modelBuilder.Entity("T.Domain.Hotels.Hotel", b =>
                 {
                     b.Property<int>("Id")
@@ -296,9 +484,15 @@ namespace T.Persistence.Migrations.Database
                     b.Property<int>("Bathroom")
                         .HasColumnType("int");
 
+                    b.Property<int>("Cancellation")
+                        .HasColumnType("int");
+
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ConfirmStatus")
+                        .HasColumnType("int");
 
                     b.Property<int>("ContactId")
                         .HasColumnType("int");
@@ -310,8 +504,10 @@ namespace T.Persistence.Migrations.Database
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExtraPeople")
+                        .HasColumnType("int");
 
                     b.Property<int>("Housekeeping")
                         .HasColumnType("int");
@@ -319,14 +515,10 @@ namespace T.Persistence.Migrations.Database
                     b.Property<int>("HousekeepingFrequency")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 7, 22, 20, 24, 34, 370, DateTimeKind.Local).AddTicks(8225));
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 53, DateTimeKind.Local).AddTicks(8725));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -356,6 +548,13 @@ namespace T.Persistence.Migrations.Database
                     b.Property<int>("RoomsCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StarsCount")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
 
@@ -364,11 +563,9 @@ namespace T.Persistence.Migrations.Database
                     b.HasIndex("ContactId")
                         .IsUnique();
 
-                    b.HasIndex("CountryId")
-                        .IsUnique();
+                    b.HasIndex("CountryId");
 
-                    b.HasIndex("CurrencyId")
-                        .IsUnique();
+                    b.HasIndex("CurrencyId");
 
                     b.HasIndex("PersonalInformationId")
                         .IsUnique();
@@ -376,11 +573,103 @@ namespace T.Persistence.Migrations.Database
                     b.ToTable("Hotels");
                 });
 
+            modelBuilder.Entity("T.Domain.Hotels.Room", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 8, 12, 1, 9, 19, 54, DateTimeKind.Local).AddTicks(2518));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsReserve")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Size")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("T.Domain.Comments.Comment", b =>
+                {
+                    b.HasOne("T.Domain.Hotels.Hotel", "Hotel")
+                        .WithMany("Comments")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("T.Domain.Account.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("T.Domain.Common.Image", b =>
+                {
+                    b.HasOne("T.Domain.Hotels.Hotel", "Hotel")
+                        .WithMany("Images")
+                        .HasForeignKey("HotelId");
+
+                    b.HasOne("T.Domain.Hotels.Room", "Room")
+                        .WithMany("Images")
+                        .HasForeignKey("RoomId");
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("Room");
+                });
+
             modelBuilder.Entity("T.Domain.Common.PersonalInformation", b =>
                 {
                     b.HasOne("T.Domain.Common.JobTitle", "JobTitle")
-                        .WithOne("PersonalInformation")
-                        .HasForeignKey("T.Domain.Common.PersonalInformation", "JobTitleId")
+                        .WithMany("PersonalInformations")
+                        .HasForeignKey("JobTitleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -389,7 +678,7 @@ namespace T.Persistence.Migrations.Database
 
             modelBuilder.Entity("T.Domain.Hotels.AmenityHotel", b =>
                 {
-                    b.HasOne("T.Domain.Hotels.Amenity", "Amenity")
+                    b.HasOne("T.Domain.Common.Amenity", "Amenity")
                         .WithMany("AmenityHotels")
                         .HasForeignKey("AmenityId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -406,6 +695,25 @@ namespace T.Persistence.Migrations.Database
                     b.Navigation("Hotel");
                 });
 
+            modelBuilder.Entity("T.Domain.Hotels.AmenityRoom", b =>
+                {
+                    b.HasOne("T.Domain.Common.Amenity", "Amenity")
+                        .WithMany()
+                        .HasForeignKey("AmenityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("T.Domain.Hotels.Room", "Room")
+                        .WithMany("AmenityRooms")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Amenity");
+
+                    b.Navigation("Room");
+                });
+
             modelBuilder.Entity("T.Domain.Hotels.Hotel", b =>
                 {
                     b.HasOne("T.Domain.Common.Contact", "Contact")
@@ -415,14 +723,14 @@ namespace T.Persistence.Migrations.Database
                         .IsRequired();
 
                     b.HasOne("T.Domain.Common.Country", "Country")
-                        .WithOne("Hotel")
-                        .HasForeignKey("T.Domain.Hotels.Hotel", "CountryId")
+                        .WithMany("Hotels")
+                        .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("T.Domain.Common.Currency", "Currency")
-                        .WithOne("Hotel")
-                        .HasForeignKey("T.Domain.Hotels.Hotel", "CurrencyId")
+                        .WithMany("Hotels")
+                        .HasForeignKey("CurrencyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -441,6 +749,27 @@ namespace T.Persistence.Migrations.Database
                     b.Navigation("PersonalInformation");
                 });
 
+            modelBuilder.Entity("T.Domain.Hotels.Room", b =>
+                {
+                    b.HasOne("T.Domain.Hotels.Hotel", "Hotel")
+                        .WithMany("Rooms")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("T.Domain.Account.User", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("T.Domain.Common.Amenity", b =>
+                {
+                    b.Navigation("AmenityHotels");
+                });
+
             modelBuilder.Entity("T.Domain.Common.Contact", b =>
                 {
                     b.Navigation("Hotel")
@@ -449,20 +778,17 @@ namespace T.Persistence.Migrations.Database
 
             modelBuilder.Entity("T.Domain.Common.Country", b =>
                 {
-                    b.Navigation("Hotel")
-                        .IsRequired();
+                    b.Navigation("Hotels");
                 });
 
             modelBuilder.Entity("T.Domain.Common.Currency", b =>
                 {
-                    b.Navigation("Hotel")
-                        .IsRequired();
+                    b.Navigation("Hotels");
                 });
 
             modelBuilder.Entity("T.Domain.Common.JobTitle", b =>
                 {
-                    b.Navigation("PersonalInformation")
-                        .IsRequired();
+                    b.Navigation("PersonalInformations");
                 });
 
             modelBuilder.Entity("T.Domain.Common.PersonalInformation", b =>
@@ -471,14 +797,22 @@ namespace T.Persistence.Migrations.Database
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("T.Domain.Hotels.Amenity", b =>
-                {
-                    b.Navigation("AmenityHotels");
-                });
-
             modelBuilder.Entity("T.Domain.Hotels.Hotel", b =>
                 {
                     b.Navigation("AmenityHotels");
+
+                    b.Navigation("Comments");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("T.Domain.Hotels.Room", b =>
+                {
+                    b.Navigation("AmenityRooms");
+
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

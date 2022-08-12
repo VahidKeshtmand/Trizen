@@ -10,7 +10,7 @@ namespace T.Domain.Common
         public string Name { get; set; } = string.Empty;
         public string Code { get; set; } = string.Empty;
 
-        public Hotel Hotel { get; set; }
+        public List<Hotel> Hotels { get; set; }
 
     }
 }

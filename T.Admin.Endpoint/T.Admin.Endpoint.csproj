@@ -4,6 +4,7 @@
     <ProjectReference Include="..\T.Application\T.Application.csproj" />
     <ProjectReference Include="..\T.Persistence\T.Persistence.csproj" />
     <ProjectReference Include="..\T.Infrastructure\T.Infrastructure.csproj" />
+    <ProjectReference Include="..\T.Common\T.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

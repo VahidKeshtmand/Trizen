@@ -854,6 +854,16 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
+      "T.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/T.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T.Common.dll": {}
+        }
+      },
       "T.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2188,6 +2198,11 @@
         "version.txt"
       ]
     },
+    "T.Common/1.0.0": {
+      "type": "project",
+      "path": "../T.Common/T.Common.csproj",
+      "msbuildProject": "../T.Common/T.Common.csproj"
+    },
     "T.Domain/1.0.0": {
       "type": "project",
       "path": "../T.Domain/T.Domain.csproj",
@@ -2201,6 +2216,7 @@
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 6.0.6",
       "MongoDB.Driver >= 2.16.1",
+      "T.Common >= 1.0.0",
       "T.Domain >= 1.0.0"
     ]
   },
@@ -2237,6 +2253,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "e:\\Trizen\\T.Common\\T.Common.csproj": {
+              "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj"
+            },
             "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
               "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
             }

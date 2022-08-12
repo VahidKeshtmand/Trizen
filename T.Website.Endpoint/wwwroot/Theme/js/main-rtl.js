@@ -89,24 +89,24 @@ Version:        1.0
         });
 
         /*=========== Dropdown menu ============*/
-        dropdownMenu.parent('li').children('a').append(function() {
+        dropdownMenu.parent('li').children('a').append(function () {
             return '<button class="drop-menu-toggler" type="button"><i class="la la-angle-down"></i></button>';
         });
 
         /*=========== Dropdown menu ============*/
-        $document.on('click', '.main-menu-content .drop-menu-toggler', function() {
+        $document.on('click', '.main-menu-content .drop-menu-toggler', function () {
             var Self = $(this);
             Self.parent().parent().children('.dropdown-menu-item').toggle();
             return false;
         });
 
         /*=========== Sub menu ============*/
-        $('.main-menu-content .dropdown-menu-item .sub-menu').parent('li').children('a').append(function() {
+        $('.main-menu-content .dropdown-menu-item .sub-menu').parent('li').children('a').append(function () {
             return '<button class="sub-menu-toggler" type="button"><i class="la la-plus"></i></button>';
         });
 
         /*=========== Dropdown menu ============*/
-        $document.on('click', '.main-menu-content .dropdown-menu-item .sub-menu-toggler', function() {
+        $document.on('click', '.main-menu-content .dropdown-menu-item .sub-menu-toggler', function () {
             var Self = $(this);
             Self.parent().parent().children('.sub-menu').toggle();
             return false;
@@ -134,13 +134,13 @@ Version:        1.0
                 $('.dropdown-menu-item').show();
                 $('.sub-menu').show();
                 $('.header-top-bar').show();
-            }else {
+            } else {
                 if (isMenuOpen) {
                     $('.main-menu-content').show();
                     $('.dropdown-menu-item').show();
                     $('.sub-menu').show();
                     $('.header-top-bar').show();
-                }else {
+                } else {
                     $('.main-menu-content').hide();
                     $('.dropdown-menu-item').hide();
                     $('.sub-menu').hide();
@@ -150,7 +150,7 @@ Version:        1.0
         });
 
         /*=========== Navbar offset top ============*/
-        if($(topNav).length) {
+        if ($(topNav).length) {
             var topOfNav = topNav.offsetTop;
         }
 
@@ -179,29 +179,29 @@ Version:        1.0
 
         /*========== Page scroll ==========*/
 
-        scrollLink.on('click',function(e){
+        scrollLink.on('click', function (e) {
             var target = $($(this).attr('href'));
 
             $($dom).animate({
-                scrollTop:target.offset().top
-            },600);
+                scrollTop: target.offset().top
+            }, 600);
 
             $(this).addClass('active');
 
             e.preventDefault();
         });
 
-        function findPosition (){
-            $('.page-scroll').each(function(){
-                if(($(this).offset().top - $(window).scrollTop()) < 20){
+        function findPosition() {
+            $('.page-scroll').each(function () {
+                if (($(this).offset().top - $(window).scrollTop()) < 20) {
                     scrollLink.removeClass('active');
-                    $('#single-content-nav').find('[data-scroll="'+ $(this).attr('id') +'"]').addClass('active');
+                    $('#single-content-nav').find('[data-scroll="' + $(this).attr('id') + '"]').addClass('active');
                 }
             });
         }
 
         /*===== Back to top button ======*/
-        $document.on("click", "#back-to-top", function() {
+        $document.on("click", "#back-to-top", function () {
             $($dom).animate({
                 scrollTop: 0
             }, 800);
@@ -221,21 +221,21 @@ Version:        1.0
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-right"></i>', '<i class="la la-angle-left"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 991 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     },
                     // breakpoint from 1441 up
-                    1441 : {
+                    1441: {
                         items: 4
                     }
                 }
@@ -255,17 +255,17 @@ Version:        1.0
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-right"></i>', '<i class="la la-angle-left"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 991 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     },
                 }
@@ -301,17 +301,17 @@ Version:        1.0
                 active: true,
                 margin: 30,
                 navText: ['<i class="la la-angle-right"></i>', '<i class="la la-angle-left"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 167 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 768 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     }
                 }
@@ -330,17 +330,17 @@ Version:        1.0
                 autoplay: false,
                 margin: 30,
                 navText: ['<i class="la la-long-arrow-right"></i>', '<i class="la la-long-arrow-left"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 768 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     }
                 }
@@ -371,25 +371,25 @@ Version:        1.0
                 dots: false,
                 smartSpeed: 700,
                 autoplay: true,
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 425 up
-                    425 : {
+                    425: {
                         items: 2
                     },
                     // breakpoint from 480 up
-                    480 : {
+                    480: {
                         items: 2
                     },
                     // breakpoint from 767 up
-                    767 : {
+                    767: {
                         items: 4
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 6
                     }
                 }
@@ -408,13 +408,13 @@ Version:        1.0
                 autoplay: false,
                 margin: 30,
                 navText: ['<i class="la la-angle-right"></i>', '<i class="la la-angle-left"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 900 up
-                    900 : {
+                    900: {
                         items: 2
                     }
 
@@ -434,17 +434,17 @@ Version:        1.0
                 autoplay: false,
                 margin: 30,
                 navText: ['<i class="la la-long-arrow-right"></i>', '<i class="la la-long-arrow-left"></i>'],
-                responsive : {
+                responsive: {
                     // breakpoint from 0 up
-                    0 : {
+                    0: {
                         items: 1
                     },
                     // breakpoint from 768 up
-                    768 : {
+                    768: {
                         items: 2
                     },
                     // breakpoint from 992 up
-                    992 : {
+                    992: {
                         items: 3
                     }
                 }
@@ -454,14 +454,14 @@ Version:        1.0
         /*==== Fancybox for video =====*/
         if ($(fancyVideo).length) {
             $(fancyVideo).fancybox({
-                lang : 'fa',
-                i18n : {
-                 'fa' : {
-                    CLOSE: "بستن",
-                    FULL_SCREEN: "تمام صفحه",
-                    SHARE: "اشترام گذاری",
-                       }
-                        },
+                lang: 'fa',
+                i18n: {
+                    'fa': {
+                        CLOSE: "بستن",
+                        FULL_SCREEN: "تمام صفحه",
+                        SHARE: "اشترام گذاری",
+                    }
+                },
                 buttons: [
                     "share",
                     "fullScreen",
@@ -472,25 +472,25 @@ Version:        1.0
         }
 
         /*==== Fancybox for gallery =====*/
-    
+
         if ($(fancyGallery).length) {
             $(fancyGallery).fancybox({
-                lang : 'fa',
-                i18n : {
-                 'fa' : {
-                    CLOSE: "بستن",
-                    NEXT: "بعدی",
-                    PREV: "قبلی",
-                    ERROR: "محتوای درخواستی بارگیری نمی شود. <br/> لطفاً بعداً دوباره امتحان کنید.",
-                    PLAY_START: "شروع اسلاید شو",
-                    PLAY_STOP: "توقف اسلاید شو",
-                    FULL_SCREEN: "تمام صفحه",
-                    THUMBS: "بند انگشتی",
-                    DOWNLOAD: "دانلود",
-                    SHARE: "اشترام گذاری",
-                    ZOOM: "بزرگنمایی"
-                       }
-                        },
+                lang: 'fa',
+                i18n: {
+                    'fa': {
+                        CLOSE: "بستن",
+                        NEXT: "بعدی",
+                        PREV: "قبلی",
+                        ERROR: "محتوای درخواستی بارگیری نمی شود. <br/> لطفاً بعداً دوباره امتحان کنید.",
+                        PLAY_START: "شروع اسلاید شو",
+                        PLAY_STOP: "توقف اسلاید شو",
+                        FULL_SCREEN: "تمام صفحه",
+                        THUMBS: "بند انگشتی",
+                        DOWNLOAD: "دانلود",
+                        SHARE: "اشترام گذاری",
+                        ZOOM: "بزرگنمایی"
+                    }
+                },
                 buttons: [
                     "share",
                     "slideShow",
@@ -516,21 +516,46 @@ Version:        1.0
                 originLeft: false
             });
         }
-
+        var lowestPrice = $("#lowestPrice");
+        var highestPrice = $("#highestPrice");
         /*======= ui price range slider ========*/
         if ($(rangeSlider).length) {
             $(rangeSlider).slider({
                 range: true,
                 min: 0,
-                max: 1000,
-                values: [ 40, 800 ],
-                slide: function( event, ui ) {
-                    $(rangeSliderAmount).val( ui.values[ 0 ] + "تومان - " + ui.values[ 1 ] + "تومان");
+                max: 4000,
+                values: [40, 800],
+                slide: function (event, ui) {
+                    lowestPrice.val("40000");
+                    highestPrice.val("800000");
+                    lowestPrice.val(ui.values[0] + "000");
+                    highestPrice.val(ui.values[1] + "000");
+                    if (ui.values[0] > 999 && ui.values[1] > 0) {
+                        var firstDigitNumber1 = String(ui.values[0])[0];
+                        var firstDigitNumber2 = String(ui.values[1])[0];
+                        var afterFirstDigitNumber1 = String(ui.values[0])[1] + String(ui.values[0])[2] + String(ui.values[0])[3];
+                        var afterFirstDigitNumber2 = String(ui.values[1])[1] + String(ui.values[1])[2] + String(ui.values[1])[3];
+                        $(rangeSliderAmount).val(`${firstDigitNumber1} میلیون ${afterFirstDigitNumber1} هزار تومان - ${firstDigitNumber2} میلیون ${afterFirstDigitNumber2} هزار تومان`);
+                        // $(rangeSliderAmount).val( firstDigit + "میلیون+ +تومان - " + ui.values[ 1 ] + "تومان");
+                    }
+                    else if (ui.values[0] > 999) {
+                        var firstDigitNumber1 = String(ui.values[0])[0];
+                        var afterFirstDigitNumber1 = String(ui.values[0])[1] + String(ui.values[0])[2] + String(ui.values[0])[3];
+                        $(rangeSliderAmount).val(`${firstDigitNumber1} میلیون ${afterFirstDigitNumber1} هزار تومان - ${ui.values[1]} هزار تومان`);
+                    }
+                    else if (ui.values[1] > 999) {
+                        var firstDigitNumber2 = String(ui.values[1])[0];
+                        var afterFirstDigitNumber2 = String(ui.values[1])[1] + String(ui.values[1])[2] + String(ui.values[1])[3];
+                        $(rangeSliderAmount).val(`${ui.values[0]} هزار تومان - ${firstDigitNumber2} میلیون ${afterFirstDigitNumber2} هزار تومان`);
+                    }
+                    else {
+                        $(rangeSliderAmount).val(ui.values[0] + "هزار تومان - " + ui.values[1] + "هزار تومان");
+                    }
                 }
             });
         }
-        $(rangeSliderAmount).val( $(rangeSlider).slider( "values", 0 ) + "تومان - "
-            + $(rangeSlider).slider( "values", 1 ) +  "  تومان " );
+        $(rangeSliderAmount).val($(rangeSlider).slider("values", 0) + "تومان - "
+            + $(rangeSlider).slider("values", 1) + "  تومان ");
 
         /*======= ui price range slider 2 ========*/
         if ($(rangeSliderTwo).length) {
@@ -538,15 +563,15 @@ Version:        1.0
                 range: true,
                 min: 0,
                 max: 1000,
-                values: [ 40, 800 ],
-                slide: function( event, ui ) {
-                    $(rangeSliderAmountTwo).val( ui.values[ 0 ] + "تومان - " + ui.values[ 1 ] + "تومان");
+                values: [40, 800],
+                slide: function (event, ui) {
+                    $(rangeSliderAmountTwo).val(ui.values[0] + "تومان - " + ui.values[1] + "تومان");
                 }
             });
         }
 
-        $(rangeSliderAmountTwo).val( $(rangeSliderTwo).slider( "values", 0 ) +
-            " تومان - " + $(rangeSliderTwo).slider( "values", 1 ) +  "  تومان " );
+        $(rangeSliderAmountTwo).val($(rangeSliderTwo).slider("values", 0) +
+            " تومان - " + $(rangeSliderTwo).slider("values", 1) + "  تومان ");
 
 
         /*==== Daterangepicker =====*/
@@ -567,7 +592,7 @@ Version:        1.0
                 format: 'DD-MM-YYYY',
                 jalaali: true,
                 language: 'fa',
-                
+
 
             });
         }
@@ -583,7 +608,7 @@ Version:        1.0
         }
 
         /*==== counter =====*/
-        if(numberCounter.length) {
+        if (numberCounter.length) {
             numberCounter.countTo({
                 speed: 1200
             });
@@ -597,8 +622,8 @@ Version:        1.0
         /*==== When you will click the add another flight btn then this action will be work =====*/
         $document.on('click', '.add-flight-btn', function () {
 
-            ( $('.multi-flight-field').length < 3 ) && $('.multi-flight-field:last').clone().insertAfter('.multi-flight-field:last');
-           
+            ($('.multi-flight-field').length < 3) && $('.multi-flight-field:last').clone().insertAfter('.multi-flight-field:last');
+
 
             $(this).closest('.multi-flight-wrap').find('.multi-flight-field:last').children('.multi-flight-delete-wrap').show();
 
@@ -612,14 +637,16 @@ Version:        1.0
                     format: 'DD-MM-YYYY',
                     jalaali: true,
                     language: 'fa',
-                    
-                }),
-                i++}) }),
 
-        /*=========== multi-flight-remove ============*/
-        $document.on('click', '.multi-flight-remove', function() {
-            $('.multi-flight-remove').closest('.multi-flight-wrap').find('.multi-flight-field').not(':first').last().remove();
-        });
+                }),
+                    i++
+            })
+        }),
+
+            /*=========== multi-flight-remove ============*/
+            $document.on('click', '.multi-flight-remove', function () {
+                $('.multi-flight-remove').closest('.multi-flight-wrap').find('.multi-flight-field').not(':first').last().remove();
+            });
 
         /*====  mobile dropdown menu  =====*/
         $document.on('click', '.toggle-menu > li .toggle-menu-icon', function (e) {
@@ -637,17 +664,17 @@ Version:        1.0
         });
 
         /*====== When you click on the out side of dropdown menu item then its will be hide ======*/
-        $document.on('click', function(event){
+        $document.on('click', function (event) {
             var $trigger = $('.dropdown-contain');
-            if($trigger !== event.target && !$trigger.has(event.target).length){
+            if ($trigger !== event.target && !$trigger.has(event.target).length) {
                 $('.dropdown-menu-wrap').slideUp(300);
             }
         });
 
-        $('.progressbar-line').each(function(){
+        $('.progressbar-line').each(function () {
             $(this).find('.progressbar-line-item').animate({
-                width:$(this).attr('data-percent')
-            },6000);
+                width: $(this).attr('data-percent')
+            }, 6000);
         });
 
         if ($(fullWidthSlider).length) {
@@ -661,13 +688,13 @@ Version:        1.0
                 margin: 10,
                 smartSpeed: 500,
                 navText: ['<i class="la la-long-arrow-right"></i>', '<i class="la la-long-arrow-left"></i>'],
-                responsive:{
-                    0:{
-                        items:1,
+                responsive: {
+                    0: {
+                        items: 1,
                         autoplay: true
                     },
-                    576:{
-                        items:2
+                    576: {
+                        items: 2
                     }
                 }
             });

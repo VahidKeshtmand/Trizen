@@ -7,7 +7,7 @@ namespace T.Application.Services.Visitor;
 
 public interface IVisitorService
 {
-    void SaveVisitorInforamation(VisitorDto visitorData);
+    void SaveVisitorInformation(VisitorDto visitorData);
     ResultTodayReportDto GetTodayReport();
 }
 
@@ -29,7 +29,7 @@ public class VisitorService : IVisitorService
 
         var todayViewPagesCount = _collection.AsQueryable()
             .Where(t => t.VisitDate >= startDate && t.VisitDate < endDate).LongCount();
-         
+
         var todayVisitorsCount = _collection.AsQueryable()
             .Where(t => t.VisitDate >= startDate && t.VisitDate < endDate)
             .GroupBy(t => t.VisitorId).LongCount();
@@ -172,7 +172,7 @@ public class VisitorService : IVisitorService
     }
 
 
-    public void SaveVisitorInforamation(VisitorDto visitorData)
+    public void SaveVisitorInformation(VisitorDto visitorData)
     {
         var visitor = new VisitorEntity
         {

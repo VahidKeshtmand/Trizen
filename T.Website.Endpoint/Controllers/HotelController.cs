@@ -1,45 +1,42 @@
 using Microsoft.AspNetCore.Mvc;
-using T.Application.Dtos.Hotels;
-using T.Application.Services.Hotels;
-using T.Website.Endpoint.Utilities.Filters;
+using T.Website.Endpoint.Models.Hotel;
+using T.Website.Endpoint.Services;
 
 namespace T.Website.Endpoint.Controllers;
 
-[ServiceFilter(typeof(SaveVisitorInfoFilter))]
 public class HotelController : Controller
 {
-    private readonly IHotelService _hotelService;
+    private readonly IHotelServiceUI _hotelService;
 
-    public HotelController(IHotelService hotelService)
+    public HotelController(IHotelServiceUI hotelService)
     {
         _hotelService = hotelService;
     }
-    public IActionResult RegisterHotel()
+
+    public IActionResult Index(SearchHotel searchModel, int pageIndex = 1, int pageSize = 5)
     {
-        var jobsTitle = _hotelService.GetJobsTitleList();
-        var countriesName = _hotelService.GetCountriesNameList();
-        var countriesCode = _hotelService.GetCountriesCodeList();
-        var currencies = _hotelService.GetCurrenciesList();
-        var amenities = _hotelService.GetAmenitiesList();
-        var model = new RegisterHotelDto
-        {
-            JobsTitle = jobsTitle,
-            CountriesName = countriesName,
-            CountriesCode = countriesCode,
-            Currencies = currencies,
-            Amenities = amenities
-        };
-        return View(model);
+        var hotelList = _hotelService.Search(searchModel, pageIndex, pageSize);
+        return View(hotelList);
     }
 
-    [HttpPost]
-    public IActionResult RegisterHotel(RegisterHotelDto model)
-    {       
-        if (!ModelState.IsValid)
-            return new JsonResult(new { Status = "Fail", Message = "لطفاً فرم را به درستی پر کنید." });
-        var result = _hotelService.Register(model);
-        if (!result.IsSuccess)
-            return new JsonResult(new { Status = "Fail" });
-        return new JsonResult(new { Status = "Success" });
+    public IActionResult Detail(string slug, string city)
+    {
+        var hotel = _hotelService.GetDetails(slug);
+        return View(hotel.Data);
+    }
+
+    public IActionResult RoomsList(string hotelSlug, int pageIndex = 1, int pageSize = 1)
+    {
+        ViewBag.hotelName = _hotelService.GetHotelName(hotelSlug).Data;
+        var roomsList = _hotelService.GetRoomsList(hotelSlug, pageIndex, pageSize);
+        return View(roomsList);
+    }
+
+    public IActionResult RoomDetails(string hotelSlug, string roomSlug)
+    {
+        var roomsList = _hotelService.GetRoomDetails(roomSlug);
+        if (!roomsList.IsSuccess)
+            return NotFound();
+        return View(roomsList.Data);
     }
 }

@@ -803,10 +803,16 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.6",
           "MongoDB.Driver": "2.16.1",
+          "T.Common": "1.0.0",
           "T.Domain": "1.0.0"
         },
         "runtime": {
           "T.Application.dll": {}
+        }
+      },
+      "T.Common/1.0.0": {
+        "runtime": {
+          "T.Common.dll": {}
         }
       },
       "T.Domain/1.0.0": {
@@ -1394,6 +1400,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "T.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "T.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

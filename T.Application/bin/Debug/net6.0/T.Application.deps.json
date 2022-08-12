@@ -13,6 +13,7 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.6",
           "MongoDB.Driver": "2.16.1",
+          "T.Common": "1.0.0",
           "T.Domain": "1.0.0"
         },
         "runtime": {
@@ -483,6 +484,11 @@
       },
       "System.Security.Principal.Windows/5.0.0": {},
       "System.Text.Encodings.Web/4.5.0": {},
+      "T.Common/1.0.0": {
+        "runtime": {
+          "T.Common.dll": {}
+        }
+      },
       "T.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Identity.Stores": "6.0.6",
@@ -912,6 +918,11 @@
       "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
+    },
+    "T.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "T.Domain/1.0.0": {
       "type": "project",

@@ -42,7 +42,7 @@ public class SaveVisitorInfoFilter : IActionFilter
             });
         }
 
-        _visitorService.SaveVisitorInforamation(new VisitorDto
+        _visitorService.SaveVisitorInformation(new VisitorDto
         {
             Browser = new VisitorVersionDto
             {

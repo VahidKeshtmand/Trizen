@@ -5,7 +5,7 @@ using T.Application.Dtos.Hotels;
 using T.Application.Interfaces.Contexts;
 using T.Application.Services.Hotels;
 using T.Application.Services.Visitor;
-using T.Application.Validator;
+using T.Infrastructure.ImageServer;
 using T.Infrastructure.MappingProfile;
 using T.Infrastructure.SetupServices;
 using T.Persistence.Contexts.MongoDb;
@@ -18,13 +18,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
 builder.Services.AddTransient<IVisitorService, VisitorService>();
 builder.Services.AddTransient<IOnlineVisitorService, OnlineVisitorService>();
+builder.Services.AddTransient<IImageUploadService, ImageUploadService>();
 var connectionString = builder.Configuration.GetConnectionString("SqlServer");
 SqlServerSetup.Configure(builder.Services, connectionString);
 
 //Add DatabaseContext
 builder.Services.AddTransient<IDatabaseContext, DatabaseContext>();
-
-
 
 //FluentValidation
 // builder.Services.AddTransient<IValidator<RegisterHotelDto>, RegisterHotelValidator>();
@@ -32,6 +31,9 @@ builder.Services.AddTransient<IDatabaseContext, DatabaseContext>();
 builder.Services.AddAutoMapper(typeof(HotelMappingProfile));
 //Add HotelService
 builder.Services.AddTransient<IHotelService, HotelService>();
+
+//Add RoomService
+builder.Services.AddTransient<IRoomService, RoomService>();
 
 var app = builder.Build();
 

@@ -16,8 +16,8 @@ namespace T.Persistence.ConfigTables.Common
             builder.HasKey(x => x.Id);
 
             builder.HasOne(x => x.JobTitle)
-                .WithOne(x => x.PersonalInformation)
-                .HasForeignKey<PersonalInformation>(x => x.JobTitleId);
+                .WithMany(x => x.PersonalInformations)
+                .HasForeignKey(x => x.JobTitleId);
         }
     }
 }

@@ -1,0 +1,143 @@
+@model T.Application.Dtos.Common.PaginatedItemsDto<T.Website.Endpoint.Models.Hotel.RoomListViewModel>
+
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area bread-bg-10">
+    <div class="breadcrumb-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-content text-center">
+                        <div class="section-heading">
+                            <h2 class="sec__title text-white">لیست اتاق های هتل @ViewBag.hotelName</h2>
+                        </div>
+                        <span class="arrow-blink">
+                            <i class="la la-arrow-down"></i>
+                        </span>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end breadcrumb-wrap -->
+    <div class="bread-svg-box">
+        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <polygon points="100 0 50 10 0 0 0 10 100 10"></polygon>
+        </svg>
+    </div><!-- end bread-svg -->
+</section><!-- end breadcrumb-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+<!-- ================================
+    START CARD AREA
+================================= -->
+<section class="card-area section--padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="title font-size-24">نیویورک: 24 هتل پیدا شد</h3>
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="tab-content" id="may-tabContent4">
+            <div class="row">
+                @foreach (var item in Model.Data)
+                {
+                    <div class="col-lg-6">
+                        <div class="card-item room-card">
+                            <div class="card-img-carousel carousel-action carousel--action">
+                                @foreach (var src in item.ImagesSrc)
+                                {
+                                    <div class="card-img">
+                                        <a href="room-details.html" class="d-block">
+                                            <img src="@src" alt="room-img">
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+                            <div class="card-body">
+                                <div class="card-price pb-2">
+                                    <p>
+                                        <span class="price__from">از </span>
+                                        <span class="price__num">@item.Price تومان </span>
+                                    </p>
+                                </div>
+                                <h3 class="card-title font-size-26"><a asp-action="RoomDetails" asp-controller="Hotel"
+                                    asp-route-roomSlug="@item.RoomSlug"
+                                    asp-route-hotelSlug="@item.HotelSlug">@item.Name</a></h3>
+                                <p class="card-text pt-2">@item.Description</p>
+                                <div class="card-attributes pt-3 pb-4">
+                                    <ul class="d-flex align-items-center">
+                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>@item.BedCount
+                                                تخت</span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>@item.Size
+                                                متر<sup>2</sup></span></li>
+                                    </ul>
+                                </div>
+                                <div class="card-btn">
+                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">رزرو</a>
+                                </div>
+                            </div>
+                        </div><!-- end card-item -->
+                </div><!-- end col-lg-6 -->
+                }
+            </div><!-- end row -->
+        </div>
+
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item @prevDisabled">
+                            <a class="page-link page-link-nav" asp-action="RoomsList" asp-controller="Hotel"
+                                asp-route-hotelSlug="@Model.Data.Select(x => x.HotelSlug).FirstOrDefault()"
+                                aria-label="Previous" asp-route-pageIndex="@(Model.PageIndex - 1)">
+                                <span aria-hidden="true"><i class="la la-angle-right"></i></span>
+                                <span class="sr-only">قبلی</span>
+                            </a>
+                        </li>
+                        @foreach (var item in Model.Pager.Pages)
+                        {
+                            @if (item == Model.PageIndex)
+                            {
+                                <li class="page-item active">
+                                    <a class="page-link page-link-nav" asp-action="RoomsList" asp-controller="Hotel"
+                                asp-route-hotelSlug="@Model.Data.Select(x => x.HotelSlug).FirstOrDefault()"
+                                asp-route-pageIndex="@item">@item<span class="sr-only">(جاری)</span></a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="page-item"><a class="page-link page-link-nav" asp-action="RoomsList"
+                                asp-controller="Hotel"
+                                asp-route-hotelSlug="@Model.Data.Select(x => x.HotelSlug).FirstOrDefault()"
+                                asp-route-pageIndex="@item">@item</a></li>
+                            }
+
+                        }
+
+
+                        <li class="page-item @nextDisabled">
+                            <a class="page-link page-link-nav" asp-action="RoomsList" asp-controller="Hotel"
+                                asp-route-hotelSlug="@Model.Data.Select(x => x.HotelSlug).FirstOrDefault()"
+                                asp-route-pageIndex="@(Model.PageIndex + 1)" aria-label="Next">
+                                <span aria-hidden="true"><i class="la la-angle-left"></i></span>
+                                <span class="sr-only">بعدی</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div><!-- end container -->
+</section><!-- end card-area -->
+<!-- ================================
+    END CARD AREA
+================================= -->

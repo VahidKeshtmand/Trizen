@@ -8,7 +8,7 @@ namespace T.Infrastructure.MappingProfile
     {
         public HotelMappingProfile()
         {
-            CreateMap<RegisterHotelDto, Hotel>().ReverseMap();
+            // CreateMap<RegisterHotelDto, Hotel>().ReverseMap();
         }
     }
 }

@@ -6,9 +6,9 @@ namespace T.Domain.Common
     public class JobTitle
     {
         public int Id { get; set; }
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
 
-        public PersonalInformation PersonalInformation { get; set; }
+        public List<PersonalInformation> PersonalInformations { get; set; }
 
     }
 

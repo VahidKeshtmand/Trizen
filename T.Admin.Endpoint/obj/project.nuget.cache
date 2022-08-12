@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4+Swm+50wRE9drkSMg8u49LwazzPN1BzYuNRWMq8m0kTRlvn7wLJEuCgTrwBfPV1I/5BbMd65ViV9+28PmqCBw==",
+  "dgSpecHash": "stTuoN7iy2VpZ+T8KzqmqBQIPNArDWQn8U2oeSfY6OhB90XWmc/vO8mw7C4weMvtkyuNgWW6KFuPeryageQjJg==",
   "success": true,
   "projectFilePath": "e:\\Trizen\\T.Admin.Endpoint\\T.Admin.Endpoint.csproj",
   "expectedPackageFiles": [
@@ -68,6 +68,8 @@
     "C:\\Users\\Iranian\\.nuget\\packages\\mongodb.driver\\2.16.1\\mongodb.driver.2.16.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\mongodb.driver.core\\2.16.1\\mongodb.driver.core.2.16.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\mongodb.libmongocrypt\\1.5.3\\mongodb.libmongocrypt.1.5.3.nupkg.sha512",
+    "C:\\Users\\Iranian\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Iranian\\.nuget\\packages\\restsharp\\108.0.1\\restsharp.108.0.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

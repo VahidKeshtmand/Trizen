@@ -18,12 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ConfigTables\Hotels\" />
+    <Folder Include="ConfigTables\Rooms\" />
     <Folder Include="Contexts\MongoDb\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\T.Application\T.Application.csproj" />
     <ProjectReference Include="..\T.Domain\T.Domain.csproj" />
+    <ProjectReference Include="..\T.Application\T.Application.csproj" />
   </ItemGroup>
 
 </Project>

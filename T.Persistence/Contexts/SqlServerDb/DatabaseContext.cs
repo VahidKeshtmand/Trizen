@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
 using T.Domain.Attributes;
+using T.Domain.Comments;
 using T.Domain.Common;
 using T.Domain.Hotels;
 using T.Persistence.ConfigTables.Common;
@@ -20,6 +21,14 @@ namespace T.Persistence.Contexts.SqlServerDb
         public DbSet<PersonalInformation> PersonalInformations { get; set; }
         public DbSet<JobTitle> JobTitles { get; set; }
         public DbSet<AmenityHotel> AmenityHotels { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<AmenityRoom> AmenityRooms { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
+
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,7 +36,8 @@ namespace T.Persistence.Contexts.SqlServerDb
             AddShadowPropertyToEachTable(modelBuilder);
             modelBuilder.ApplyConfiguration(new HotelConfig());
             modelBuilder.ApplyConfiguration(new PersonalInformationConfig());
-            modelBuilder.ApplyConfiguration(new AmenityHotelConfig());
+            modelBuilder.Entity<Room>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            //modelBuilder.ApplyConfiguration(new AmenityHotelConfig());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -81,7 +91,8 @@ namespace T.Persistence.Contexts.SqlServerDb
                 if (item.State == EntityState.Deleted && removeDate != null && isRemoved != null)
                 {
                     item.Property("RemoveDate").CurrentValue = DateTime.Now;
-                    item.Property("IsRemoved").CurrentValue = false;
+                    item.Property("IsRemoved").CurrentValue = true;
+                    item.State = EntityState.Modified;
                 }
             }
         }

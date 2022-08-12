@@ -1198,6 +1198,7 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore": "6.0.6",
           "MongoDB.Driver": "2.16.1",
+          "T.Common": "1.0.0",
           "T.Domain": "1.0.0"
         },
         "compile": {
@@ -1205,6 +1206,16 @@
         },
         "runtime": {
           "bin/placeholder/T.Application.dll": {}
+        }
+      },
+      "T.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/T.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T.Common.dll": {}
         }
       },
       "T.Domain/1.0.0": {
@@ -3125,6 +3136,11 @@
       "type": "project",
       "path": "../T.Application/T.Application.csproj",
       "msbuildProject": "../T.Application/T.Application.csproj"
+    },
+    "T.Common/1.0.0": {
+      "type": "project",
+      "path": "../T.Common/T.Common.csproj",
+      "msbuildProject": "../T.Common/T.Common.csproj"
     },
     "T.Domain/1.0.0": {
       "type": "project",

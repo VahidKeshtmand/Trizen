@@ -7,8 +7,8 @@ namespace T.Domain.Common
     public class PersonalInformation
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
+        public string Name { get; set; }
+        public string Email { get; set; }
 
         public JobTitle JobTitle { get; set; }
         public int JobTitleId { get; set; }

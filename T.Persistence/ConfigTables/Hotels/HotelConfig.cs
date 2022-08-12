@@ -20,16 +20,18 @@ namespace T.Persistence.ConfigTables.Hotels
                 .HasForeignKey<Hotel>(x => x.ContactId);
 
             builder.HasOne(x => x.Country)
-                .WithOne(x => x.Hotel)
-                .HasForeignKey<Hotel>(x => x.CountryId);
+                .WithMany(x => x.Hotels)
+                .HasForeignKey(x => x.CountryId);
 
             builder.HasOne(x => x.Currency)
-                .WithOne(x => x.Hotel)
-                .HasForeignKey<Hotel>(x => x.CurrencyId);
+                .WithMany(x => x.Hotels)
+                .HasForeignKey(x => x.CurrencyId);
 
             builder.HasOne(x => x.PersonalInformation)
                 .WithOne(x => x.Hotel)
                 .HasForeignKey<Hotel>(x => x.PersonalInformationId);
+
+            builder.HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
         }
     }
 }

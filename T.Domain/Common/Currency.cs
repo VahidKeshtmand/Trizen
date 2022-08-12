@@ -9,6 +9,6 @@ namespace T.Domain.Common
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Hotel Hotel { get; set; }
+        public List<Hotel> Hotels { get; set; }
     }
 }

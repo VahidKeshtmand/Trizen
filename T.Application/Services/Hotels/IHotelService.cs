@@ -3,20 +3,26 @@ using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
 using T.Application.Dtos.Common;
 using T.Application.Dtos.Hotels;
+using T.Common;
 using T.Domain.Common;
 using T.Domain.Hotels;
+
 
 namespace T.Application.Services.Hotels
 {
     public interface IHotelService
     {
-        List<RequestHotelsListDto> GetRequestList();
-        List<JobTitleDto> GetJobsTitleList();
-        List<CountryNameDto> GetCountriesNameList();
-        List<CountryCodeDto> GetCountriesCodeList();
-        List<CurrencyDto> GetCurrenciesList();
-        List<AmenityDto> GetAmenitiesList();
-        BaseDto Register(RegisterHotelDto model);
+        PaginatedItemsDto<ListDto> GetList(int page, int pageSize);
+        List<string> GetImages(int id);
+        InformationDto GetInformation();
+        BaseDto Register(RegisterDto model);
+        bool ConfirmStatusMethod(int id);
+        bool RejectStatusMethod(int id);
+        DetailDto GetDetail(int id);
+        bool Remove(int id);
+        EditDto GetHotel(int id);
+        BaseDto Edit(EditDto model);
+
     }
 
     public class HotelService : IHotelService
@@ -30,55 +36,48 @@ namespace T.Application.Services.Hotels
             _mapper = mapper;
         }
 
-        public List<JobTitleDto> GetJobsTitleList()
+        public InformationDto GetInformation()
         {
-            return _databaseContext.JobTitles.Select(x => new JobTitleDto
+            var jobsTitles = _databaseContext.JobTitles.Select(x => new JobTitleDto
             {
                 Id = x.Id,
                 Title = x.Title
             }).ToList();
-        }
-
-        public List<CountryNameDto> GetCountriesNameList()
-        {
-            return _databaseContext.Countries.Select(x => new CountryNameDto
+            var countriesName = _databaseContext.Countries.Select(x => new CountryNameDto
             {
                 Id = x.Id,
                 Name = x.Name
             }).ToList();
-        }
-
-        public List<CountryCodeDto> GetCountriesCodeList()
-        {
-            return _databaseContext.Countries.Select(x => new CountryCodeDto
+            var countriesCode = _databaseContext.Countries.Select(x => new CountryCodeDto
             {
                 Id = x.Id,
                 Code = $"{x.Name} ({x.Code})"
             }).ToList();
-        }
-
-        public List<CurrencyDto> GetCurrenciesList()
-        {
-            return _databaseContext.Currencies.Select(x => new CurrencyDto
+            var currencies = _databaseContext.Currencies.Select(x => new CurrencyDto
             {
                 Id = x.Id,
                 Name = x.Name
             }).ToList();
-        }
-
-        public List<AmenityDto> GetAmenitiesList()
-        {
-            return _databaseContext.Amenities.Select(x => new AmenityDto
+            var amenities = _databaseContext.Amenities.Select(x => new AmenityDto
             {
                 Id = x.Id,
                 Title = x.Title,
                 Display = x.Display
             }).ToList();
+
+            return new InformationDto
+            {
+                Amenities = amenities,
+                CountriesCode = countriesCode,
+                CountriesName = countriesName,
+                Currencies = currencies,
+                JobTitles = jobsTitles
+            };
+
         }
 
-        public BaseDto Register(RegisterHotelDto model)
+        public BaseDto Register(RegisterDto model)
         {
-
             var contact = new Contact
             {
                 Email = model.Email,
@@ -114,7 +113,10 @@ namespace T.Application.Services.Hotels
                 CurrencyId = model.Currency,
                 CountryId = model.Country,
                 ContactId = contact.Id,
-                PersonalInformationId = personalInformation.Id
+                PersonalInformationId = personalInformation.Id,
+                StarsCount = model.StarsCount,
+                Cancellation = model.Cancellation,
+                ExtraPeople = model.ExtraPeople,
             };
             _databaseContext.Hotels.Add(hotel);
             _databaseContext.SaveChanges();
@@ -128,26 +130,286 @@ namespace T.Application.Services.Hotels
                 });
             }
             _databaseContext.SaveChanges();
+            if (model.ImagesSrc != null && model.ImagesSrc.Count > 0)
+            {
+                hotel.Images = new List<Image>();
+                foreach (var src in model.ImagesSrc)
+                {
+                    hotel.Images.Add(new Image
+                    {
+                        HotelId = hotel.Id,
+                        Src = src,
+                    });
+                }
+            }
+            _databaseContext.SaveChanges();
             return new BaseDto
             {
                 IsSuccess = true,
-                Message = "با موفقیت ارسال شد. بعد از بررسی با شما تماس می گیریم."
+                Message = ""
             };
         }
 
-        public List<RequestHotelsListDto> GetRequestList()
+        public bool ConfirmStatusMethod(int id)
         {
-            return _databaseContext.Hotels
-            .Include(x => x.Contact)
-            .Include(x => x.Country)
-            .Select(x => new RequestHotelsListDto
+            var hotel = _databaseContext.Hotels.FirstOrDefault(x => x.Id == id);
+
+            if (hotel == null) return false;
+
+            hotel.ConfirmStatus = ConfirmStatus.Confirmed;
+            _databaseContext.SaveChanges();
+            return true;
+        }
+
+        public bool RejectStatusMethod(int id)
+        {
+            var hotel = _databaseContext.Hotels.FirstOrDefault(x => x.Id == id);
+
+            if (hotel == null) return false;
+
+            hotel.ConfirmStatus = ConfirmStatus.Reject;
+            _databaseContext.SaveChanges();
+            return true;
+        }
+
+        public DetailDto GetDetail(int id)
+        {
+            var hotel = _databaseContext.Hotels
+                .Include(x => x.AmenityHotels)
+                .ThenInclude(x => x.Amenity)
+                .Include(x => x.Country)
+                .Include(x => x.Currency)
+                .Include(x => x.Contact)
+                .Include(x => x.PersonalInformation)
+                .ThenInclude(x => x.JobTitle)
+                .Include(x => x.Images)
+                .Select(x => new DetailDto
+                {
+                    Id = x.Id,
+                    Address = x.Address,
+                    Bathroom = x.Bathroom,
+                    City = x.City,
+                    Country = x.Country.Name,
+                    CountryCode = x.Country.Code,
+                    Description = x.Description,
+                    Currency = x.Currency.Name,
+                    Email = x.Contact.Email,
+                    Facebook = x.Contact.Facebook,
+                    Linkedin = x.Contact.Linkedin,
+                    Twitter = x.Contact.Twitter,
+                    Website = x.Contact.Website,
+                    HousekeepingFrequencyValue = x.HousekeepingFrequency,
+                    HousekeepingValue = x.Housekeeping,
+                    MaximumRoomPrice = x.MaximumRoomPrice,
+                    MinimumDaysStayValue = x.MinimumDaysStay,
+                    MinimumRoomPrice = x.MinimumRoomPrice,
+                    Name = x.Name,
+                    PersonalEmail = x.PersonalInformation.Email,
+                    PersonalName = x.PersonalInformation.Name,
+                    RoomsCount = x.RoomsCount,
+                    PhoneNumber = x.Contact.PhoneNumber,
+                    PersonalJobTitle = x.PersonalInformation.JobTitle.Title,
+                    Amenities = x.AmenityHotels.Select(x => x.Amenity.Title).ToList(),
+                    ImagesSrc = ComposeImageUri(x.Images.Select(x => x.Src).ToList())
+                }).FirstOrDefault(x => x.Id == id);
+
+            if (hotel == null) return new DetailDto();
+
+            return hotel;
+        }
+        private static List<string> ComposeImageUri(List<string> imagesSrc)
+        {
+            var srcs = new List<string>();
+            foreach (var src in imagesSrc)
             {
-                Name = x.Name,
-                PhoneNumber = x.Contact.PhoneNumber,
-                Location = x.Country.Name + x.City,
-                Website = x.Contact.Website
-            }).ToList();
+                srcs.Add("https://localhost:7235/" + src.Replace("\\", "//"));
+            }
+
+            return srcs;
+        }
+
+        public PaginatedItemsDto<ListDto> GetList(int page, int pageSize)
+        {
+            int rowCount = 0;
+            var hotels = _databaseContext.Hotels
+                .Include(x => x.Contact)
+                .Include(x => x.Country)
+                .ToPaged(page, pageSize, out rowCount)
+                .OrderByDescending(x => x.Id)
+                .Select(x => new ListDto
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    PhoneNumber = x.Contact.PhoneNumber,
+                    Location = x.Country.Name + " - " + x.City,
+                    Website = x.Contact.Website,
+                    ConfirmStatus = x.ConfirmStatus
+
+                }).ToList();
+
+            return new PaginatedItemsDto<ListDto>(page, pageSize, rowCount, hotels);
+        }
+
+        public bool Remove(int id)
+        {
+            var hotel = _databaseContext.Hotels.FirstOrDefault(x => x.Id == id);
+            if (hotel == null)
+                return false;
+            _databaseContext.Hotels.Remove(hotel);
+            _databaseContext.SaveChanges();
+            return true;
+        }
+
+        public EditDto GetHotel(int id)
+        {
+            var hotel = _databaseContext.Hotels
+                .Include(x => x.AmenityHotels)
+                .ThenInclude(x => x.Amenity)
+                .Include(x => x.Country)
+                .Include(x => x.Currency)
+                .Include(x => x.Contact)
+                .Include(x => x.PersonalInformation)
+                .ThenInclude(x => x.JobTitle)
+                .Include(x => x.Images)
+                .Select(x => new EditDto
+                {
+                    Id = x.Id,
+                    Address = x.Address,
+                    BathroomValue = x.Bathroom,
+                    City = x.City,
+                    Country = x.Country.Id,
+                    CountryCode = x.Country.Id,
+                    Description = x.Description,
+                    Currency = x.Currency.Id,
+                    Email = x.Contact.Email,
+                    Facebook = x.Contact.Facebook,
+                    Linkedin = x.Contact.Linkedin,
+                    Twitter = x.Contact.Twitter,
+                    Website = x.Contact.Website,
+                    HousekeepingFrequencyValue = x.HousekeepingFrequency,
+                    HousekeepingValue = x.Housekeeping,
+                    MaximumRoomPrice = x.MaximumRoomPrice,
+                    MinimumDaysStayValue = x.MinimumDaysStay,
+                    MinimumRoomPrice = x.MinimumRoomPrice,
+                    Name = x.Name,
+                    PersonalEmail = x.PersonalInformation.Email,
+                    PersonalName = x.PersonalInformation.Name,
+                    RoomsCount = x.RoomsCount,
+                    PhoneNumber = x.Contact.PhoneNumber,
+                    PersonalJobTitle = x.PersonalInformation.JobTitle.Id,
+                    AmenitiesValue = GetAmenities(x.AmenityHotels.Select(x => x.Amenity.Id).ToList()),
+                    Cancellation = x.Cancellation,
+                    ExtraPeople = x.ExtraPeople,
+                    StarsCount = x.StarsCount,
+                    ImagesSrc = x.Images.Select(x => x.Src).ToList()
+                }).FirstOrDefault(x => x.Id == id);
+
+            if (hotel == null) return new EditDto();
+
+            return hotel;
+        }
+
+        private static Dictionary<int, string> GetAmenities(List<int> ids)
+        {
+            var amenities = new Dictionary<int, string>();
+
+            foreach (var id in ids)
+            {
+                amenities.Add(id, "on");
+            }
+
+            return amenities;
+        }
+
+        public BaseDto Edit(EditDto model)
+        {
+            var hotel = _databaseContext.Hotels
+                .Include(x => x.AmenityHotels)
+                .ThenInclude(x => x.Amenity)
+                .Include(x => x.Country)
+                .Include(x => x.Currency)
+                .Include(x => x.Contact)
+                .Include(x => x.PersonalInformation)
+                .ThenInclude(x => x.JobTitle)
+                .Include(x => x.Images)
+                .FirstOrDefault(x => x.Id == model.Id);
+            if (hotel == null) return new BaseDto { IsSuccess = false, Message = "هتل مورد نظر یافت نشد !" };
+
+            hotel.Address = model.Address;
+            hotel.Bathroom = model.BathroomValue;
+            hotel.Cancellation = model.Cancellation;
+            hotel.City = model.City;
+            hotel.Contact.Email = model.Email;
+            hotel.Contact.Website = model.Website;
+            hotel.Contact.Facebook = model.Facebook;
+            hotel.Contact.Twitter = model.Twitter;
+            hotel.Contact.Linkedin = model.Linkedin;
+            hotel.Contact.PhoneNumber = model.PhoneNumber;
+            hotel.Bathroom = model.BathroomValue;
+            hotel.CountryId = model.Country;
+            hotel.CurrencyId = model.Currency;
+            hotel.Description = model.Description;
+            hotel.ExtraPeople = model.ExtraPeople;
+            hotel.PersonalInformation.Email = model.Email;
+            hotel.PersonalInformation.JobTitleId = model.PersonalJobTitle;
+            hotel.PersonalInformation.Name = model.PersonalName;
+            hotel.Description = model.Description;
+            hotel.Cancellation = model.Cancellation;
+            hotel.CurrencyId = model.Currency;
+            hotel.Housekeeping = model.HousekeepingValue;
+            hotel.HousekeepingFrequency = model.HousekeepingFrequencyValue;
+            hotel.MaximumRoomPrice = model.MaximumRoomPrice;
+            hotel.MinimumRoomPrice = model.MinimumRoomPrice;
+            hotel.MinimumDaysStay = model.MinimumDaysStayValue;
+            hotel.StarsCount = model.StarsCount;
+            hotel.Name = model.Name;
+            hotel.RoomsCount = model.RoomsCount;
+
+            foreach (var dic in model.AmenitiesValue.Keys)
+            {
+                if (!_databaseContext.AmenityHotels.Where(x => x.HotelId == model.Id && x.AmenityId == dic).Any())
+                {
+                    hotel.AmenityHotels.Add(new AmenityHotel
+                    {
+                        AmenityId = dic,
+                        HotelId = model.Id
+                    });
+                }
+
+            }
+            if (model.ImagesSrc != null && model.ImagesSrc.Count > 0)
+            {
+                foreach (var src in model.ImagesSrc)
+                {
+                    hotel.Images.Add(new Image
+                    {
+                        HotelId = model.Id,
+                        Src = src,
+                    });
+                }
+            }
+            _databaseContext.SaveChanges();
+
+            return new BaseDto
+            {
+                IsSuccess = true,
+                Message = "مشخصات هتل ویرایش شد !"
+            };
 
         }
+
+        public List<string> GetImages(int id)
+        {
+            var hotel = _databaseContext.Hotels.Include(x => x.Images)
+                .Select(x => new { x.Id, x.Images }).FirstOrDefault(x => x.Id == id);
+
+            if (hotel != null)
+                return ComposeImageUri(hotel.Images.Select(x => x.Src).ToList());
+            return new List<string>();
+
+        }
+
+
     }
+
 }

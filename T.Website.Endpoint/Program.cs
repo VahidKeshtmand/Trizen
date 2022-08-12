@@ -9,6 +9,7 @@ using T.Infrastructure.SetupServices;
 using T.Persistence.Contexts.MongoDb;
 using T.Persistence.Contexts.SqlServerDb;
 using T.Website.Endpoint.Hubs;
+using T.Website.Endpoint.Services;
 using T.Website.Endpoint.Utilities.Filters;
 using T.Website.Endpoint.Utilities.Middlewares.cs;
 
@@ -27,6 +28,7 @@ builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>
 builder.Services.AddTransient<IVisitorService, VisitorService>();
 builder.Services.AddScoped<SaveVisitorInfoFilter>();
 builder.Services.AddTransient<IOnlineVisitorService, OnlineVisitorService>();
+builder.Services.AddTransient<ICommentServiceUI, CommentServiceUI>();
 
 builder.Services.AddAuthentication();
 
@@ -39,8 +41,7 @@ builder.Services.AddAutoMapper(typeof(HotelMappingProfile));
 //Add DatabaseContext service
 builder.Services.AddTransient<IDatabaseContext, DatabaseContext>();
 
-//Add Hotel service
-builder.Services.AddTransient<IHotelService, HotelService>();
+builder.Services.AddTransient<IHotelServiceUI, HotelServiceUI>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -61,9 +62,26 @@ app.UseAuthorization();
 
 
 app.MapControllerRoute(
+    name: "hotelDetail",
+    pattern: "Hotel/{city}/{slug}/Detail",
+    defaults: new { Controller = "Hotel", action = "Detail" });
+
+app.MapControllerRoute(
+    name: "roomsList",
+    pattern: "Hotel/{hotelSlug}/Rooms",
+    defaults: new { Controller = "Hotel", action = "RoomsList" });
+
+app.MapControllerRoute(
+    name: "roomDetails",
+    pattern: "Hotel/{hotelSlug}/{roomSlug}/RoomDetails",
+    defaults: new { Controller = "Hotel", action = "RoomDetails" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapHub<OnlineVisitorHub>("/onlinevisitorhub");
+
+
+// app.MapHub<OnlineVisitorHub>("/onlinevisitorhub");
 
 app.Run();

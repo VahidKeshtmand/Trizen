@@ -1,0 +1,83 @@
+@using T.Website.Endpoint.Models.Hotel
+@model T.Website.Endpoint.Models.Hotel.SearchHotel
+
+<div class="search-fields-container margin-top-30px ">
+    <form method="post" asp-action="Index" asp-controller="Hotel">
+        <div class="contact-form-action row">
+
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label class="label-text">کجا میخوای بری؟ (نام شهر)</label>
+                    <div class="form-group">
+                        <span class="la la-map-marker form-icon"></span>
+                        <input data-val="false" data-val-required="false" class="form-control" asp-for="City"
+                            placeholder="مقصد">
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label class="label-text">تاریخ ورود - تاریخ خروج</label>
+                    <div class="form-group">
+                        <span class="la la-calendar form-icon"></span>
+                        <input class="date-range form-control" type="text" name="daterange">
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label class="label-text">تعداد تخت</label>
+                    <div class="form-group">
+                        <div class="select-contain select-contain-shadow w-auto">
+                            <select asp-for="BedNumber" class="select-contain-select"
+                                asp-items="Html.GetEnumSelectList<BedNumber>()">
+                                <option value="0">یک مورد رو انتخاب کن</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="input-box">
+                    <label asp-for="StarNumber" class="label-text">تعداد ستاره</label>
+                    <div class="form-group">
+                        <span class="la la-star-o form-icon"></span>
+                        <input class="form-control" asp-for="StarNumber">
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+
+        </div><!-- end contact-form-action -->
+        <div class="advanced-wrap">
+            <a class="btn collapse-btn theme-btn-hover-gray font-size-15" data-toggle="collapse" href="#collapseTwo"
+                role="button" aria-expanded="false" aria-controls="collapseTwo">
+                گزینه های بیشتر <i class="la la-angle-down ml-1"></i>
+            </a>
+            <div class="pt-3 collapse" id="collapseTwo">
+                <div class="slider-range-wrap ">
+                    <div class="price-slider-amount padding-bottom-20px">
+                        <label for="amount" class="filter__label">قیمت :</label>
+                        <input name="amount" id="amount" class="amounts " readonly>
+                        <input asp-for="LowestPrice" id="lowestPrice" type="hidden">
+                        <input asp-for="HighestPrice" id="highestPrice" type="hidden">
+                    </div><!-- end price-slider-amount -->
+                    <div id="slider-range"></div><!-- end slider-range -->
+                </div><!-- end slider-range-wrap -->
+                <div class="checkbox-wrap padding-top-30px">
+                    <h3 class="title font-size-15 pb-3">امکانات هتل</h3>
+                    @foreach (var item in Model.Amenities)
+                    {
+                        <div class="custom-checkbox d-inline-block mr-4">
+                            <input type="checkbox" id="@item.Display" name="AmenitiesValue[@item.Id]">
+                            <label for="@item.Display">@item.Title</label>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="btn-box pt-3">
+            <button type="submit" class="theme-btn">جستجو</button>
+        </div>
+    </form>
+</div><!-- end search-fields-container -->

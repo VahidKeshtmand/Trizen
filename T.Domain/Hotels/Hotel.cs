@@ -1,4 +1,5 @@
 ﻿using T.Domain.Attributes;
+using T.Domain.Comments;
 using T.Domain.Common;
 
 namespace T.Domain.Hotels
@@ -7,18 +8,23 @@ namespace T.Domain.Hotels
     public class Hotel
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string City { get; set; } = string.Empty;
-        public string Address { get; set; } = string.Empty;
+        public string Name { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
         public int RoomsCount { get; set; }
         public int MaximumRoomPrice { get; set; }
         public int MinimumRoomPrice { get; set; }
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
         public MinimumDaysStay MinimumDaysStay { get; set; }
         public Housekeeping Housekeeping { get; set; }
         public HousekeepingFrequency HousekeepingFrequency { get; set; }
         public Bathroom Bathroom { get; set; }
-        public string ImageAddress { get; set; } = string.Empty;
+        public ConfirmStatus ConfirmStatus { get; set; } = ConfirmStatus.Pending;
+        public ExtraPeople ExtraPeople { get; set; }
+        public Cancellation Cancellation { get; set; }
+        public int StarsCount { get; set; }
+        public string Slug { get; set; }
+
 
         public PersonalInformation PersonalInformation { get; set; }
         public int? PersonalInformationId { get; set; }
@@ -33,6 +39,10 @@ namespace T.Domain.Hotels
         public int CurrencyId { get; set; }
 
         public List<AmenityHotel> AmenityHotels { get; set; }
+        public List<Image> Images { get; set; }
+        public List<Room> Rooms { get; set; }
+        public List<Comment> Comments { get; set; }
+
     }
 
     public enum Bathroom
@@ -61,6 +71,24 @@ namespace T.Domain.Hotels
         MoreThanThreeNights
     }
 
+    public enum ConfirmStatus
+    {
+        Pending,
+        Reject,
+        Confirmed
+    }
+
+    public enum ExtraPeople
+    {
+        NoCharge,
+        Charge
+    }
+
+    public enum Cancellation
+    {
+        Strict,
+        NotStrict
+    }
 }
 
 
