@@ -1,9 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
 using T.Domain.Attributes;
+using T.Domain.Baskets;
 using T.Domain.Comments;
 using T.Domain.Common;
+using T.Domain.Discounts;
+using T.Domain.Flight;
 using T.Domain.Hotels;
+using T.Persistence.ConfigTables.Comments;
 using T.Persistence.ConfigTables.Common;
 using T.Persistence.ConfigTables.Hotels;
 
@@ -25,10 +29,12 @@ namespace T.Persistence.Contexts.SqlServerDb
         public DbSet<Room> Rooms { get; set; }
         public DbSet<AmenityRoom> AmenityRooms { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
-
-
-
+        public DbSet<Discount> Discounts { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<AirlineCompany> AirlineCompanies { get; set; }
+        public DbSet<Flight> Flights { get; set; }
+        public DbSet<Seat> Seats { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,7 +42,14 @@ namespace T.Persistence.Contexts.SqlServerDb
             AddShadowPropertyToEachTable(modelBuilder);
             modelBuilder.ApplyConfiguration(new HotelConfig());
             modelBuilder.ApplyConfiguration(new PersonalInformationConfig());
+            modelBuilder.ApplyConfiguration(new CommentConfig());
+            modelBuilder.Entity<AirlineCompany>().HasOne(x => x.Image).WithOne(x => x.AirlineCompany).HasForeignKey<Image>(x => x.AirlineCompanyId);
             modelBuilder.Entity<Room>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<Discount>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<BasketItem>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<Basket>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<AirlineCompany>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+
             //modelBuilder.ApplyConfiguration(new AmenityHotelConfig());
 
             base.OnModelCreating(modelBuilder);

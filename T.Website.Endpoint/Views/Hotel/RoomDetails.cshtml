@@ -473,122 +473,28 @@
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">رزرو شما</h3>
                             <div class="sidebar-widget-item">
-                                <div class="contact-form-action">
-                                    <form action="#">
-                                        <div class="input-box">
-                                            <label class="label-text">تاریخ ورود</label>
-                                            <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text"
-                                                    name="daterange-single">
-                                            </div>
-                                        </div>
-                                        <div class="input-box">
-                                            <label class="label-text">تاریخ خروج</label>
-                                            <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text"
-                                                    name="daterange-single">
-                                            </div>
-                                        </div>
-                                        <div class="input-box">
-                                            <label class="label-text">اتاق ها</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <select class="select-contain-select">
-                                                        <option value="0">انتخاب اتاق</option>
-                                                        <option value="1" selected>1 اتاق</option>
-                                                        <option value="2">2 اتاق</option>
-                                                        <option value="3">3 اتاق </option>
-                                                        <option value="4">4 اتاق </option>
-                                                        <option value="5">5 اتاق </option>
-                                                        <option value="6">6 اتاق </option>
-                                                        <option value="7">7 اتاق </option>
-                                                        <option value="8">8 اتاق </option>
-                                                        <option value="9">9 اتاق </option>
-                                                        <option value="10">10 اتاق </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                <div class="sidebar-widget-item">
+                                    <div class="sidebar-book-title-wrap mb-3">
+                                        @if (Model.PriceWithDiscount != null)
+                                        {
+                                            <p><span class="text-form">از </span><span
+                                                class="text-value ml-2 mr-1">@Model.PriceWithDiscount
+                                                    تومان</span>
+
+                                                <span class="before-price">@Model.Price.ToString("n0") تومان</span>
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p><span class="text-form">از </span><span
+                                                class="text-value ml-2 mr-1">@Model.Price.ToString("n0")
+                                                    تومان</span>
+                                            </p>
+                                        }
+                                    </div>
                                 </div>
+                                @await Component.InvokeAsync("AddRoomToBasket", new {id = @Model.Id})
                             </div><!-- end sidebar-widget-item -->
-                            <div class="sidebar-widget-item">
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">بزرگسال<span>سن 18+</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">کودک <span>2-12 سال</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">نوزاد <span>0-2 سال</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                            </div><!-- end sidebar-widget-item -->
-                            <div class="sidebar-widget-item py-4">
-                                <h3 class="title stroke-shape">خدمات اضافی</h3>
-                                <div class="extra-service-wrap">
-                                    <form action="#" method="post" class="extraServiceForm" id="extraServiceForm">
-                                        <div id="checkboxContainPrice">
-                                            <div class="custom-checkbox">
-                                                <input type="checkbox" name="cleaning" id="cleaningChb" value="15.00" />
-                                                <label for="cleaningChb"
-                                                    class="d-flex justify-content-between align-items-center">هزینه
-                                                    نظافت <span class="text-black font-weight-regular">15 تومان
-                                                    </span></label>
-                                            </div>
-                                            <div class="custom-checkbox">
-                                                <input type="checkbox" name="airport-pickup" id="airportPickupChb"
-                                                    value="20.00" />
-                                                <label for="airportPickupChb"
-                                                    class="d-flex justify-content-between align-items-center">پیکاپ
-                                                    فرودگاهی <span class="text-black font-weight-regular">20
-                                                        تومان</span></label>
-                                            </div>
-                                            <div class="custom-checkbox">
-                                                <input type="checkbox" name="breakfast" id="breakfastChb"
-                                                    value="10.00" />
-                                                <label for="breakfastChb"
-                                                    class="d-flex justify-content-between align-items-center">صبحانه
-                                                    <span class="text-black font-weight-regular">10 تومان برای هر
-                                                        نفر</span></label>
-                                            </div>
-                                            <div class="custom-checkbox">
-                                                <input type="checkbox" name="parking" id="parkingChb" value="5.00" />
-                                                <label for="parkingChb"
-                                                    class="d-flex justify-content-between align-items-center">پارکینگ
-                                                    <span class="text-black font-weight-regular">هر شب 5
-                                                        تومان</span></label>
-                                            </div>
-                                        </div>
-                                        <div class="total-price pt-3">
-                                            <p class="text-black">قیمت ویژه</p>
-                                            <p class="d-flex align-items-center"> <input type="text" name="total"
-                                                    class="num" value="80,000" readonly="readonly" /> <span
-                                                    class="font-size-17 text-black">تومان </span> <span>/ به ازای هر
-                                                    اتاق</span></p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div><!-- end sidebar-widget-item -->
-                            <div class="btn-box">
-                                <a href="cart.html" class="theme-btn text-center w-100 mb-2">رزرو</a>
-                            </div>
                         </div><!-- end sidebar-widget -->
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">وجه تمایز ما چیست ؟</h3>

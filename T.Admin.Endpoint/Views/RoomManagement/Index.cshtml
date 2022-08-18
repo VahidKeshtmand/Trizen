@@ -34,13 +34,17 @@
                         <a asp-action="Register" asp-controller="RoomManagement" asp-route-hotelId="@ViewBag.hotelId"
                             class="theme-btn theme-btn-small mr-2 mb-2">ثبت
                             اتاق جدید</a>
+                        <a asp-action="Add" asp-controller="DiscountManagement" asp-route-hotelId="@ViewBag.hotelId"
+                            class="theme-btn theme-btn-small mr-2 mb-2">افزودن تخفیف به تمام اتاق های هتل</a>
                         <div class="table-form table-responsive">
                             <table id="listTable" class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">اسم</th>
                                         <th scope="col">تعداد تخت</th>
+                                        <th scope="col">تعداد اتاق</th>
                                         <th scope="col">قیمت</th>
+                                        <th scope="col">تخفیف</th>
                                         <th scope="col">وضعیت رزرو</th>
                                         <th scope="col">عملیات</th>
                                     </tr>
@@ -55,8 +59,9 @@
                                                 </div>
                                             </td>
                                             <td>@item.BedCount</td>
+                                            <td>@item.Count</td>
                                             <td>@item.Price</td>
-
+                                            <td>@item.DiscountPercent</td>
                                             <td>
                                                 @if (item.IsReserve == false)
                                                 {
@@ -79,6 +84,20 @@
 
                                                     <button onclick="ShowAlertRoom(@item.Id, 'Delete')"
                                                     class="theme-btn theme-btn-small mr-2">حذف</button>
+                                                    @if (item.DiscountPercent == 0)
+                                                    {
+                                                        <a asp-action="Add" asp-controller="DiscountManagement"
+                                                    asp-route-roomId="@item.Id"
+                                                    class="theme-btn theme-btn-small mr-2">افزودن تخفیف</a>
+                                                    }
+                                                    @if (item.DiscountPercent != 0)
+                                                    {
+                                                        <a asp-action="Edit" asp-controller="DiscountManagement"
+                                                    asp-route-id="@item.DiscountId"
+                                                    class="theme-btn theme-btn-small mr-2">ویرایش تخفیف</a>
+                                                        <button onclick="ShowAlertDiscount(@item.DiscountId, 'Delete')"
+                                                    class="theme-btn theme-btn-small mr-2">حذف تخفیف</button>
+                                                    }
 
                                                 </div>
                                             </td>

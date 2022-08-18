@@ -12,8 +12,7 @@ namespace T.Persistence.Contexts.SqlServerDb
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            var assembly = typeof(UserConfig).Assembly;
-            builder.ApplyConfigurationsFromAssembly(assembly);
+            builder.ApplyConfiguration(new UserConfig());
             ChangeTablesName(builder);
             PrimaryKeyDefination(builder);
         }
@@ -34,8 +33,8 @@ namespace T.Persistence.Contexts.SqlServerDb
             builder.Entity<IdentityUserRole<string>>()
                 .HasKey(ul => new { ul.UserId, ul.RoleId });
             builder.Entity<IdentityUserToken<string>>()
-                .HasKey(ul => new { ul.LoginProvider, ul.UserId, ul.Name });    
-            
+                .HasKey(ul => new { ul.LoginProvider, ul.UserId, ul.Name });
+
             builder.Entity<IdentityRoleClaim<string>>()
                 .HasKey(ul => ul.Id);
             builder.Entity<IdentityUserClaim<string>>()

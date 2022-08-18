@@ -1,6 +1,7 @@
 using OS.Application.Interfaces.Contexts;
 using T.Application.Interfaces.Contexts;
 using T.Application.Services.Account;
+using T.Application.Services.Baskets;
 using T.Application.Services.Hotels;
 using T.Application.Services.Visitor;
 using T.Infrastructure.IdentityConfigs;
@@ -29,6 +30,7 @@ builder.Services.AddTransient<IVisitorService, VisitorService>();
 builder.Services.AddScoped<SaveVisitorInfoFilter>();
 builder.Services.AddTransient<IOnlineVisitorService, OnlineVisitorService>();
 builder.Services.AddTransient<ICommentServiceUI, CommentServiceUI>();
+builder.Services.AddTransient<IBasketService, BasketService>();
 
 builder.Services.AddAuthentication();
 

@@ -86,7 +86,7 @@
                                     <p class="mr-2">@Model.Address</p>
                                     <p>
                                         <span class="badge badge-warning text-white font-size-16">4.7</span>
-                                        <span>(4209 نظر)</span>
+                                        <span>(@Model.Comments.Count() نظر)</span>
                                     </p>
                                 </div>
                             </div><!-- end single-content-item -->
@@ -443,7 +443,7 @@
                                             <div class="review-summary">
                                                 <h2>4.5<span>/5</span></h2>
                                                 <p>عالی</p>
-                                                <span>بر اساس 4 نظر</span>
+                                                <span>بر اساس @Model.Comments.Count() نظر</span>
                                             </div>
                                         </div><!-- end col-lg-4 -->
                                         <div class="col-lg-8">
@@ -534,130 +534,37 @@
                         </div><!-- end reviews -->
                         <div class="review-box">
                             <div class="single-content-item padding-top-40px">
-                                <h3 class="title font-size-20">نمایش 3 نظر</h3>
+                                <h3 class="title font-size-20">نمایش @Model.Comments.Count() نظر</h3>
                                 <div class="comments-list padding-top-50px">
-                                    <div class="comment">
-                                        <div class="comment-avatar">
-                                            <img class="avatar__img" alt="" src="images/team8.jpg">
-                                        </div>
-                                        <div class="comment-body">
-                                            <div class="meta-data">
-                                                <h3 class="comment__author">فرید خلیلی</h3>
-                                                <div class="meta-data-inner d-flex">
-                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                    </span>
-                                                    <p class="comment__date">5 آبان 1400</p>
-                                                </div>
+                                    @foreach (var item in Model.Comments)
+                                    {
+                                        <div class="comment">
+                                            <div class="comment-avatar">
+                                                <img class="avatar__img" alt=""
+                                                src="https://localhost:7235/Resources/Images/images.png">
                                             </div>
-                                            <p class="comment-content">
-                                                همه چیز این هتل عالی امابرای تحویل اتاق باید خانواده ایی 200دلار به صورت
-                                                امانت پرداخت کنید و زمان برگشتن مجدد بهتون برمیگردونن(با پاسپورت).
-                                                صبحانه عالی،استخر خوب،تمیزی هتل و اتاق عالی،رفتار پرسنل عالی.بردن اب و
-                                                ......به هتل ازاده و کاری ندارن..
-                                            </p>
-                                            <div
-                                                class="comment-reply d-flex align-items-center justify-content-between">
-                                                <a class="theme-btn" href="#" data-toggle="modal"
-                                                    data-target="#replayPopupForm">
-                                                    <span class="la la-mail-reply mr-1"></span>پاسخ
-                                                </a>
-                                                <div class="reviews-reaction">
-                                                    <a href="#" class="comment-like"><i class="la la-thumbs-up"></i>
-                                                        13</a>
-                                                    <a href="#" class="comment-dislike"><i
-                                                            class="la la-thumbs-down"></i> 2</a>
-                                                    <a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
+                                            <div class="comment-body">
+                                                <div class="meta-data">
+                                                    <h3 class="comment__author">@item.Name</h3>
+                                                    <div class="meta-data-inner d-flex">
+                                                        <span class="ratings d-flex align-items-center mr-1">
+                                                            @for (int x = 0; x < item.Rate; x++)
+                                                            {
+                                                                <i class="la la-star"></i>
+                                                            }
+
+                                                            @for (int i = 0; i < 5 - item.Rate; i++)
+                                                            {
+                                                                <i class="la la-star-o"></i>
+                                                            }
+                                                        </span>
+                                                        <p class="comment__date">@item.Date</p>
+                                                    </div>
                                                 </div>
+                                                <p class="comment-content">@item.Message</p>
                                             </div>
-                                        </div>
-                                    </div><!-- end comments -->
-                                    <div class="comment comment-reply-item">
-                                        <div class="comment-avatar">
-                                            <img class="avatar__img" alt="" src="images/team9.jpg">
-                                        </div>
-                                        <div class="comment-body">
-                                            <div class="meta-data">
-                                                <h3 class="comment__author">علی کیانی</h3>
-                                                <div class="meta-data-inner d-flex">
-                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                    </span>
-                                                    <p class="comment__date">5 آبان 1400</p>
-                                                </div>
-                                            </div>
-                                            <p class="comment-content">
-                                                من به همراه نامزدم به مدت 5 روز در این هتل اقامت داشتمکه واقعا بینظیربود
-                                                و همه چی تموم .از نظر تمیزی و امکانات بهداشتی خیلی خوب . صبحانه بینظیر -
-                                                یعنی عالی / زیبایی هتل و برخورد خوب کارکنان خیلی خوب بود و برای سفر ما
-                                                خاطرات خوبی توی ذهنمون جا گذاشت
-                                            </p>
-                                            <div
-                                                class="comment-reply d-flex align-items-center justify-content-between">
-                                                <a class="theme-btn" href="#" data-toggle="modal"
-                                                    data-target="#replayPopupForm">
-                                                    <span class="la la-mail-reply mr-1"></span>پاسخ
-                                                </a>
-                                                <div class="reviews-reaction">
-                                                    <a href="#" class="comment-like"><i class="la la-thumbs-up"></i>
-                                                        13</a>
-                                                    <a href="#" class="comment-dislike"><i
-                                                            class="la la-thumbs-down"></i> 2</a>
-                                                    <a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end comments -->
-                                    <div class="comment">
-                                        <div class="comment-avatar">
-                                            <img class="avatar__img" alt="" src="images/team10.jpg">
-                                        </div>
-                                        <div class="comment-body">
-                                            <div class="meta-data">
-                                                <h3 class="comment__author">فرهاد رضوانی</h3>
-                                                <div class="meta-data-inner d-flex">
-                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                    </span>
-                                                    <p class="comment__date">5 آبان 1400</p>
-                                                </div>
-                                            </div>
-                                            <p class="comment-content">
-                                                بی نظیر و عالی بود همه چیز تمام و کمال فقط باید با تاکسی رفت و آمد کنید
-                                                که به نظر من مشکلی نبود
-                                            </p>
-                                            <div
-                                                class="comment-reply d-flex align-items-center justify-content-between">
-                                                <a class="theme-btn" href="#" data-toggle="modal"
-                                                    data-target="#replayPopupForm">
-                                                    <span class="la la-mail-reply mr-1"></span>پاسخ
-                                                </a>
-                                                <div class="reviews-reaction">
-                                                    <a href="#" class="comment-like"><i class="la la-thumbs-up"></i>
-                                                        13</a>
-                                                    <a href="#" class="comment-dislike"><i
-                                                            class="la la-thumbs-down"></i> 2</a>
-                                                    <a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end comments -->
-                                    <div class="btn-box load-more text-center">
-                                        <button class="theme-btn theme-btn-small theme-btn-transparent"
-                                            type="button">نظرات بیشتر</button>
-                                    </div>
+                                        </div><!-- end comments -->
+                                    }
                                 </div><!-- end comments-list -->
                                 <div class="comment-forum padding-top-40px">
                                     <div class="form-box">
@@ -665,104 +572,127 @@
                                             <h3 class="title">نظری بنویس</h3>
                                         </div><!-- form-title-wrap -->
                                         <div class="form-content">
-                                            <div class="rate-option p-2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>خدمات</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="lst1" value="1">
-                                                                <label for="lst1"></label>
-                                                                <input type="checkbox" id="lst2" value="2">
-                                                                <label for="lst2"></label>
-                                                                <input type="checkbox" id="lst3" value="3">
-                                                                <label for="lst3"></label>
-                                                                <input type="checkbox" id="lst4" value="4">
-                                                                <label for="lst4"></label>
-                                                                <input type="checkbox" id="lst5" value="5">
-                                                                <label for="lst5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>مکان </label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="l1" value="1">
-                                                                <label for="l1"></label>
-                                                                <input type="checkbox" id="l2" value="2">
-                                                                <label for="l2"></label>
-                                                                <input type="checkbox" id="l3" value="3">
-                                                                <label for="l3"></label>
-                                                                <input type="checkbox" id="l4" value="4">
-                                                                <label for="l4"></label>
-                                                                <input type="checkbox" id="l5" value="5">
-                                                                <label for="l5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>سرویس دوره ای</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="vm1" value="1">
-                                                                <label for="vm1"></label>
-                                                                <input type="checkbox" id="vm2" value="2">
-                                                                <label for="vm2"></label>
-                                                                <input type="checkbox" id="vm3" value="3">
-                                                                <label for="vm3"></label>
-                                                                <input type="checkbox" id="vm4" value="4">
-                                                                <label for="vm4"></label>
-                                                                <input type="checkbox" id="vm5" value="5">
-                                                                <label for="vm5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>پاکیزگی</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="cln1" value="1">
-                                                                <label for="cln1"></label>
-                                                                <input type="checkbox" id="cln2" value="2">
-                                                                <label for="cln2"></label>
-                                                                <input type="checkbox" id="cln3" value="3">
-                                                                <label for="cln3"></label>
-                                                                <input type="checkbox" id="cln4" value="4">
-                                                                <label for="cln4"></label>
-                                                                <input type="checkbox" id="cln5" value="5">
-                                                                <label for="cln5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>امکانات رفاهی</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="f1" value="1">
-                                                                <label for="f1"></label>
-                                                                <input type="checkbox" id="f2" value="2">
-                                                                <label for="f2"></label>
-                                                                <input type="checkbox" id="f3" value="3">
-                                                                <label for="f3"></label>
-                                                                <input type="checkbox" id="f4" value="4">
-                                                                <label for="f4"></label>
-                                                                <input type="checkbox" id="f5" value="5">
-                                                                <label for="f5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                </div><!-- end row -->
-                                            </div><!-- end rate-option -->
                                             <div class="contact-form-action">
-                                                <form method="get" asp-action="َAddComment" asp-controller="Home">
+                                                <form method="post" asp-action="AddComment" asp-controller="Home"
+                                                    data-ajax="true" data-ajax-success="OperationResult">
                                                     <div class="row">
+                                                        <div class="col-lg-4 responsive-column">
+                                                            <div class="rate-option-item">
+                                                                <label>خدمات</label>
+                                                                <div class="rate-stars-option">
+                                                                    <input type="checkbox" id="lst1" value="1"
+                                                                        name="serviceRate">
+                                                                    <label for="lst1"></label>
+                                                                    <input type="checkbox" id="lst2" value="2"
+                                                                        name="serviceRate">
+                                                                    <label for="lst2"></label>
+                                                                    <input type="checkbox" id="lst3" value="3"
+                                                                        name="serviceRate">
+                                                                    <label for="lst3"></label>
+                                                                    <input type="checkbox" id="lst4" value="4"
+                                                                        name="serviceRate">
+                                                                    <label for="lst4"></label>
+                                                                    <input type="checkbox" id="lst5" value="5"
+                                                                        name="serviceRate">
+                                                                    <label for="lst5"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- col-lg-4 -->
+                                                        <div class="col-lg-4 responsive-column">
+                                                            <div class="rate-option-item">
+                                                                <label>مکان </label>
+                                                                <div class="rate-stars-option">
+                                                                    <input type="checkbox" id="l1" value="1"
+                                                                        name="locationRate">
+                                                                    <label for="l1"></label>
+                                                                    <input type="checkbox" id="l2" value="2"
+                                                                        name="locationRate">
+                                                                    <label for="l2"></label>
+                                                                    <input type="checkbox" id="l3" value="3"
+                                                                        name="locationRate">
+                                                                    <label for="l3"></label>
+                                                                    <input type="checkbox" id="l4" value="4"
+                                                                        name="locationRate">
+                                                                    <label for="l4"></label>
+                                                                    <input type="checkbox" id="l5" value="5"
+                                                                        name="locationRate">
+                                                                    <label for="l5"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- col-lg-4 -->
+                                                        <div class="col-lg-4 responsive-column">
+                                                            <div class="rate-option-item">
+                                                                <label>ارزش بر اساس هزینه</label>
+                                                                <div class="rate-stars-option">
+                                                                    <input type="checkbox" id="vm1" value="1"
+                                                                        name="valueForMoneyServiceRate">
+                                                                    <label for="vm1"></label>
+                                                                    <input type="checkbox" id="vm2" value="2"
+                                                                        name="valueForMoneyServiceRate">
+                                                                    <label for="vm2"></label>
+                                                                    <input type="checkbox" id="vm3" value="3"
+                                                                        name="valueForMoneyServiceRate">
+                                                                    <label for="vm3"></label>
+                                                                    <input type="checkbox" id="vm4" value="4"
+                                                                        name="valueForMoneyServiceRate">
+                                                                    <label for="vm4"></label>
+                                                                    <input type="checkbox" id="vm5" value="5"
+                                                                        name="valueForMoneyServiceRate">
+                                                                    <label for="vm5"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- col-lg-4 -->
+                                                        <div class="col-lg-4 responsive-column">
+                                                            <div class="rate-option-item">
+                                                                <label>پاکیزگی</label>
+                                                                <div class="rate-stars-option">
+                                                                    <input type="checkbox" id="cln1" value="1"
+                                                                        name="cleanlinessRate">
+                                                                    <label for="cln1"></label>
+                                                                    <input type="checkbox" id="cln2" value="2"
+                                                                        name="cleanlinessRate">
+                                                                    <label for="cln2"></label>
+                                                                    <input type="checkbox" id="cln3" value="3"
+                                                                        name="cleanlinessRate">
+                                                                    <label for="cln3"></label>
+                                                                    <input type="checkbox" id="cln4" value="4"
+                                                                        name="cleanlinessRate">
+                                                                    <label for="cln4"></label>
+                                                                    <input type="checkbox" id="cln5" value="5"
+                                                                        name="cleanlinessRate">
+                                                                    <label for="cln5"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- col-lg-4 -->
+                                                        <div class="col-lg-4 responsive-column">
+                                                            <div class="rate-option-item">
+                                                                <label>امکانات رفاهی</label>
+                                                                <div class="rate-stars-option">
+                                                                    <input type="checkbox" id="f1" value="1"
+                                                                        name="amenityRate">
+                                                                    <label for="f1"></label>
+                                                                    <input type="checkbox" id="f2" value="2"
+                                                                        name="amenityRate">
+                                                                    <label for="f2"></label>
+                                                                    <input type="checkbox" id="f3" value="3"
+                                                                        name="amenityRate">
+                                                                    <label for="f3"></label>
+                                                                    <input type="checkbox" id="f4" value="4"
+                                                                        name="amenityRate">
+                                                                    <label for="f4"></label>
+                                                                    <input type="checkbox" id="f5" value="5"
+                                                                        name="amenityRate">
+                                                                    <label for="f5"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- col-lg-4 -->
                                                         <div class="col-lg-6 responsive-column">
+                                                            <input type="hidden" value="@Model.Id" name="hotelId">
                                                             <div class="input-box">
-                                                                <label class="label-text">نام</label>
+                                                                <label name="name" class="label-text">نام</label>
                                                                 <div class="form-group">
                                                                     <span class="la la-user form-icon"></span>
-                                                                    <input class="form-control" type="text" name="name"
+                                                                    <input class="form-control" name="name"
                                                                         placeholder="نام شما">
                                                                 </div>
                                                             </div>
@@ -772,8 +702,8 @@
                                                                 <label class="label-text">ایمیل</label>
                                                                 <div class="form-group">
                                                                     <span class="la la-envelope-o form-icon"></span>
-                                                                    <input class="form-control" type="email"
-                                                                        name="email" placeholder="آدرس ایمیل">
+                                                                    <input class="form-control" name="Email"
+                                                                        placeholder="آدرس ایمیل">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1153,3 +1083,16 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </section><!-- end cta-area -->
+
+@section Scripts
+{
+<script src="~/js/custom-alert.js"></script>
+<script src="~/js/toastr.min.js"></script>
+
+}
+
+@section Css
+{
+<link rel="stylesheet" href="~/css/toastr.min.css">
+
+}

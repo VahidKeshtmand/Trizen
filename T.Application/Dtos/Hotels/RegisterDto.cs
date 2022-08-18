@@ -27,6 +27,11 @@ public class RegisterDto
     [MinLength(3, ErrorMessage = "تعداد کاراکتر ها نباید کمتر از 3 کاراکتر باشد !")]
     public string Name { get; set; }
 
+    [Required(ErrorMessage = "لطفاً Slug خود را وارد کنید !")]
+    [MaxLength(200, ErrorMessage = "تعداد کاراکتر ها نباید بیشتر از 200 کاراکتر باشد !")]
+    [MinLength(3, ErrorMessage = "تعداد کاراکتر ها نباید کمتر از 3 کاراکتر باشد !")]
+    public string Slug { get; set; }
+
     [Range(1, int.MaxValue, ErrorMessage = "لطفاً کشور خود را انتخاب کنید !")]
     public int Country { get; set; }
 

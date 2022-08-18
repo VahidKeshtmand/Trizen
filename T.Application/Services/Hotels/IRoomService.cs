@@ -32,7 +32,9 @@ public class RoomService : IRoomService
     public BaseDto<RoomIndexDto> GetList(int hotelId, int page, int pageSize)
     {
         int rowCount = 0;
-        var rooms = _databaseContext.Rooms.Where(x => x.HotelId == hotelId)
+        var rooms = _databaseContext.Rooms
+            .Include(x => x.Discounts)
+            .Where(x => x.HotelId == hotelId)
             .ToPaged(page, pageSize, out rowCount)
             .OrderByDescending(x => x.Id)
             .Select(x => new RoomListDto
@@ -42,6 +44,9 @@ public class RoomService : IRoomService
                 BedCount = x.BedCount,
                 IsReserve = x.IsReserve,
                 Price = x.Price,
+                DiscountPercent = x.Discounts.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x => x.Percent).FirstOrDefault(),
+                DiscountId = x.Discounts.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x => x.Id).FirstOrDefault(),
+                Count = x.Count
             }).ToList();
         var hotel = _databaseContext.Hotels.Select(x => new { x.Id, x.Name }).FirstOrDefault(x => x.Id == hotelId);
         if (hotel == null)
@@ -81,8 +86,7 @@ public class RoomService : IRoomService
                 Id = x.Id,
                 Title = x.Title
             }).ToList();
-        var hotel = _databaseContext.Rooms.Include(x => x.Hotel)
-            .Select(x => new { Id = x.Id, HotelName = x.Hotel.Name, HotelId = x.Hotel.Id }).FirstOrDefault(x => x.Id == id);
+        var hotel = _databaseContext.Hotels.Select(x => new { x.Id, x.Name }).FirstOrDefault(x => x.Id == id);
         if (hotel == null || amenities == null || serviceAmenities == null)
             return new BaseDto<InformationRoomDto>
             {
@@ -94,8 +98,8 @@ public class RoomService : IRoomService
             {
                 Amenities = amenities,
                 ServiceAmenities = serviceAmenities,
-                HotelName = hotel.HotelName,
-                HotelId = hotel.HotelId
+                HotelName = hotel.Name,
+                HotelId = hotel.Id
             },
             IsSuccess = true
         };
@@ -114,7 +118,7 @@ public class RoomService : IRoomService
             Price = model.Price,
             BedCount = model.BedCount,
             Size = model.Size,
-
+            Slug = model.Slug
         };
         _databaseContext.Rooms.Add(room);
         _databaseContext.SaveChanges();

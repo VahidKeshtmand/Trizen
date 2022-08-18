@@ -26,9 +26,9 @@ namespace T.Website.Endpoint.Controllers
         public IActionResult AddComment(AddCommentViewModel model)
         {
             if (!ModelState.IsValid)
-                return new JsonResult(new { status = false, message = "فرم ارسال نظر را به درستی پر کنید !" });
+                return new JsonResult(new { status = "error", message = "فرم ارسال نظر را به درستی پر کنید !" });
             var result = _commentController.AddComment(model);
-            return new JsonResult(new { status = result.IsSuccess, message = result.Message });
+            return new JsonResult(new { status = "success", message = result.Message });
         }
     }
 }

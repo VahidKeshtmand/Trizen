@@ -8,69 +8,81 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = T.Website.Endpoint
 build_property.RootNamespace = T.Website.Endpoint
-build_property.ProjectDir = e:\Trizen\T.Website.Endpoint\
+build_property.ProjectDir = E:\Trizen\T.Website.Endpoint\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = e:\Trizen\T.Website.Endpoint
+build_property.MSBuildProjectDirectory = E:\Trizen\T.Website.Endpoint
 build_property._RazorSourceGeneratorDebug = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Account/VerifyPhoneNumber.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Account/VerifyPhoneNumber.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlQaG9uZU51bWJlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Home/Index.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Basket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Trizen/T.Website.Endpoint/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Home/Privacy.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Hotel/Detail.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Hotel/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Hotel/Index.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Hotel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Hotel/RoomDetails.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Hotel/RoomDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcUm9vbURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Hotel/RoomsList.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Hotel/RoomsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcUm9vbXNMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Shared/Components/SearchHotelList/Default.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Shared/Components/AddRoomToBasket/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRkUm9vbVRvQmFza2V0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Trizen/T.Website.Endpoint/Views/Shared/Components/SearchHotelList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2VhcmNoSG90ZWxMaXN0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Shared/Error.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Shared/PartialViews/_LoginPartial.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Shared/PartialViews/_CreateComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfQ3JlYXRlQ29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Trizen/T.Website.Endpoint/Views/Shared/PartialViews/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTG9naW5QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Shared/PartialViews/_RegisterPartial.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Shared/PartialViews/_RegisterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfUmVnaXN0ZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/_ViewImports.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/_ViewStart.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/Trizen/T.Website.Endpoint/Views/Shared/_Layout.cshtml]
+[E:/Trizen/T.Website.Endpoint/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4485jsiz5p

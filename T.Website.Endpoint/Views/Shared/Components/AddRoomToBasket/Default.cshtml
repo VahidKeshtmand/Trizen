@@ -1,0 +1,46 @@
+@model T.Application.Dtos.Baskets.BasketItemDto
+
+<div class="contact-form-action">
+    <form asp-action="Index" asp-controller="Basket" method="post">
+        <div class="input-box">
+            <label asp-for="CheckInDate" class="label-text">تاریخ ورود</label>
+            <div class="form-group">
+                <span class="la la-calendar form-icon"></span>
+                <input asp-for="CheckInDate" class="date-range form-control">
+            </div>
+        </div>
+        <div class="input-box">
+            <label asp-for="CheckOutDate" class="label-text">تاریخ خروج</label>
+            <div class="form-group">
+                <span class="la la-calendar form-icon"></span>
+                <input asp-for="CheckOutDate" class="date-range form-control">
+            </div>
+        </div>
+        <input asp-for="BedNumber" value="@Model.BedNumber" type="hidden">
+        <input asp-for="Id" value="@Model.Id" type="hidden">
+
+        <div class="input-box">
+            <label asp-for="Quantity" class="label-text">اتاق ها</label>
+            <div class="form-group">
+                <div class="select-contain w-auto">
+                    <select asp-for="Quantity" class="select-contain-select">
+                        @for (int i = 0; i <= Model.Quantity; i++)
+                        {
+                            @if (i == 0)
+                            {
+                                <option value="@i">انتخاب اتاق</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i اتاق</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <button type="submit" class="theme-btn text-center w-100 mb-2">رزرو</button>
+        </div>
+    </form>
+</div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+KBjtTp2jE/bo4H+IrTBi/XbyORWdNtYNmKydWlr2yU=",
+  "Hash": "D74p4dQsT/Jcj/k23QETzkF8OYPdWUrlh8EpXEbS1jE=",
   "Source": "T.Website.Endpoint",
   "BasePath": "_content/T.Website.Endpoint",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.Website.Endpoint\\wwwroot\\js\\custom-alert.js",
+      "SourceId": "T.Website.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.Website.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.Website.Endpoint",
+      "RelativePath": "js/custom-alert.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\custom-alert.js"
     },
     {
       "Identity": "E:\\Trizen\\T.Website.Endpoint\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",

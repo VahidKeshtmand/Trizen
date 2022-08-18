@@ -1,10 +1,16 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using OS.Application.Interfaces.Contexts;
 using T.Application.Dtos.Hotels;
 using T.Application.Interfaces.Contexts;
+using T.Application.Services.Comment;
+using T.Application.Services.Discounts;
+using T.Application.Services.Flights;
 using T.Application.Services.Hotels;
 using T.Application.Services.Visitor;
+using T.Domain.Account;
+using T.Infrastructure.IdentityConfigs;
 using T.Infrastructure.ImageServer;
 using T.Infrastructure.MappingProfile;
 using T.Infrastructure.SetupServices;
@@ -19,6 +25,7 @@ builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>
 builder.Services.AddTransient<IVisitorService, VisitorService>();
 builder.Services.AddTransient<IOnlineVisitorService, OnlineVisitorService>();
 builder.Services.AddTransient<IImageUploadService, ImageUploadService>();
+builder.Services.AddIdentityService(builder.Configuration);
 var connectionString = builder.Configuration.GetConnectionString("SqlServer");
 SqlServerSetup.Configure(builder.Services, connectionString);
 
@@ -34,6 +41,13 @@ builder.Services.AddTransient<IHotelService, HotelService>();
 
 //Add RoomService
 builder.Services.AddTransient<IRoomService, RoomService>();
+
+
+//Add CommentService
+builder.Services.AddTransient<ICommentService, CommentService>();
+builder.Services.AddTransient<IDiscountService, DiscountService>();
+builder.Services.AddTransient<IFlightService, FlightService>();
+
 
 var app = builder.Build();
 

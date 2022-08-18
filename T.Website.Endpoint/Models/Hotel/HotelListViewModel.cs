@@ -1,3 +1,5 @@
+using T.Website.Endpoint.Models.Comments;
+
 namespace T.Website.Endpoint.Models.Hotel;
 
 public class HotelListViewModel
@@ -17,6 +19,7 @@ public class HotelListViewModel
     public List<int> Amenities { get; set; }
     public bool IsAmenitiesExist { get; set; }
     public bool IsBedNumberExist { get; set; }
+
 
 }
 

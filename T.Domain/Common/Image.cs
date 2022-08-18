@@ -1,4 +1,5 @@
 using T.Domain.Attributes;
+using T.Domain.Flight;
 using T.Domain.Hotels;
 
 namespace T.Domain.Common;
@@ -14,4 +15,7 @@ public class Image
 
     public Room? Room { get; set; }
     public int? RoomId { get; set; }
+
+    public AirlineCompany? AirlineCompany { get; set; }
+    public int? AirlineCompanyId { get; set; }
 }

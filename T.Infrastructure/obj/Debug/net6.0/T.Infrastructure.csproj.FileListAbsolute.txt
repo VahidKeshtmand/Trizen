@@ -1,4 +1,4 @@
-E:\Trizen\T.Infrastructure\bin\Debug\net6.0\T.Infrastructure.deps.json
+e:\Trizen\T.Infrastructure\bin\Debug\net6.0\T.Infrastructure.deps.json
 e:\Trizen\T.Infrastructure\bin\Debug\net6.0\T.Infrastructure.dll
 e:\Trizen\T.Infrastructure\bin\Debug\net6.0\T.Infrastructure.pdb
 e:\Trizen\T.Infrastructure\bin\Debug\net6.0\T.Application.dll
@@ -14,8 +14,8 @@ e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.GeneratedMSBuildEdi
 e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.AssemblyInfoInputs.cache
 e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.AssemblyInfo.cs
 e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.csproj.CoreCompileInputs.cache
-E:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.csproj.CopyComplete
+e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.csproj.CopyComplete
 e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.dll
 e:\Trizen\T.Infrastructure\obj\Debug\net6.0\refint\T.Infrastructure.dll
 e:\Trizen\T.Infrastructure\obj\Debug\net6.0\T.Infrastructure.pdb
-E:\Trizen\T.Infrastructure\obj\Debug\net6.0\ref\T.Infrastructure.dll
+e:\Trizen\T.Infrastructure\obj\Debug\net6.0\ref\T.Infrastructure.dll

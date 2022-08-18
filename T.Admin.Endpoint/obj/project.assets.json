@@ -3340,14 +3340,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "e:\\Trizen\\T.Application\\T.Application.csproj": {
-              "projectPath": "e:\\Trizen\\T.Application\\T.Application.csproj"
+            "E:\\Trizen\\T.Application\\T.Application.csproj": {
+              "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
             },
             "e:\\Trizen\\T.Common\\T.Common.csproj": {
               "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj"
             },
-            "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
-              "projectPath": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
+            "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
+              "projectPath": "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
             },
             "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
               "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj"

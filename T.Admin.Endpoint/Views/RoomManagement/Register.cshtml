@@ -52,6 +52,16 @@
                             </div><!-- end col-lg-6 -->
                             <div class="col-lg-6 responsive-column">
                                 <div class="input-box">
+                                    <label asp-for="Slug" class="label-text">Slug</label>
+                                    <div class="form-group">
+                                        <span class="la la-globe form-icon"></span>
+                                        <input class="form-control" asp-for="Slug">
+                                        <span asp-validation-for="Slug" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
                                     <label asp-for="BedCount" class="label-text">تعداد تخت</label>
                                     <div class="form-group">
                                         <span class="la la-envelope-o form-icon"></span>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+MgEAZA0Bs4mYJVba0El1BWaxp3R6vZDVrqq3n8QDGM=",
+  "Hash": "zJV5ejBPLF/CStUE61auOb4LehaPwNT/YXLQiU31ts4=",
   "Source": "T.StaticFiles.Endpoint",
   "BasePath": "_content/T.StaticFiles.Endpoint",
   "Mode": "Default",
@@ -10,17 +10,51 @@
     {
       "Name": "T.StaticFiles.Endpoint\\wwwroot",
       "Source": "T.StaticFiles.Endpoint",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\اتاق دلربا 2\\2022\\2022 - 8\\683573c1-bfa5-4df7-a0a5-829e8b554a07624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\AirlineCompany\\American Airline\\2022\\2022 - 8\\18a33cb9-c7ae-468d-8529-fc778f8523a2airline-img10.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/AirlineCompany/American Airline/2022/2022 - 8/18a33cb9-c7ae-468d-8529-fc778f8523a2airline-img10.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\AirlineCompany\\American Airline\\2022\\2022 - 8\\18a33cb9-c7ae-468d-8529-fc778f8523a2airline-img10.png"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\AirlineCompany\\Turkish Airline\\2022\\2022 - 8\\d2a7114d-bd2c-46be-9b56-b76a9abbc5ebairline-img11.png",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/AirlineCompany/Turkish Airline/2022/2022 - 8/d2a7114d-bd2c-46be-9b56-b76a9abbc5ebairline-img11.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\AirlineCompany\\Turkish Airline\\2022\\2022 - 8\\d2a7114d-bd2c-46be-9b56-b76a9abbc5ebairline-img11.png"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\اتاق دلربا 2\\2022\\2022 - 8\\683573c1-bfa5-4df7-a0a5-829e8b554a07624dfd93842c4.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/اتاق دلربا 2/2022/2022 - 8/683573c1-bfa5-4df7-a0a5-829e8b554a07624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -34,10 +68,197 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\اتاق دلربا 2\\2022\\2022 - 8\\683573c1-bfa5-4df7-a0a5-829e8b554a07624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\e1e3b46c-3832-472b-aa31-b0314d252de0Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\180aaa33-6071-4a7c-90db-4cfefaf9639cimg1.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/180aaa33-6071-4a7c-90db-4cfefaf9639cimg1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\180aaa33-6071-4a7c-90db-4cfefaf9639cimg1.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\180aaa33-6071-4a7c-90db-4cfefaf9639cimg2.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/180aaa33-6071-4a7c-90db-4cfefaf9639cimg2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\180aaa33-6071-4a7c-90db-4cfefaf9639cimg2.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\180aaa33-6071-4a7c-90db-4cfefaf9639cimg4.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/180aaa33-6071-4a7c-90db-4cfefaf9639cimg4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\180aaa33-6071-4a7c-90db-4cfefaf9639cimg4.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\6efebde8-de46-4511-8bb2-c0c152578b8eimg1.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/6efebde8-de46-4511-8bb2-c0c152578b8eimg1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\6efebde8-de46-4511-8bb2-c0c152578b8eimg1.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\6efebde8-de46-4511-8bb2-c0c152578b8eimg4.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/6efebde8-de46-4511-8bb2-c0c152578b8eimg4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\6efebde8-de46-4511-8bb2-c0c152578b8eimg4.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\8652a54f-3368-4dc8-aab9-cecf4c6d34e4img1.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/8652a54f-3368-4dc8-aab9-cecf4c6d34e4img1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\8652a54f-3368-4dc8-aab9-cecf4c6d34e4img1.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\8652a54f-3368-4dc8-aab9-cecf4c6d34e4img2.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/8652a54f-3368-4dc8-aab9-cecf4c6d34e4img2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\8652a54f-3368-4dc8-aab9-cecf4c6d34e4img2.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\8652a54f-3368-4dc8-aab9-cecf4c6d34e4img4.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/8652a54f-3368-4dc8-aab9-cecf4c6d34e4img4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\8652a54f-3368-4dc8-aab9-cecf4c6d34e4img4.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\a5757950-1f40-4d31-8065-c42cbb2ca37eimg1.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/a5757950-1f40-4d31-8065-c42cbb2ca37eimg1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\a5757950-1f40-4d31-8065-c42cbb2ca37eimg1.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\a5757950-1f40-4d31-8065-c42cbb2ca37eimg2.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/a5757950-1f40-4d31-8065-c42cbb2ca37eimg2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\a5757950-1f40-4d31-8065-c42cbb2ca37eimg2.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\a5757950-1f40-4d31-8065-c42cbb2ca37eimg4.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/a5757950-1f40-4d31-8065-c42cbb2ca37eimg4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\a5757950-1f40-4d31-8065-c42cbb2ca37eimg4.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\e1e3b46c-3832-472b-aa31-b0314d252de0Assassin's_Creed_Unity_cover.png",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/خورشید/2022/2022 - 8/e1e3b46c-3832-472b-aa31-b0314d252de0Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -51,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\خورشید\\2022\\2022 - 8\\e1e3b46c-3832-472b-aa31-b0314d252de0Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/عباسیه/2022/2022 - 8/b887da61-94c8-4aff-b577-6137c8842109624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -68,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/عباسیه/2022/2022 - 8/b887da61-94c8-4aff-b577-6137c8842109817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -85,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/عباسیه/2022/2022 - 8/b887da61-94c8-4aff-b577-6137c8842109Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -102,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\عباسیه\\2022\\2022 - 8\\b887da61-94c8-4aff-b577-6137c8842109Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/علی بابا/2022/2022 - 8/0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -119,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/علی بابا/2022/2022 - 8/0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -136,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843e817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843eAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843eAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/علی بابا/2022/2022 - 8/0b7fc1f3-48fa-4e54-9e0d-4139dcfb843eAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -153,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\0b7fc1f3-48fa-4e54-9e0d-4139dcfb843eAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\bdd9c073-fba2-4dbf-ab9f-ef083c78b1efAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\bdd9c073-fba2-4dbf-ab9f-ef083c78b1efAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/علی بابا/2022/2022 - 8/bdd9c073-fba2-4dbf-ab9f-ef083c78b1efAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -170,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\علی بابا\\2022\\2022 - 8\\bdd9c073-fba2-4dbf-ab9f-ef083c78b1efAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\sdf\\2022\\2022 - 8\\c82d60cd-63a4-4af9-ac63-ebf37b42ae5f817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\sdf\\2022\\2022 - 8\\c82d60cd-63a4-4af9-ac63-ebf37b42ae5f817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/sdf/2022/2022 - 8/c82d60cd-63a4-4af9-ac63-ebf37b42ae5f817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -187,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\sdf\\2022\\2022 - 8\\c82d60cd-63a4-4af9-ac63-ebf37b42ae5f817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\sdf\\2022\\2022 - 8\\c82d60cd-63a4-4af9-ac63-ebf37b42ae5fAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\sdf\\2022\\2022 - 8\\c82d60cd-63a4-4af9-ac63-ebf37b42ae5fAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/sdf/2022/2022 - 8/c82d60cd-63a4-4af9-ac63-ebf37b42ae5fAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -204,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\sdf\\2022\\2022 - 8\\c82d60cd-63a4-4af9-ac63-ebf37b42ae5fAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5d624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5d624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/58c8528e-b09f-42db-88f6-c65ba4eb7b5d624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -221,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5d624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5d817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5d817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/58c8528e-b09f-42db-88f6-c65ba4eb7b5d817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -238,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5d817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5dAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5dAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/58c8528e-b09f-42db-88f6-c65ba4eb7b5dAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -255,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\58c8528e-b09f-42db-88f6-c65ba4eb7b5dAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\651064b4-f8dd-4139-ae71-0b3a710fbd30624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\651064b4-f8dd-4139-ae71-0b3a710fbd30624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/651064b4-f8dd-4139-ae71-0b3a710fbd30624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -272,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\651064b4-f8dd-4139-ae71-0b3a710fbd30624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\651064b4-f8dd-4139-ae71-0b3a710fbd30Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\651064b4-f8dd-4139-ae71-0b3a710fbd30Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/651064b4-f8dd-4139-ae71-0b3a710fbd30Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -289,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\651064b4-f8dd-4139-ae71-0b3a710fbd30Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\7154eaf1-2aaa-4776-a05b-bc196fac42a5Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\7154eaf1-2aaa-4776-a05b-bc196fac42a5Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/7154eaf1-2aaa-4776-a05b-bc196fac42a5Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -306,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\7154eaf1-2aaa-4776-a05b-bc196fac42a5Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\88c0dcca-bc96-4bc8-8a27-5582d8d9cd64strangeeeers4posew4.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\88c0dcca-bc96-4bc8-8a27-5582d8d9cd64strangeeeers4posew4.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/88c0dcca-bc96-4bc8-8a27-5582d8d9cd64strangeeeers4posew4.png",
       "AssetKind": "All",
@@ -323,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\88c0dcca-bc96-4bc8-8a27-5582d8d9cd64strangeeeers4posew4.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a10b7351-33ce-41d0-ab33-8a77b4bd3c7d624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a10b7351-33ce-41d0-ab33-8a77b4bd3c7d624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/a10b7351-33ce-41d0-ab33-8a77b4bd3c7d624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -340,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a10b7351-33ce-41d0-ab33-8a77b4bd3c7d624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a2424596-bc83-47d3-b318-901c870f93e1624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a2424596-bc83-47d3-b318-901c870f93e1624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/a2424596-bc83-47d3-b318-901c870f93e1624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -357,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a2424596-bc83-47d3-b318-901c870f93e1624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a2424596-bc83-47d3-b318-901c870f93e1strangeeeers4posew4.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a2424596-bc83-47d3-b318-901c870f93e1strangeeeers4posew4.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/a2424596-bc83-47d3-b318-901c870f93e1strangeeeers4posew4.png",
       "AssetKind": "All",
@@ -374,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\a2424596-bc83-47d3-b318-901c870f93e1strangeeeers4posew4.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/bdba18e5-b054-4a73-b4f2-c592193e4868624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -391,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868Assassin's_Creed_Unity_cover.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868Assassin's_Creed_Unity_cover.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/bdba18e5-b054-4a73-b4f2-c592193e4868Assassin's_Creed_Unity_cover.jpg",
       "AssetKind": "All",
@@ -408,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868Assassin's_Creed_Unity_cover.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868strangeeeers4posew4.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868strangeeeers4posew4.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/bdba18e5-b054-4a73-b4f2-c592193e4868strangeeeers4posew4.png",
       "AssetKind": "All",
@@ -425,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\bdba18e5-b054-4a73-b4f2-c592193e4868strangeeeers4posew4.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c36d8361-f9bc-448f-bb34-07107da024aa624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c36d8361-f9bc-448f-bb34-07107da024aa624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/c36d8361-f9bc-448f-bb34-07107da024aa624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -442,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c36d8361-f9bc-448f-bb34-07107da024aa624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c36d8361-f9bc-448f-bb34-07107da024aastrangeeeers4posew4.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c36d8361-f9bc-448f-bb34-07107da024aastrangeeeers4posew4.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/c36d8361-f9bc-448f-bb34-07107da024aastrangeeeers4posew4.png",
       "AssetKind": "All",
@@ -459,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c36d8361-f9bc-448f-bb34-07107da024aastrangeeeers4posew4.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c64ca973-ad99-49ac-9d50-2799a43558d4624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c64ca973-ad99-49ac-9d50-2799a43558d4624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/c64ca973-ad99-49ac-9d50-2799a43558d4624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -476,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c64ca973-ad99-49ac-9d50-2799a43558d4624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c64ca973-ad99-49ac-9d50-2799a43558d4Assassin's_Creed_Unity_cover.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c64ca973-ad99-49ac-9d50-2799a43558d4Assassin's_Creed_Unity_cover.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/c64ca973-ad99-49ac-9d50-2799a43558d4Assassin's_Creed_Unity_cover.jpg",
       "AssetKind": "All",
@@ -493,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\c64ca973-ad99-49ac-9d50-2799a43558d4Assassin's_Creed_Unity_cover.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\cb8fad79-7f06-4bae-b2d3-d5980832db7dstrangeeeers4posew4.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\cb8fad79-7f06-4bae-b2d3-d5980832db7dstrangeeeers4posew4.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/cb8fad79-7f06-4bae-b2d3-d5980832db7dstrangeeeers4posew4.png",
       "AssetKind": "All",
@@ -510,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\cb8fad79-7f06-4bae-b2d3-d5980832db7dstrangeeeers4posew4.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\fc685512-d90f-42fb-ae7b-cbf25aea2d48624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\fc685512-d90f-42fb-ae7b-cbf25aea2d48624dfd93842c4.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/fc685512-d90f-42fb-ae7b-cbf25aea2d48624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -527,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\fc685512-d90f-42fb-ae7b-cbf25aea2d48624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\fc685512-d90f-42fb-ae7b-cbf25aea2d48Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\fc685512-d90f-42fb-ae7b-cbf25aea2d48Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test/2022/2022 - 8/fc685512-d90f-42fb-ae7b-cbf25aea2d48Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -544,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test\\2022\\2022 - 8\\fc685512-d90f-42fb-ae7b-cbf25aea2d48Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test20\\2022\\2022 - 8\\93d285d5-62de-4eca-8f5e-2126663f027c817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test20\\2022\\2022 - 8\\93d285d5-62de-4eca-8f5e-2126663f027c817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test20/2022/2022 - 8/93d285d5-62de-4eca-8f5e-2126663f027c817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -561,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test20\\2022\\2022 - 8\\93d285d5-62de-4eca-8f5e-2126663f027c817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test20\\2022\\2022 - 8\\93d285d5-62de-4eca-8f5e-2126663f027cAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Test20\\2022\\2022 - 8\\93d285d5-62de-4eca-8f5e-2126663f027cAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Test20/2022/2022 - 8/93d285d5-62de-4eca-8f5e-2126663f027cAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -578,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Test20\\2022\\2022 - 8\\93d285d5-62de-4eca-8f5e-2126663f027cAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen10\\2022\\2022 - 8\\a282b972-9f3f-4b01-b878-ba59827332f4817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen10\\2022\\2022 - 8\\a282b972-9f3f-4b01-b878-ba59827332f4817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen10/2022/2022 - 8/a282b972-9f3f-4b01-b878-ba59827332f4817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -595,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen10\\2022\\2022 - 8\\a282b972-9f3f-4b01-b878-ba59827332f4817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen10\\2022\\2022 - 8\\a282b972-9f3f-4b01-b878-ba59827332f4Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen10\\2022\\2022 - 8\\a282b972-9f3f-4b01-b878-ba59827332f4Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen10/2022/2022 - 8/a282b972-9f3f-4b01-b878-ba59827332f4Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -612,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen10\\2022\\2022 - 8\\a282b972-9f3f-4b01-b878-ba59827332f4Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\09fef3cb-1fef-49b1-85ad-a92d65a7b946817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\09fef3cb-1fef-49b1-85ad-a92d65a7b946817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/09fef3cb-1fef-49b1-85ad-a92d65a7b946817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -629,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\09fef3cb-1fef-49b1-85ad-a92d65a7b946817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\09fef3cb-1fef-49b1-85ad-a92d65a7b946Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\09fef3cb-1fef-49b1-85ad-a92d65a7b946Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/09fef3cb-1fef-49b1-85ad-a92d65a7b946Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -646,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\09fef3cb-1fef-49b1-85ad-a92d65a7b946Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\42a55fad-277f-458c-8848-cb222df17d27817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\42a55fad-277f-458c-8848-cb222df17d27817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/42a55fad-277f-458c-8848-cb222df17d27817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -663,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\42a55fad-277f-458c-8848-cb222df17d27817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\42a55fad-277f-458c-8848-cb222df17d27Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\42a55fad-277f-458c-8848-cb222df17d27Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/42a55fad-277f-458c-8848-cb222df17d27Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -680,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\42a55fad-277f-458c-8848-cb222df17d27Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\5fc1798a-f4f2-4a1a-a268-74ec85e76e01817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\5fc1798a-f4f2-4a1a-a268-74ec85e76e01817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/5fc1798a-f4f2-4a1a-a268-74ec85e76e01817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -697,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\5fc1798a-f4f2-4a1a-a268-74ec85e76e01817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\5fc1798a-f4f2-4a1a-a268-74ec85e76e01Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\5fc1798a-f4f2-4a1a-a268-74ec85e76e01Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/5fc1798a-f4f2-4a1a-a268-74ec85e76e01Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -714,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\5fc1798a-f4f2-4a1a-a268-74ec85e76e01Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\64ac5279-bd5e-4f97-9839-97bdb86c37e9817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\64ac5279-bd5e-4f97-9839-97bdb86c37e9817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/64ac5279-bd5e-4f97-9839-97bdb86c37e9817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -731,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\64ac5279-bd5e-4f97-9839-97bdb86c37e9817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\64ac5279-bd5e-4f97-9839-97bdb86c37e9Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\64ac5279-bd5e-4f97-9839-97bdb86c37e9Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/64ac5279-bd5e-4f97-9839-97bdb86c37e9Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -748,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\64ac5279-bd5e-4f97-9839-97bdb86c37e9Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\6cf4caa4-5f7a-4500-ad2b-28d476fcf206817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\6cf4caa4-5f7a-4500-ad2b-28d476fcf206817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/6cf4caa4-5f7a-4500-ad2b-28d476fcf206817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -765,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\6cf4caa4-5f7a-4500-ad2b-28d476fcf206817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\6cf4caa4-5f7a-4500-ad2b-28d476fcf206Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\6cf4caa4-5f7a-4500-ad2b-28d476fcf206Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/6cf4caa4-5f7a-4500-ad2b-28d476fcf206Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -782,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\6cf4caa4-5f7a-4500-ad2b-28d476fcf206Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\795b27cb-58d3-4929-aaeb-0cd1a64057dc817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\795b27cb-58d3-4929-aaeb-0cd1a64057dc817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/795b27cb-58d3-4929-aaeb-0cd1a64057dc817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -799,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\795b27cb-58d3-4929-aaeb-0cd1a64057dc817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\795b27cb-58d3-4929-aaeb-0cd1a64057dcAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\795b27cb-58d3-4929-aaeb-0cd1a64057dcAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/795b27cb-58d3-4929-aaeb-0cd1a64057dcAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -816,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\795b27cb-58d3-4929-aaeb-0cd1a64057dcAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\a9a2829a-78a1-4407-86a3-2ec4f63adb20817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\a9a2829a-78a1-4407-86a3-2ec4f63adb20817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/a9a2829a-78a1-4407-86a3-2ec4f63adb20817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -833,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\a9a2829a-78a1-4407-86a3-2ec4f63adb20817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\a9a2829a-78a1-4407-86a3-2ec4f63adb20Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\a9a2829a-78a1-4407-86a3-2ec4f63adb20Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/a9a2829a-78a1-4407-86a3-2ec4f63adb20Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -850,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\a9a2829a-78a1-4407-86a3-2ec4f63adb20Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\c0485948-7d3b-48f6-9a2a-bc853dcec40b817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\c0485948-7d3b-48f6-9a2a-bc853dcec40b817zvXdCgSL.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/c0485948-7d3b-48f6-9a2a-bc853dcec40b817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -867,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\c0485948-7d3b-48f6-9a2a-bc853dcec40b817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\c0485948-7d3b-48f6-9a2a-bc853dcec40bAssassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\c0485948-7d3b-48f6-9a2a-bc853dcec40bAssassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Hotel/Trizen3/2022/2022 - 8/c0485948-7d3b-48f6-9a2a-bc853dcec40bAssassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -884,10 +1105,27 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Hotel\\Trizen3\\2022\\2022 - 8\\c0485948-7d3b-48f6-9a2a-bc853dcec40bAssassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Room\\اتاق دلربا\\2022\\2022 - 8\\cc71a2ba-a1d2-48de-a130-b45da8a25ec1817zvXdCgSL.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\images.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/images.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\images.png"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Room\\اتاق دلربا\\2022\\2022 - 8\\cc71a2ba-a1d2-48de-a130-b45da8a25ec1817zvXdCgSL.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Room/اتاق دلربا/2022/2022 - 8/cc71a2ba-a1d2-48de-a130-b45da8a25ec1817zvXdCgSL.jpg",
       "AssetKind": "All",
@@ -901,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Room\\اتاق دلربا\\2022\\2022 - 8\\cc71a2ba-a1d2-48de-a130-b45da8a25ec1817zvXdCgSL.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Room\\اتاق دلربا\\2022\\2022 - 8\\cc71a2ba-a1d2-48de-a130-b45da8a25ec1Assassin's_Creed_Unity_cover.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Room\\اتاق دلربا\\2022\\2022 - 8\\cc71a2ba-a1d2-48de-a130-b45da8a25ec1Assassin's_Creed_Unity_cover.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/Images/Room/اتاق دلربا/2022/2022 - 8/cc71a2ba-a1d2-48de-a130-b45da8a25ec1Assassin's_Creed_Unity_cover.png",
       "AssetKind": "All",
@@ -918,10 +1156,44 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Images\\Room\\اتاق دلربا\\2022\\2022 - 8\\cc71a2ba-a1d2-48de-a130-b45da8a25ec1Assassin's_Creed_Unity_cover.png"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\ImagesHotel\\Test\\2022\\2022 - 8\\f4563323-1502-4924-8753-ca464da48425624dfd93842c4.jpg",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Room\\دلربا\\2022\\2022 - 8\\9f6fdf15-43c4-4f3e-a240-575b5091b4baimg30.jpg",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Room/دلربا/2022/2022 - 8/9f6fdf15-43c4-4f3e-a240-575b5091b4baimg30.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Room\\دلربا\\2022\\2022 - 8\\9f6fdf15-43c4-4f3e-a240-575b5091b4baimg30.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\Images\\Room\\دلربا\\2022\\2022 - 8\\9f6fdf15-43c4-4f3e-a240-575b5091b4baimg31.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "BasePath": "_content/T.StaticFiles.Endpoint",
+      "RelativePath": "Resources/Images/Room/دلربا/2022/2022 - 8/9f6fdf15-43c4-4f3e-a240-575b5091b4baimg31.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Room\\دلربا\\2022\\2022 - 8\\9f6fdf15-43c4-4f3e-a240-575b5091b4baimg31.jpg"
+    },
+    {
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\ImagesHotel\\Test\\2022\\2022 - 8\\f4563323-1502-4924-8753-ca464da48425624dfd93842c4.jpg",
+      "SourceId": "T.StaticFiles.Endpoint",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/ImagesHotel/Test/2022/2022 - 8/f4563323-1502-4924-8753-ca464da48425624dfd93842c4.jpg",
       "AssetKind": "All",
@@ -935,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\ImagesHotel\\Test\\2022\\2022 - 8\\f4563323-1502-4924-8753-ca464da48425624dfd93842c4.jpg"
     },
     {
-      "Identity": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\ImagesHotel\\Test\\2022\\2022 - 8\\f4563323-1502-4924-8753-ca464da48425strangeeeers4posew4.png",
+      "Identity": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\Resources\\ImagesHotel\\Test\\2022\\2022 - 8\\f4563323-1502-4924-8753-ca464da48425strangeeeers4posew4.png",
       "SourceId": "T.StaticFiles.Endpoint",
       "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
+      "ContentRoot": "E:\\Trizen\\T.StaticFiles.Endpoint\\wwwroot\\",
       "BasePath": "_content/T.StaticFiles.Endpoint",
       "RelativePath": "Resources/ImagesHotel/Test/2022/2022 - 8/f4563323-1502-4924-8753-ca464da48425strangeeeers4posew4.png",
       "AssetKind": "All",

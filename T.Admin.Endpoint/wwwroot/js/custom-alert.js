@@ -156,6 +156,78 @@ function ShowAlertRoom(id, action) {
     })
 }
 
+const deleteDiscountTitleMessage = "از حذف تخفیف مطمئن هستید؟"
+const deleteDiscountTextMessage = "در صورت حذف تخفیف؛ تخفیف موجود از روی قیمت برداشته می شود !";
+function ShowAlertDiscount(id, action) {
+    var title, text;
+    if (action === "Delete") {
+        title = deleteDiscountTitleMessage;
+        text = deleteDiscountTextMessage;
+    }
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'بله',
+        cancelButtonText: 'لغو'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: `/DiscountManagement/${action}?id=${id}`,
+                type: "post"
+                , success: function (response) {
+                    if (response.status === "success") {
+                        toastr["success"](successOperationMessage)
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+
+                        $("#listTable").load(`${location.href} #listTable`);
+                    }
+                    else {
+                        toastr["error"](failedOperationMessage)
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+                    }
+
+                },
+            });
+        }
+    })
+}
+
 function OperationResult(response) {
     debugger;
     if (response.status === "success") {
@@ -181,4 +253,154 @@ function OperationResult(response) {
             "hideMethod": "fadeOut"
         }
     }
+}
+
+const deleteCommentTitleMessage = "از حذف این نظر مطمئن هستید؟"
+const deleteCommentTextMessage = "در صورت حذف این نظر؛ این نظر از لیست نظر های موجود حذف می شود !";
+const confirmedCommentTitleMessage = "از ثبت این نظر مطمئن هستید؟"
+const confirmedCommentTextMessage = "در صورت ثبت این نظر؛ این نظر به نظرات موجود در سایت اضافه می شود !";
+function ShowAlertRoom(id, action) {
+    var title, text;
+    if (action === "Delete") {
+        title = deleteRoomTitleMessage;
+        text = deleteRoomTextMessage;
+    }
+    if (action === "Confirmed") {
+        title = confirmedCommentTitleMessage;
+        text = confirmedCommentTextMessage;
+    }
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'بله',
+        cancelButtonText: 'لغو'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: `/CommentManagement/${action}?id=${id}`,
+                type: "post"
+                , success: function (response) {
+                    if (response.status === "success") {
+                        toastr["success"](successOperationMessage)
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+
+                        $("#listTable").load(`${location.href} #listTable`);
+                    }
+                    else {
+                        toastr["error"](failedOperationMessage)
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+                    }
+
+                },
+            });
+        }
+    })
+}
+
+const deleteAirlineCompanyTitleMessage = "از حذف این نظر مطمئن هستید؟"
+const deleteAirlineCompanyTextMessage = "در صورت حذف این نظر؛ این نظر از لیست نظر های موجود حذف می شود !";
+function ShowAlertFlight(id, action) {
+    var title, text;
+    if (action === "DeleteAirlineCompany") {
+        title = deleteAirlineCompanyTitleMessage;
+        text = deleteAirlineCompanyTextMessage;
+    }
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'بله',
+        cancelButtonText: 'لغو'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: `/FlightManagement/${action}?id=${id}`,
+                type: "post"
+                , success: function (response) {
+                    if (response.status === "success") {
+                        toastr["success"](successOperationMessage)
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+
+                        $("#listTable").load(`${location.href} #listTable`);
+                    }
+                    else {
+                        toastr["error"](failedOperationMessage)
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-right",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+                    }
+
+                },
+            });
+        }
+    })
 }

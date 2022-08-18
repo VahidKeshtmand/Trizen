@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using T.Application.Dtos.Account;
 using T.Application.Services.Account;
+using T.Application.Services.Baskets;
 using T.Website.Endpoint.Utilities.Filters;
 
 namespace T.Website.Endpoint.Controllers
@@ -10,10 +11,12 @@ namespace T.Website.Endpoint.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
+        private readonly IBasketService _BasketService;
 
-        public AccountController(IAccountService accountService)
+        public AccountController(IAccountService accountService, IBasketService basketService)
         {
             _accountService = accountService;
+            _BasketService = basketService;
         }
 
         [HttpPost]
@@ -24,9 +27,13 @@ namespace T.Website.Endpoint.Controllers
 
             var registerResult = _accountService.Register(model);
             var signInResult = _accountService.Login(model.Email, model.Password, false);
-
+            var user = _accountService.FindUserByName(model.Email);
             if (registerResult.Succeeded && signInResult.Succeeded)
+            {
+                TransferBasket(user.Id);
                 return new JsonResult(new { status = "Success" });
+            }
+
 
             return new JsonResult(new { status = "Error" });
 
@@ -77,7 +84,19 @@ namespace T.Website.Endpoint.Controllers
             var result = _accountService.Login(model.Email, model.Password, model.RememberMe);
             if (!result.Succeeded)
                 return new JsonResult(new { status = "Error" });
+            TransferBasket(user.Id);
             return new JsonResult(new { status = "Success" });
+        }
+
+        private void TransferBasket(string userId)
+        {
+            var cookieName = "BasketId";
+            if (Request.Cookies.ContainsKey(cookieName))
+            {
+                var anonymousId = Request.Cookies[cookieName];
+                _BasketService.TransferBasket(anonymousId, userId);
+                Response.Cookies.Delete(cookieName);
+            }
         }
 
     }

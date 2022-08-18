@@ -31,9 +31,9 @@ public class RoomManagementController : Controller
         return View(result.Data);
     }
 
-    public IActionResult Register(int id)
+    public IActionResult Register(int hotelId)
     {
-        var information = _roomService.GetInformation(id);
+        var information = _roomService.GetInformation(hotelId);
         ViewBag.hotelId = information.Data.HotelId;
         var registerRoom = new RegisterRoomDto
         {

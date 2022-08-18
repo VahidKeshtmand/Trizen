@@ -15,9 +15,14 @@ public class Comment
     public string Name { get; set; }
     public string Email { get; set; }
     public string Message { get; set; }
-
-    public int UserId { get; set; }
-    public User User { get; set; }
+    public CommentStatus CommentStatus { get; set; }
+    public string UserId { get; set; }
     public Hotel Hotel { get; set; }
     public int HotelId { get; set; }
+}
+
+public enum CommentStatus
+{
+    Waiting,
+    Confirmed,
 }

@@ -1,0 +1,128 @@
+@using T.Domain.Hotels
+@model T.Application.Dtos.Discounts.EditDiscountDto
+
+<div class="dashboard-bread dashboard--bread dashboard-bread-2">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="breadcrumb-content">
+                    <div class="section-heading">
+                        <h2 class="sec__title font-size-30 text-white">افزودن تخفیف برای (@Model.ExistenceName)</h2>
+                    </div>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6">
+                <div class="breadcrumb-list text-right">
+                    <ul class="list-items">
+                        <li><a asp-controller="Home" asp-action="Index" class="text-white">صفحه اصلی</a></li>
+                        <li>
+                            @if (Model.HotelId != 0)
+                            {
+                                <a asp-controller="RoomManagement" asp-action="Index" asp-route-hotelId="Model.HotelId"
+                                class="text-white">لیست
+                                    اتاق ها</a>
+                            }
+                            @if (Model.RoomId != 0)
+                            {
+                                <a asp-controller="RoomManagement" asp-action="Index" asp-route-hotelId="@ViewBag.hotelId"
+                                class="text-white">لیست
+                                    اتاق ها</a>
+                            }
+                        </li>
+                        <li>افزودن تخفیف جدید</li>
+                    </ul>
+                </div><!-- end breadcrumb-list -->
+            </div><!-- end col-lg-6 -->
+        </div><!-- end row -->
+    </div>
+</div><!-- end dashboard-bread -->
+
+<div class="dashboard-main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div asp-validation-summary="ModelOnly"></div>
+                <form method="post" asp-action="Edit" asp-controller="DiscountManagement" data-ajax="true"
+                    data-ajax-success="OperationResult">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <h3 class="title"><i class="la la-bed mr-2 text-gray"></i>اطلاعات تخفیف</h3>
+                        </div><!-- form-title-wrap -->
+                        <div class="form-content contact-form-action row">
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label asp-for="Percent" class="label-text">درصد تخفیف</label>
+                                    <div class="form-group">
+                                        <span class="la la-user form-icon"></span>
+                                        <input class="form-control" asp-for="Percent">
+                                        <span asp-validation-for="Percent" class="text-danger"></span>
+
+                                        <input asp-for="Id" type="hidden" />
+                                        <input asp-for="HotelId" type="hidden" />
+
+
+
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label asp-for="DiscountDate" class="label-text">از تاریخ تا تاریخ</label>
+                                    <div class="form-group">
+                                        <span class="la la-envelope-o form-icon"></span>
+                                        <input asp-for="DiscountDate" class="date-range form-control" type="text"
+                                            readonly>
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+                            <div class="col-lg-12 responsive-column">
+                                <div class="input-box">
+                                    <label asp-for="Description" class="label-text">توضیحات</label>
+                                    <div class="form-group">
+                                        <span class="la la-edit form-icon"></span>
+                                        <input class="form-control" asp-for="Description" placeholder="توضیحات">
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
+                        </div><!-- end form-content -->
+                    </div><!-- end form-box -->
+                    <div class="submit-box">
+                        <h3 class="title pb-3">ارسال این لیست</h3>
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="agreeChb">
+                            <label for="agreeChb">
+                                این کادر را علامت بزنید تا تأیید کنید که شما نماینده رسمی ملکی هستید که
+                                این لیست را برای آن ارسال می کنید و اطلاعاتی که ارائه کرده اید صحیح است. وقتی تصویری را
+                                ارسال می‌کنید، همچنین تصدیق می‌کنید که حق استفاده از تصویر را در وب دارید و موافقت
+                                می‌کنید
+                                که به Trizen با توجه به هیچ‌یک و همه مسائل مربوط به حق نسخه‌برداری ناشی از استفاده شما
+                                از
+                                تصویر آسیب نرسانید.
+                            </label>
+                        </div>
+                        <div class="btn-box pt-3">
+                            <input type="submit" class="theme-btn" value="ارسال">
+                        </div>
+                    </div>
+
+                </form><!-- end submit-box -->
+            </div><!-- end col-lg-9 -->
+        </div><!-- end row -->
+    </div><!-- end container-fluid -->
+</div><!-- end dashboard-main-content -->
+
+
+
+@section Css
+{
+<link rel="stylesheet" href="~/css/toastr.min.css">
+}
+@section Scripts
+{
+@{
+await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+<script src="~/js/toastr.min.js"></script>
+<script src="~/js/custom-alert.js" asp-append-version="true"></script>
+}

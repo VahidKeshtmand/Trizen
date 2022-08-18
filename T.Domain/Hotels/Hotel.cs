@@ -1,6 +1,7 @@
 ﻿using T.Domain.Attributes;
 using T.Domain.Comments;
 using T.Domain.Common;
+using T.Domain.Discounts;
 
 namespace T.Domain.Hotels
 {
@@ -42,6 +43,8 @@ namespace T.Domain.Hotels
         public List<Image> Images { get; set; }
         public List<Room> Rooms { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<Discount> Discounts { get; set; }
+
 
     }
 

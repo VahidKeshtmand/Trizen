@@ -1,4 +1,4 @@
-E:\Trizen\T.Application\bin\Debug\net6.0\T.Application.deps.json
+e:\Trizen\T.Application\bin\Debug\net6.0\T.Application.deps.json
 e:\Trizen\T.Application\bin\Debug\net6.0\T.Application.dll
 e:\Trizen\T.Application\bin\Debug\net6.0\T.Application.pdb
 e:\Trizen\T.Application\bin\Debug\net6.0\T.Common.dll
@@ -10,8 +10,8 @@ e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.GeneratedMSBuildEditorCon
 e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.AssemblyInfoInputs.cache
 e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.AssemblyInfo.cs
 e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.csproj.CoreCompileInputs.cache
-E:\Trizen\T.Application\obj\Debug\net6.0\T.Application.csproj.CopyComplete
+e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.csproj.CopyComplete
 e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.dll
 e:\Trizen\T.Application\obj\Debug\net6.0\refint\T.Application.dll
 e:\Trizen\T.Application\obj\Debug\net6.0\T.Application.pdb
-E:\Trizen\T.Application\obj\Debug\net6.0\ref\T.Application.dll
+e:\Trizen\T.Application\obj\Debug\net6.0\ref\T.Application.dll

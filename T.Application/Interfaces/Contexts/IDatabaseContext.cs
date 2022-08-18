@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using T.Domain;
+using T.Domain.Baskets;
 using T.Domain.Comments;
 using T.Domain.Common;
+using T.Domain.Discounts;
+using T.Domain.Flight;
 using T.Domain.Hotels;
 
 namespace OS.Application.Interfaces.Contexts
@@ -20,6 +23,13 @@ namespace OS.Application.Interfaces.Contexts
         DbSet<Room> Rooms { get; set; }
         DbSet<AmenityRoom> AmenityRooms { get; set; }
         DbSet<Comment> Comments { get; set; }
+        DbSet<Discount> Discounts { get; set; }
+        DbSet<Basket> Baskets { get; set; }
+        DbSet<BasketItem> BasketItems { get; set; }
+        DbSet<AirlineCompany> AirlineCompanies { get; set; }
+        DbSet<Flight> Flights { get; set; }
+        DbSet<Seat> Seats { get; set; }
+
 
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);

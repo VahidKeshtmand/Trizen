@@ -9,6 +9,9 @@ public class RoomListDto
     public bool IsReserve { get; set; }
     public int BedCount { get; set; }
     public int Price { get; set; }
+    public int DiscountPercent { get; set; }
+    public int DiscountId { get; set; }
+    public int Count { get; set; }
 }
 
 public class RoomIndexDto

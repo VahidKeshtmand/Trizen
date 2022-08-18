@@ -117,6 +117,7 @@ namespace T.Application.Services.Hotels
                 StarsCount = model.StarsCount,
                 Cancellation = model.Cancellation,
                 ExtraPeople = model.ExtraPeople,
+                Slug = model.Slug
             };
             _databaseContext.Hotels.Add(hotel);
             _databaseContext.SaveChanges();

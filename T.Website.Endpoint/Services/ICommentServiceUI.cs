@@ -25,8 +25,8 @@ public class CommentServiceUI : ICommentServiceUI
 
     public BaseDto AddComment(AddCommentViewModel model)
     {
-        var isRegister = _userManager.Users.Any(x => x.Email == model.Email);
-        if (!isRegister)
+        var user = _userManager.FindByEmailAsync(model.Email).Result;
+        if (user == null)
             return new BaseDto
             {
                 IsSuccess = false,
@@ -41,9 +41,9 @@ public class CommentServiceUI : ICommentServiceUI
             Message = model.Message,
             ServiceRate = model.ServiceRate,
             Name = model.Name,
-            ValueForMoneyService = model.ValueForMoneyService,
+            ValueForMoneyService = (int)((model.ValueForMoneyServiceRate + model.AmenityRate + model.CleanlinessRate + model.FacilityRate + model.LocationRate) / 5),
             HotelId = model.HotelId,
-            UserId = model.UserId,
+            UserId = user.Id,
         };
         _databaseContext.Comments.Add(comment);
         _databaseContext.SaveChanges();

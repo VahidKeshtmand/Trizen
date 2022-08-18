@@ -1,5 +1,6 @@
 using T.Domain.Attributes;
 using T.Domain.Common;
+using T.Domain.Discounts;
 
 namespace T.Domain.Hotels;
 
@@ -12,6 +13,7 @@ public class Room
     public int BedCount { get; set; }
     public int Size { get; set; }
     public int Price { get; set; }
+    public int Count { get; set; }
     public bool IsReserve { get; set; } = false;
     public string Slug { get; set; }
 
@@ -19,5 +21,7 @@ public class Room
     public int HotelId { get; set; }
     public List<AmenityRoom> AmenityRooms { get; set; }
     public List<Image> Images { get; set; }
+    public List<Discount> Discounts { get; set; }
+
     // public List<ReserveRoom> ReserveRooms { get; set; }
 }

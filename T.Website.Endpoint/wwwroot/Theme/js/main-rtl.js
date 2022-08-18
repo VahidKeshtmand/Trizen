@@ -69,6 +69,10 @@ Version:        1.0
         var rangeSliderAmountTwo = $('#amount2');
         var dateRangePicker = $('input[name="daterange"]');
         var dateRangePickerTwo = $('input[name="daterange-single"]');
+
+        var dateRangeCheckInDate = $('input[name="CheckInDate"]');
+        var dateRangeCheckOutDate = $('input[name="CheckOutDate"]');
+
         var bootstrapSelectMenu = $('.select-contain-select');
         var numberCounter = $('.counter');
         var fullWidthSlider = $('.full-width-slider');
@@ -587,6 +591,28 @@ Version:        1.0
         /*==== Daterangepicker =====*/
         if ($(dateRangePickerTwo).length) {
             $(dateRangePickerTwo).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
+            });
+        }
+        if ($(dateRangeCheckInDate).length) {
+            $(dateRangeCheckInDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
+            });
+        }
+        if ($(dateRangeCheckOutDate).length) {
+            $(dateRangeCheckOutDate).daterangepicker({
                 opens: 'left',
                 singleDatePicker: true,
                 format: 'DD-MM-YYYY',

@@ -28,13 +28,18 @@ public class HotelDetailRoomListViewModel
 
 public class RoomDetails
 {
+    public int Id { get; set; }
     public string Slug { get; set; }
     public List<string> ImagesSrc { get; set; }
     public string Name { get; set; }
     public double UserRate { get; set; }
     public int CommentCount { get; set; }
     public string Description { get; set; }
+    public int Price { get; set; }
+    public string PriceWithDiscount { get; set; }
+    public List<int> Discounts { get; set; }
     public List<string> Services { get; set; }
     public List<string> Amenities { get; set; }
+    public int Count { get; set; }
 
 }
