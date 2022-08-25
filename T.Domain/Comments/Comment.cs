@@ -1,5 +1,6 @@
 using T.Domain.Account;
 using T.Domain.Attributes;
+using T.Domain.Flights;
 using T.Domain.Hotels;
 
 namespace T.Domain.Comments;
@@ -18,7 +19,9 @@ public class Comment
     public CommentStatus CommentStatus { get; set; }
     public string UserId { get; set; }
     public Hotel Hotel { get; set; }
-    public int HotelId { get; set; }
+    public int? HotelId { get; set; }
+    public Flight Flight { get; set; }
+    public int? FlightId { get; set; }
 }
 
 public enum CommentStatus

@@ -28,6 +28,12 @@
                                 class="text-white">لیست
                                     اتاق ها</a>
                             }
+                            @if (Model.FlightId != 0)
+                            {
+                                <a asp-controller="FlightManagement" asp-action="FlightList"
+                                asp-route-airlineCompany="@ViewBag.hotelId" class="text-white">لیست
+                                    پرواز ها</a>
+                            }
                         </li>
                         <li>افزودن تخفیف جدید</li>
                     </ul>
@@ -59,9 +65,7 @@
 
                                         <input asp-for="Id" type="hidden" />
                                         <input asp-for="HotelId" type="hidden" />
-
-
-
+                                        <input asp-for="FlightId" type="hidden" />
                                     </div>
                                 </div>
                             </div><!-- end col-lg-6 -->

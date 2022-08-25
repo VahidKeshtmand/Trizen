@@ -24,6 +24,7 @@ SqlServerSetup.Configure(builder.Services, connectionString);
 builder.Services.AddIdentityService(builder.Configuration);
 builder.Services.AddTransient<IAccountService, AccountService>();
 builder.Services.AddTransient<ISmsService, SmsService>();
+builder.Services.AddTransient<IFlightServiceUI, FlightServiceUI>();
 
 builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
 builder.Services.AddTransient<IVisitorService, VisitorService>();

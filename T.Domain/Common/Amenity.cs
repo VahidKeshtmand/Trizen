@@ -1,4 +1,5 @@
 ﻿using T.Domain.Attributes;
+using T.Domain.Flights;
 using T.Domain.Hotels;
 
 namespace T.Domain.Common
@@ -11,14 +12,15 @@ namespace T.Domain.Common
         public string Display { get; set; } = string.Empty;
         public AmenityType AmenityType { get; set; } = AmenityType.Hotel;
         public List<AmenityHotel> AmenityHotels { get; set; }
-
+        public List<AmenityFlight> AmenityFlights { get; set; }
     }
 
     public enum AmenityType
     {
         Hotel,
         Room,
-        RoomService
+        RoomService,
+        Flight
     }
 
 }

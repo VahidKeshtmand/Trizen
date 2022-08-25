@@ -71,6 +71,9 @@
                                                     <a asp-action="EditAirlineCompany" asp-controller="FlightManagement"
                                                     asp-route-id="@item.Id"
                                                     class="theme-btn theme-btn-small mr-2">ویرایش</a>
+                                                    <a asp-action="FlightList" asp-controller="FlightManagement"
+                                                    asp-route-airlineCompanyId="@item.Id"
+                                                    class="theme-btn theme-btn-small mr-2">میدیریت پرواز ها</a>
                                                 </div>
                                             </td>
                                         </tr>

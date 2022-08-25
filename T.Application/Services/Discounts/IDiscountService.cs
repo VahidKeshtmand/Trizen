@@ -12,6 +12,7 @@ public interface IDiscountService
     BaseDto Add(AddDiscountDto model);
     string GetExistenceName(int roomId, int hotelId);
     int GetHotelId(int? roomId);
+    int GetAirlineCompanyId(int? flightId);
     BaseDto Delete(int id);
     BaseDto<EditDiscountDto> Find(int id);
     BaseDto Edit(EditDiscountDto model);
@@ -25,18 +26,21 @@ public class DiscountService : IDiscountService
     {
         _databaseContext = databaseContext;
     }
-    private bool CheckDiscountExist(int? roomId)
+    private bool CheckRoomDiscountExist(int? roomId)
     {
         return _databaseContext.Discounts.Any(x => x.RoomId == roomId && x.StartDate < DateTime.Now && x.EndDate > DateTime.Now);
     }
 
-
+    private bool CheckFlightDiscountExist(int? flightId)
+    {
+        return _databaseContext.Discounts.Any(x => x.FlightId == flightId && x.StartDate < DateTime.Now && x.EndDate > DateTime.Now);
+    }
 
     public BaseDto Add(AddDiscountDto model)
     {
         var startDate = model.DiscountDate.Substring(0, 10).ToGeorgianDateTime();
         var endDate = model.DiscountDate.Substring(13).ToGeorgianDateTime();
-        if (endDate > DateTime.Now)
+        if (endDate < DateTime.Now)
             return new BaseDto
             {
                 IsSuccess = false,
@@ -44,7 +48,7 @@ public class DiscountService : IDiscountService
             };
         if (model.RoomId != null)
         {
-            var isDiscountExist = CheckDiscountExist(model.RoomId);
+            var isDiscountExist = CheckRoomDiscountExist(model.RoomId);
             if (isDiscountExist)
                 return new BaseDto
                 {
@@ -72,7 +76,7 @@ public class DiscountService : IDiscountService
                 };
             foreach (var item in rooms.Rooms)
             {
-                var isDiscountExist = CheckDiscountExist(item.Id);
+                var isDiscountExist = CheckRoomDiscountExist(item.Id);
                 if (isDiscountExist)
                     return new BaseDto
                     {
@@ -87,10 +91,29 @@ public class DiscountService : IDiscountService
                     EndDate = endDate,
                     Description = model.Description
                 });
-
             }
 
         }
+        if (model.FlightId != null)
+        {
+            var isDiscountExist = CheckFlightDiscountExist(model.FlightId);
+            if (isDiscountExist)
+                return new BaseDto
+                {
+                    IsSuccess = false,
+                    Message = "تاریخ قبل از امروز را نمی توانید انتخاب کنید !"
+                };
+            var discount = new Discount
+            {
+                Percent = model.Percent,
+                FlightId = model.FlightId,
+                StartDate = startDate,
+                EndDate = endDate,
+                Description = model.Description
+            };
+            _databaseContext.Discounts.Add(discount);
+        }
+
         _databaseContext.SaveChanges();
         return new BaseDto
         {
@@ -119,6 +142,14 @@ public class DiscountService : IDiscountService
 
     public BaseDto Edit(EditDiscountDto model)
     {
+        var startDate = model.DiscountDate.Substring(0, 10).ToGeorgianDateTime();
+        var endDate = model.DiscountDate.Substring(13).ToGeorgianDateTime();
+        if (endDate < DateTime.Now)
+            return new BaseDto
+            {
+                IsSuccess = false,
+                Message = "تاریخ قبل از امروز را نمی توانید انتخاب کنید !"
+            };
         var discount = _databaseContext.Discounts.FirstOrDefault(x => x.Id == model.Id);
         if (discount == null)
             return new BaseDto
@@ -127,8 +158,6 @@ public class DiscountService : IDiscountService
             };
         discount.Description = model.Description;
         discount.Percent = model.Percent;
-        var startDate = model.DiscountDate.Substring(0, 10).ToGeorgianDateTime();
-        var endDate = model.DiscountDate.Substring(13).ToGeorgianDateTime();
         discount.StartDate = startDate;
         discount.EndDate = endDate;
         _databaseContext.SaveChanges();
@@ -150,7 +179,7 @@ public class DiscountService : IDiscountService
             };
         if (discount.Select(x => x.RoomId) != null)
         {
-            var model = discount.Include(x => x.Room).Select(x => new EditDiscountDto
+            var model = discount.Include(x => x.Room).Include(x => x.Flight).Select(x => new EditDiscountDto
             {
                 Description = x.Description,
                 DiscountDate = x.StartDate.ToShamsi() + " - " + x.EndDate.ToShamsi(),
@@ -159,6 +188,7 @@ public class DiscountService : IDiscountService
                 RoomId = x.RoomId,
                 Id = x.Id,
                 HotelId = x.Room.HotelId,
+                FlightId = x.Flight.Id
             }).FirstOrDefault();
 
             return new BaseDto<EditDiscountDto>
@@ -190,5 +220,10 @@ public class DiscountService : IDiscountService
         if (roomId == null || roomId == 0)
             return 0;
         return _databaseContext.Rooms.Select(x => new { x.HotelId, x.Id }).FirstOrDefault(x => x.Id == roomId).HotelId;
+    }
+
+    public int GetAirlineCompanyId(int? flightId)
+    {
+        return _databaseContext.Flights.Select(x => new { x.AirlineCompanyId, x.Id }).FirstOrDefault(x => x.Id == flightId).AirlineCompanyId;
     }
 }

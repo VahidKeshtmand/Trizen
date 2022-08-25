@@ -4,7 +4,7 @@ using T.Domain.Baskets;
 using T.Domain.Comments;
 using T.Domain.Common;
 using T.Domain.Discounts;
-using T.Domain.Flight;
+using T.Domain.Flights;
 using T.Domain.Hotels;
 
 namespace OS.Application.Interfaces.Contexts
@@ -29,6 +29,7 @@ namespace OS.Application.Interfaces.Contexts
         DbSet<AirlineCompany> AirlineCompanies { get; set; }
         DbSet<Flight> Flights { get; set; }
         DbSet<Seat> Seats { get; set; }
+        DbSet<AmenityFlight> AmenityFlights { get; set; }
 
 
         int SaveChanges();

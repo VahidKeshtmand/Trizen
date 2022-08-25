@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Trizen\\T.Domain\\T.Domain.csproj": {}
+    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {}
   },
   "projects": {
-    "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
+    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "projectName": "T.Domain",
-        "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Domain\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

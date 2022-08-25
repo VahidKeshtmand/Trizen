@@ -36,8 +36,8 @@
               "e:\\Trizen\\T.Common\\T.Common.csproj": {
                 "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj"
               },
-              "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -151,14 +151,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
+    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "projectName": "T.Domain",
-        "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Domain\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -249,8 +249,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
-                "projectPath": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj"
+              "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+                "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj"
               }
             }
           }
@@ -313,14 +313,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+    "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj",
         "projectName": "T.Persistence",
-        "projectPath": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj",
+        "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Persistence\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -345,8 +345,8 @@
               "E:\\Trizen\\T.Application\\T.Application.csproj": {
                 "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
               },
-              "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }

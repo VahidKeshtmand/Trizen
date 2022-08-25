@@ -42,7 +42,8 @@ public class CommentServiceUI : ICommentServiceUI
             ServiceRate = model.ServiceRate,
             Name = model.Name,
             ValueForMoneyService = (int)((model.ValueForMoneyServiceRate + model.AmenityRate + model.CleanlinessRate + model.FacilityRate + model.LocationRate) / 5),
-            HotelId = model.HotelId,
+            HotelId = model.HotelId ?? null,
+            FlightId = model.FlightId ?? null,
             UserId = user.Id,
         };
         _databaseContext.Comments.Add(comment);

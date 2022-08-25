@@ -333,13 +333,19 @@ function ShowAlertRoom(id, action) {
     })
 }
 
-const deleteAirlineCompanyTitleMessage = "از حذف این نظر مطمئن هستید؟"
-const deleteAirlineCompanyTextMessage = "در صورت حذف این نظر؛ این نظر از لیست نظر های موجود حذف می شود !";
+const deleteAirlineCompanyTitleMessage = "از حذف شرکت هواپیمایی مطمئن هستید؟"
+const deleteAirlineCompanyTextMessage = "در صورت حذف شرکت هواپیمایی؛ این شرکت هواپیمایی از لیست شرکت هواپیمایی های موجود حذف می شود !";
+const deleteFlightTitleMessage = "از حذف این پرواز مطمئن هستید؟"
+const deleteFlightTextMessage = "در صورت حذف این پرواز؛ این پرواز از لیست پرواز های موجود حذف می شود !";
 function ShowAlertFlight(id, action) {
     var title, text;
     if (action === "DeleteAirlineCompany") {
         title = deleteAirlineCompanyTitleMessage;
         text = deleteAirlineCompanyTextMessage;
+    }
+    if (action === "DeleteFlight") {
+        title = deleteFlightTitleMessage;
+        text = deleteFlightTextMessage;
     }
     Swal.fire({
         title: title,

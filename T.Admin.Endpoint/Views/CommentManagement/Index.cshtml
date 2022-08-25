@@ -63,6 +63,14 @@
                                                     هتل @item.HotelName
                                                 </td>
                                             }
+                                            @if (item.AirlineCompanyName != null && item.Origin != null && item.TakeOfDate
+                                           != null && item.Destination != null)
+                                            {
+                                                <td>
+                                                    پرواز @item.AirlineCompanyName - @item.Origin - @item.Destination -
+                                                    @item.TakeOfDate
+                                                </td>
+                                            }
                                             <td>@item.InsertDate</td>
                                             <td>
                                                 @if (item.CommentStatus == CommentStatus.Waiting)

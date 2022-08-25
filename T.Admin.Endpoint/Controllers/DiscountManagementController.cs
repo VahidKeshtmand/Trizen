@@ -13,7 +13,7 @@ public class DiscountManagementController : Controller
         _discountService = discountService;
     }
 
-    public IActionResult Add(int hotelId, int roomId)
+    public IActionResult Add(int hotelId, int roomId, int flightId)
     {
         var existenceName = _discountService.GetExistenceName(roomId, hotelId);
         var roomHotelId = _discountService.GetHotelId(roomId);
@@ -22,7 +22,8 @@ public class DiscountManagementController : Controller
         {
             ExistenceName = existenceName,
             RoomId = roomId,
-            HotelId = hotelId
+            HotelId = hotelId,
+            FlightId = flightId
         };
         return View(model);
     }
@@ -40,6 +41,11 @@ public class DiscountManagementController : Controller
         {
             var roomHotelId = _discountService.GetHotelId(model.RoomId);
             return new JsonResult(new { status = "success", redirectAction = $"/RoomManagement/Index?hotelId={roomHotelId}" });
+        }
+        if (model.FlightId != null)
+        {
+            var airlineCompanyId = _discountService.GetAirlineCompanyId(model.FlightId);
+            return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={airlineCompanyId}" });
         }
         return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
 
@@ -66,8 +72,13 @@ public class DiscountManagementController : Controller
 
         if (result.IsSuccess == false)
             return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
-        if (model.HotelId != 0)
+        if (model.HotelId != 0 && model.HotelId != null)
             return new JsonResult(new { status = "success", redirectAction = $"/RoomManagement/Index?hotelId={model.HotelId}" });
+        if (model.FlightId != null)
+        {
+            var airlineCompanyId = _discountService.GetAirlineCompanyId(model.FlightId);
+            return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={airlineCompanyId}" });
+        }
         return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
 
     }

@@ -36,7 +36,15 @@ public class FileController : ControllerBase
     private UploadFileDto UploadImage(IFormFileCollection files, string category, string name)
     {
         var dataTime = DateTime.Now;
-        var folder = $@"Resources/Images/{category}/{name}/{dataTime.Year}/{dataTime.Year} - {dataTime.Month}/";
+        var folder = string.Empty;
+        if (name == "0")
+        {
+            folder = $@"Resources/Images/{category}/{dataTime.Year}/{dataTime.Year} - {dataTime.Month}/";
+        }
+        else
+        {
+            folder = $@"Resources/Images/{category}/{name}/{dataTime.Year}/{dataTime.Year} - {dataTime.Month}/";
+        }
         var uploadRootFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
         if (!Directory.Exists(uploadRootFolder))
             Directory.CreateDirectory(uploadRootFolder);

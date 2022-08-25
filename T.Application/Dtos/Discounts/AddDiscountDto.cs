@@ -6,6 +6,7 @@ public class AddDiscountDto
     public int Percent { get; set; }
     public int? RoomId { get; set; }
     public int? HotelId { get; set; }
+    public int? FlightId { get; set; }
     public string ExistenceName { get; set; }
     public string? Description { get; set; }
 

@@ -37,10 +37,14 @@
                                 <i class="la la-photo mr-2"></i>عکس های بیشتر
                             </a>
                         </div>
+                        @{
+                            var c = 2;
+                        }
                         @foreach (var item in Model.HotelImagesSrc)
                         {
-                            <a class="d-none" data-fancybox="gallery" data-src="@item" data-caption="تصویر شماره - 02"
+                            <a class="d-none" data-fancybox="gallery" data-src="@item" data-caption="تصویر شماره - @c"
                             data-speed="700"></a>
+                            { c++; }
                         }
                     </div><!-- end breadcrumb-btn -->
                 </div><!-- end col-lg-12 -->

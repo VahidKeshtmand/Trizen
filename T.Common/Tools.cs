@@ -39,8 +39,10 @@ namespace T.Common
             return "";
         }
 
-        public static string ToFarsi(this DateTime date)
+        public static string? ToFarsi(this DateTime date)
         {
+            if (date == null)
+                return null;
             if (date == new DateTime()) return "";
             var month = string.Empty;
             var pc = new PersianCalendar();
@@ -89,8 +91,9 @@ namespace T.Common
             return $"{pc.GetDayOfMonth(date):00}  {month}  {pc.GetYear(date):00}";
         }
 
-        public static string ToShamsi(this DateTime date)
+        public static string? ToShamsi(this DateTime date)
         {
+            if (date == null) return null;
             if (date == new DateTime()) return "";
             var month = string.Empty;
             var pc = new PersianCalendar();

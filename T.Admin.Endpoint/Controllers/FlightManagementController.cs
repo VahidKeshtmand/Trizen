@@ -15,7 +15,7 @@ public class FlightManagementController : Controller
         _imageUploadService = imageUploadService;
     }
 
-    public IActionResult Index(string searchKey, int page = 1, int pageSize = 100)
+    public IActionResult Index(string searchKey, int page = 1, int pageSize = 20)
     {
         var airlineCompanies = _flightService.GetAirlineCompanyList(searchKey, page, pageSize);
         return View(airlineCompanies);
@@ -82,5 +82,104 @@ public class FlightManagementController : Controller
             return new JsonResult(new { status = "error", message = result.Message });
 
         return new JsonResult(new { status = "success", redirectAction = "/FlightManagement/Index" });
+    }
+
+    public IActionResult FlightList(int airlineCompanyId, string searchKey, int pageIndex = 1, int pageSize = 20)
+    {
+        var list = _flightService.GetFlightsList(airlineCompanyId, searchKey, pageIndex, pageSize);
+        var airlineCompanyName = _flightService.FindAirlineCompanyName(airlineCompanyId);
+        if (!airlineCompanyName.IsSuccess)
+            return NotFound();
+        var model = new FlightListPageDto
+        {
+            AirlineCompanyId = airlineCompanyId,
+            AirlineCompanyName = airlineCompanyName.Data,
+            Flights = list
+        };
+        return View(model);
+    }
+
+    public IActionResult AddFlight(int airlineCompanyId)
+    {
+        if (airlineCompanyId == null || airlineCompanyId == 0)
+            return NotFound();
+
+        var info = _flightService.GetInformation();
+        var flight = new AddFlightDto
+        {
+            AirlineCompanyId = airlineCompanyId,
+            Information = new InformationForAddFlightDto
+            {
+                Amenities = info.Amenities,
+                Currencies = info.Currencies
+            }
+        };
+        return View(flight);
+    }
+
+    [HttpPost]
+    public JsonResult AddFlight(AddFlightDto model)
+    {
+        var imagesSrc = new List<string>();
+        if (model.Images != null)
+        {
+            var list = new List<IFormFile>();
+            list.AddRange(model.Images);
+            var uploadResult = _imageUploadService.Upload(list, "Flight", "0");
+            foreach (var src in uploadResult)
+            {
+                imagesSrc.Add(src);
+            }
+        }
+        model.ImagesSrc = imagesSrc;
+        var flight = _flightService.AddFlight(model);
+        if (!flight.IsSuccess)
+            return new JsonResult(new { status = "error", message = flight.Message });
+
+        return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={model.AirlineCompanyId}" });
+    }
+
+    public IActionResult EditFlight(int id, int airlineCompanyId)
+    {
+        if (airlineCompanyId == null || airlineCompanyId == 0)
+            return NotFound();
+
+        var flight = _flightService.FindFlight(id);
+        if (!flight.IsSuccess)
+            return NotFound();
+        flight.Data.Information = _flightService.GetInformation();
+        flight.Data.AirlineCompanyId = airlineCompanyId;
+        return View(flight.Data);
+    }
+
+    [HttpPost]
+    public JsonResult EditFlight(EditFlightDto model)
+    {
+        var imagesSrc = new List<string>();
+        if (model.Images != null)
+        {
+            var list = new List<IFormFile>();
+            list.AddRange(model.Images);
+            var uploadResult = _imageUploadService.Upload(list, "Flight", "0");
+            foreach (var src in uploadResult)
+            {
+                imagesSrc.Add(src);
+            }
+        }
+        model.ImagesSrc = imagesSrc;
+        var flight = _flightService.EditFlight(model);
+        if (!flight.IsSuccess)
+            return new JsonResult(new { status = "error", message = flight.Message });
+
+        return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={model.AirlineCompanyId}" });
+    }
+
+    public IActionResult DeleteFlight(int id)
+    {
+        var result = _flightService.DeleteFlight(id);
+        if (!result.IsSuccess)
+            return new JsonResult(new { status = "error", message = result.Message });
+
+        return new JsonResult(new { status = "success", message = result.Message });
     }
 }

@@ -68,6 +68,10 @@ Version:        1.0
         var rangeSliderTwo = $('#slider-range2');
         var rangeSliderAmountTwo = $('#amount2');
         var dateRangePicker = $('input[name="daterange"]');
+        var landingDate = $('input[name="LandingDate"]');
+        var takeOffDate = $('input[name="TakeOffDate"]');
+        var returnTakeOffDate = $('input[name="ReturnTakeOffDate"]');
+        var returnLandingDate = $('input[name="ReturnLandingDate"]');
         var discountDate = $('input[name="DiscountDate"]');
         var dateRangePickerTwo = $('input[name="daterange-single"]');
         var bootstrapSelectMenu = $('.select-contain-select');
@@ -566,6 +570,61 @@ Version:        1.0
                 format: 'DD-MM-YYYY',
                 jalaali: true,
                 language: 'fa',
+            });
+        }
+
+        if ($(landingDate).length) {
+            $(landingDate).daterangepicker({
+                opens: 'left',
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+            });
+        }
+
+        if ($(takeOffDate).length) {
+            $(takeOffDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
+            });
+        }
+
+        if ($(returnLandingDate).length) {
+            $(returnLandingDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
+            });
+        }
+        if ($(returnTakeOffDate).length) {
+            $(returnTakeOffDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
+            });
+        }
+        if ($(landingDate).length) {
+            $(landingDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
             });
         }
 

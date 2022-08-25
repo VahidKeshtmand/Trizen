@@ -1,7 +1,8 @@
+using System.ComponentModel.DataAnnotations;
 using T.Domain.Attributes;
 using T.Domain.Common;
 
-namespace T.Domain.Flight;
+namespace T.Domain.Flights;
 
 [Auditable]
 public class AirlineCompany
@@ -16,61 +17,20 @@ public class AirlineCompany
     public List<Flight> Flights { get; set; }
 }
 
-[Auditable]
-public class Flight
-{
-    public int Id { get; set; }
-    public string FlyingFrom { get; set; }
-    public int FlyingTo { get; set; }
-    public FlightType FlightType { get; set; }
-    public DateTime TakeOff { get; set; }
-    public DateTime Landing { get; set; }
-    public int SeatNumber { get; set; }
-    public Coach Coach { get; set; }
-    public int AirlineCompanyId { get; set; }
-    public AirlineCompany AirlineCompany { get; set; }
-    public int TotalTimeOfFlight { get; set; }
-    public int PriceRange { get; set; }
-    public string Refundable { get; set; }
-    public int CancellationCharge { get; set; }
-    public int FlightChange { get; set; }
-    public int TaxesAndFees { get; set; }
-    public int BasePrice { get; set; }
-    public string Description { get; set; }
-
-    public List<Image> Images { get; set; }
-    public List<Amenity> Amenities { get; set; }
-    public List<Country> Countries { get; set; }
-    public Currency Currency { get; set; }
-    public int CurrencyId { get; set; }
-    public Contact Contact { get; set; }
-    public int ContactId { get; set; }
-    public List<Seat> Seats { get; set; }
-
-}
-
-[Auditable]
-public class Seat
-{
-    public int Id { get; set; }
-    public int Price { get; set; }
-    public int FlightId { get; set; }
-    public Flight Flight { get; set; }
-    public string Description { get; set; }
-    public Image Image { get; set; }
-    public int ImageId { get; set; }
-
-}
-
 public enum FlightType
 {
+    [Display(Name = "یک طرفه")]
     OneWay,
+    [Display(Name = "رفت و برگشت")]
     RoundTrip
 }
 
 public enum Coach
 {
+    [Display(Name = "اقتصادی")]
     Economy,
+    [Display(Name = "تجاری")]
     Business,
+    [Display(Name = "فرست کلس")]
     FirstClass
 }

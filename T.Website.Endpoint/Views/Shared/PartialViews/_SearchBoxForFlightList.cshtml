@@ -1,0 +1,49 @@
+@model T.Website.Endpoint.Models.Flights.FlightSearchModelDto
+<div class="search-fields-container margin-top-30px">
+    <div class="contact-form-action">
+        <form method="get" asp-action="Index" asp-controller="Flight" class="row">
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label asp-for="Destination" class="label-text">مقصد</label>
+                    <div class="form-group">
+                        <span class="la la-map-marker form-icon"></span>
+                        <input data-val="false" asp-for="Destination" class="form-control" placeholder="شهر یا فرودگاه">
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label asp-for="TakeOffDate" class="label-text">تاریخ رفت</label>
+                    <div class="form-group">
+                        <span class="la la-calendar form-icon"></span>
+                        <input asp-for="TakeOffDate" class="date-range form-control" type="text" readonly>
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label asp-for="LandingDate" class="label-text">تاریخ برگشت</label>
+                    <div class="form-group">
+                        <span class="la la-calendar form-icon"></span>
+                        <input asp-for="LandingDate" class="date-range form-control" type="text" readonly>
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="input-box">
+                    <label asp-for="AirlineCompany" class="label-text">شرکت هواپیمایی</label>
+                    <div class="form-group">
+                        <span class="la la-plane form-icon"></span>
+                        <input data-val="false" asp-for="AirlineCompany" class="form-control" type="text">
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="btn-box pt-3">
+                    <button type="submit" class="theme-btn">جستجو</button>
+                </div>
+            </div>
+        </form>
+    </div><!-- end contact-form-action -->
+
+</div>

@@ -3291,8 +3291,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
-              "projectPath": "E:\\Trizen\\T.Persistence\\T.Persistence.csproj"
+            "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+              "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj"
             }
           }
         }

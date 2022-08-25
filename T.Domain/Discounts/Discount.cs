@@ -1,4 +1,5 @@
 using T.Domain.Attributes;
+using T.Domain.Flights;
 using T.Domain.Hotels;
 
 namespace T.Domain.Discounts;
@@ -12,5 +13,7 @@ public class Discount
     public int Percent { get; set; }
     public int? RoomId { get; set; }
     public Room Room { get; set; }
+    public int? FlightId { get; set; }
+    public Flight Flight { get; set; }
     public string? Description { get; set; }
 }

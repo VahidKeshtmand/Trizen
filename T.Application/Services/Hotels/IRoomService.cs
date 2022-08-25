@@ -44,8 +44,8 @@ public class RoomService : IRoomService
                 BedCount = x.BedCount,
                 IsReserve = x.IsReserve,
                 Price = x.Price,
-                DiscountPercent = x.Discounts.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x => x.Percent).FirstOrDefault(),
-                DiscountId = x.Discounts.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x => x.Id).FirstOrDefault(),
+                DiscountPercent = x.Discounts.Where(x => x.EndDate > DateTime.Now).Select(x => x.Percent).FirstOrDefault(),
+                DiscountId = x.Discounts.Where(x => x.EndDate > DateTime.Now).Select(x => x.Id).FirstOrDefault(),
                 Count = x.Count
             }).ToList();
         var hotel = _databaseContext.Hotels.Select(x => new { x.Id, x.Name }).FirstOrDefault(x => x.Id == hotelId);

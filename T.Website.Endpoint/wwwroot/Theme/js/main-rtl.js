@@ -67,6 +67,8 @@ Version:        1.0
         var rangeSliderAmount = $('#amount');
         var rangeSliderTwo = $('#slider-range2');
         var rangeSliderAmountTwo = $('#amount2');
+        var takeOffDate = $('input[name="TakeOffDate"]');
+        var landingDate = $('input[name="LandingDate"]');
         var dateRangePicker = $('input[name="daterange"]');
         var dateRangePickerTwo = $('input[name="daterange-single"]');
 
@@ -591,6 +593,28 @@ Version:        1.0
         /*==== Daterangepicker =====*/
         if ($(dateRangePickerTwo).length) {
             $(dateRangePickerTwo).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
+            });
+        }
+
+        if ($(landingDate).length) {
+            $(landingDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+            });
+        }
+
+        if ($(takeOffDate).length) {
+            $(takeOffDate).daterangepicker({
                 opens: 'left',
                 singleDatePicker: true,
                 format: 'DD-MM-YYYY',

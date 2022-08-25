@@ -5,7 +5,7 @@ using T.Domain.Baskets;
 using T.Domain.Comments;
 using T.Domain.Common;
 using T.Domain.Discounts;
-using T.Domain.Flight;
+using T.Domain.Flights;
 using T.Domain.Hotels;
 using T.Persistence.ConfigTables.Comments;
 using T.Persistence.ConfigTables.Common;
@@ -35,6 +35,8 @@ namespace T.Persistence.Contexts.SqlServerDb
         public DbSet<AirlineCompany> AirlineCompanies { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Seat> Seats { get; set; }
+        public DbSet<AmenityFlight> AmenityFlights { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -49,6 +51,9 @@ namespace T.Persistence.Contexts.SqlServerDb
             modelBuilder.Entity<BasketItem>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
             modelBuilder.Entity<Basket>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
             modelBuilder.Entity<AirlineCompany>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<Flight>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<Comment>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+
 
             //modelBuilder.ApplyConfiguration(new AmenityHotelConfig());
 

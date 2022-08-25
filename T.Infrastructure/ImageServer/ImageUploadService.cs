@@ -10,7 +10,7 @@ namespace T.Infrastructure.ImageServer
         {
             var client = new RestClient($"https://localhost:7235/api/File?apikey=MySecretKey&&category={category}&&name={name}");
             // client.Timeout = -1;
-            var request = new RestRequest("", Method.Post);
+            var request = new RestRequest($"https://localhost:7235/api/File?apikey=MySecretKey&&category={category}&&name={name}", Method.Post);
 
             foreach (var file in files)
             {

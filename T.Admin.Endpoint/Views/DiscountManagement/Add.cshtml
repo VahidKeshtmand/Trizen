@@ -64,6 +64,10 @@
                                         {
                                             <input asp-for="RoomId" type="hidden" value="@Model.RoomId" />
                                         }
+                                        @if (Model.FlightId != 0)
+                                        {
+                                            <input asp-for="FlightId" type="hidden" value="@Model.FlightId" />
+                                        }
                                     </div>
                                 </div>
                             </div><!-- end col-lg-6 -->
