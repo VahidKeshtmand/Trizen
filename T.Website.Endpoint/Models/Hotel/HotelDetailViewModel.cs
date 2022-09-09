@@ -20,6 +20,7 @@ public class HotelDetailViewModel
     public string Country { get; set; }
     public Cancellation Cancellation { get; set; }
     public string Slug { get; set; }
+    public double Rate { get; set; }
     public List<CommentViewModel> Comments { get; set; }
 }
 

@@ -2253,11 +2253,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "e:\\Trizen\\T.Common\\T.Common.csproj": {
-              "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj"
+            "E:\\Trizen\\T.Common\\T.Common.csproj": {
+              "projectPath": "E:\\Trizen\\T.Common\\T.Common.csproj"
             },
-            "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
-              "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
+            "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
+              "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
             }
           }
         }

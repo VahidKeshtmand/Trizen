@@ -8,20 +8,6 @@ public class RegisterDto
 {
     public InformationDto? Information { get; set; }
 
-    [Required(ErrorMessage = "لطفاً نام و نام خانوادگی خود را وارد کنید !")]
-    [MaxLength(200, ErrorMessage = "تعداد کاراکتر ها نباید بیشتر از 200 کاراکتر باشد !")]
-    [MinLength(3, ErrorMessage = "تعداد کاراکتر ها نباید کمتر از 3 کاراکتر باشد !")]
-    public string PersonalName { get; set; }
-
-    [Required(ErrorMessage = "لطفاً ایمیل خود را وارد کنید !")]
-    [EmailAddress(ErrorMessage = "لطفاً ایمیلی معتبر وارد کنید !")]
-    [MaxLength(200, ErrorMessage = "تعداد کاراکتر ها نباید بیشتر از 200 کاراکتر باشد !")]
-    [MinLength(3, ErrorMessage = "تعداد کاراکتر ها نباید کمتر از 3 کاراکتر باشد !")]
-    public string PersonalEmail { get; set; }
-
-    [Range(1, int.MaxValue, ErrorMessage = "لطفاً عنوان شغلی خود را انتخاب کنید !")]
-    public int PersonalJobTitle { get; set; }
-
     [Required(ErrorMessage = "لطفاً نام تجاری خود را وارد کنید !")]
     [MaxLength(200, ErrorMessage = "تعداد کاراکتر ها نباید بیشتر از 200 کاراکتر باشد !")]
     [MinLength(3, ErrorMessage = "تعداد کاراکتر ها نباید کمتر از 3 کاراکتر باشد !")]
@@ -58,9 +44,8 @@ public class RegisterDto
     [MinLength(3, ErrorMessage = "تعداد کاراکتر ها نباید کمتر از 3 کاراکتر باشد !")]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "لطفاً آدرس وبسایت خود را وارد کنید !")]
     [RegularExpression(@"^(http(s)?://)?([\w-]+\.)+[\w-]+[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?$", ErrorMessage = "لطفاً آدرس وبسایت معتبر خود را وارد کنید !")]
-    public string Website { get; set; }
+    public string? Website { get; set; }
     public string? Facebook { get; set; }
     public string? Twitter { get; set; }
     public string? Linkedin { get; set; }

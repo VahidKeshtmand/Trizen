@@ -21,6 +21,18 @@
     }
 }
 
+function GetBedNumber() {
+    var baby = document.getElementById("babyQtyInput").value;
+    var child = document.getElementById("childQtyInput").value;
+    var adult = document.getElementById("adultQtyInput").value;
+    var babyQty = parseInt(baby);
+    var childQty = parseInt(child);
+    var adultQty = parseInt(adult);
+    var bedCount = document.getElementById("BedCount");
+    bedCount.value = babyQty + childQty + adultQty;
+
+}
+
 function LoginSubmitted(response) {
     if (response.status === "Success") {
         Swal.fire({

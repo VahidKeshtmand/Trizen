@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using T.Application.Interfaces.Contexts;
 using T.Domain.Account;
 using T.Persistence.ConfigTables.Account;
 
 namespace T.Persistence.Contexts.SqlServerDb
 {
-    public class IdentityDatabaseContext : IdentityDbContext<User, Role, string>
+    public class IdentityDatabaseContext : IdentityDbContext<User, Role, string>, IIdentityDatabaseContext
     {
         public IdentityDatabaseContext(DbContextOptions<IdentityDatabaseContext> options) : base(options) { }
 

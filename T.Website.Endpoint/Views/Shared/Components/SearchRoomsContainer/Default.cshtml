@@ -1,0 +1,37 @@
+@using T.Website.Endpoint.Models.Hotel
+@model T.Application.Dtos.Rooms.SearchRoomDto
+
+<div class="search-fields-container margin-top-30px ">
+    <form method="get" asp-action="RoomsList" asp-controller="Hotel">
+        <div class="contact-form-action row">
+            <div class="col-lg-3 col-sm-6 pr-0">
+                <div class="input-box">
+                    <label asp-for="CheckInCheckOutDate" class="label-text">تاریخ ورود - تاریخ خروج</label>
+                    <div class="form-group">
+                        <span class="la la-calendar form-icon"></span>
+                        <input asp-for="CheckInCheckOutDate" class="date-range form-control" type="text">
+                        <input type="hidden" asp-for="Slug">
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="input-box">
+                    <label class="label-text">اتاق ها</label>
+                    <div class="form-group">
+                        <div class="select-contain select-contain-shadow w-auto">
+                            <select asp-for="BedCount" class="select-contain-select"
+                                asp-items="Html.GetEnumSelectList<BedNumber>()">
+                                <option value="0">یک مورد رو انتخاب کن</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end col-lg-3 -->
+
+        </div><!-- end contact-form-action -->
+
+        <div class="btn-box pt-3">
+            <button type="submit" class="theme-btn">جستجو</button>
+        </div>
+    </form>
+</div><!-- end search-fields-container -->

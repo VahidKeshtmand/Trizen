@@ -8,7 +8,6 @@ e:\Trizen\T.Persistence\bin\Debug\net6.0\T.Domain.dll
 e:\Trizen\T.Persistence\bin\Debug\net6.0\T.Domain.pdb
 e:\Trizen\T.Persistence\bin\Debug\net6.0\T.Application.pdb
 e:\Trizen\T.Persistence\bin\Debug\net6.0\T.Common.pdb
-e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.csproj.AssemblyReference.cache
 e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.GeneratedMSBuildEditorConfig.editorconfig
 e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.AssemblyInfoInputs.cache
 e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.AssemblyInfo.cs
@@ -19,3 +18,4 @@ e:\Trizen\T.Persistence\obj\Debug\net6.0\refint\T.Persistence.dll
 e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.pdb
 e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.genruntimeconfig.cache
 e:\Trizen\T.Persistence\obj\Debug\net6.0\ref\T.Persistence.dll
+e:\Trizen\T.Persistence\obj\Debug\net6.0\T.Persistence.csproj.AssemblyReference.cache

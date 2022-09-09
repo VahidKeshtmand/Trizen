@@ -1,0 +1,157 @@
+@using T.Domain.Hotels
+@model T.Application.Dtos.Common.PaginatedItemsDto<T.Application.Dtos.Hotels.ListDto>
+
+<div class="dashboard-bread dashboard--bread dashboard-bread-2">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="breadcrumb-content">
+                    <div class="section-heading">
+                        <h2 class="sec__title font-size-30 text-white">لیست هتل ها</h2>
+                    </div>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6">
+                <div class="breadcrumb-list text-right">
+                    <ul class="list-items">
+                        <li><a asp-controller="Home" asp-action="Index" class="text-white">صفحه اصلی</a></li>
+                        <li>مدیریت هتل ها</li>
+                        <li>لیست هتل</li>
+                    </ul>
+                </div><!-- end breadcrumb-list -->
+            </div><!-- end col-lg-6 -->
+        </div><!-- end row -->
+    </div>
+</div><!-- end dashboard-bread -->
+<div class="dashboard-main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-box">
+                    <div class="form-title-wrap">
+                        <h3 class="title">هتل ها</h3>
+                    </div>
+                    <div class="form-content">
+                        <a asp-action="Register" asp-controller="HotelManagement"
+                            class="theme-btn theme-btn-small mr-2 mb-2">ثبت
+                            هتل جدید</a>
+                        <div class="table-form table-responsive">
+                            <table id="listTable" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">اسم</th>
+                                        <th scope="col">مکان</th>
+                                        <th scope="col">تلفن</th>
+                                        <th scope="col">وبسایت</th>
+                                        <th scope="col">عملیات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Data)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="table-content">
+                                                    <h3 class="title">@item.Name</h3>
+                                                </div>
+                                            </td>
+                                            <td>@item.Location</td>
+                                            <td>@item.PhoneNumber</td>
+                                            <td>@item.Website</td>
+                                            <td>
+                                                <div class="table-content">
+
+                                                    <a asp-action="Edit" asp-controller="HotelManagement"
+                                                    asp-route-id="@item.Id"
+                                                    class="theme-btn theme-btn-small mr-2">ویرایش</a>
+
+                                                    <button onclick="ShowAlertHotel(@item.Id, 'Delete')"
+                                                    class="theme-btn theme-btn-small mr-2">حذف</button>
+
+                                                    <a asp-action="Detail" asp-controller="HotelManagement"
+                                                    asp-route-id="@item.Id"
+                                                    class="theme-btn theme-btn-small mr-2">جزئیات</a>
+
+                                                    <a asp-action="Index" asp-controller="RoomManagement"
+                                                    asp-route-hotelId="@item.Id"
+                                                    class="theme-btn theme-btn-small mr-2">مدیریت اتاق
+                                                        ها</a>
+
+                                                    <a asp-action="RegisterAdmin" asp-controller="HotelManagement"
+                                                    class="theme-btn theme-btn-small mr-2">ثبت مدیریت
+                                                        هتل</a>
+
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><!-- end form-box -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link page-link-nav" href="#" aria-label="Previous">
+                                <span aria-hidden="true"><i class="la la-angle-right"></i></span>
+                                <span class="sr-only">قبلی</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link page-link-nav" href="#">1</a></li>
+                        <li class="page-item active">
+                            <a class="page-link page-link-nav" href="#">2 <span class="sr-only">(جاری)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link page-link-nav" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link page-link-nav" href="#" aria-label="Next">
+                                <span aria-hidden="true"><i class="la la-angle-left"></i></span>
+                                <span class="sr-only">بعدی</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="border-top mt-5"></div>
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="copy-right padding-top-30px">
+                    <p class="copy__desc">
+                        &copy; تمامی حقوق محفوظ است . توسعه با
+                        <span class="la la-heart"></span> توسط <a href="https://arezo-hoseini.ir">آرزو حسینی</a>
+                    </p>
+                </div><!-- end copy-right -->
+            </div><!-- end col-lg-7 -->
+            <div class="col-lg-5">
+                <div class="footer-social-box text-right padding-top-30px">
+                    <ul class="social-profile">
+                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
+                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
+                        <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
+                    </ul>
+                </div><!-- end copy-right-content -->
+            </div><!-- end col-lg-5 -->
+        </div><!-- end row -->
+    </div><!-- end container-fluid -->
+</div><!-- end dashboard-main-content -->
+
+@section Css
+{
+<link rel="stylesheet" href="~/css/toastr.min.css">
+
+}
+@section Scripts
+{
+<script src="~/js/sweetalert2.all.min.js"></script>
+<script src="~/js/toastr.min.js"></script>
+<script src="~/js/custom-alert.js"></script>
+}

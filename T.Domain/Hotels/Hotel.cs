@@ -20,15 +20,10 @@ namespace T.Domain.Hotels
         public Housekeeping Housekeeping { get; set; }
         public HousekeepingFrequency HousekeepingFrequency { get; set; }
         public Bathroom Bathroom { get; set; }
-        public ConfirmStatus ConfirmStatus { get; set; } = ConfirmStatus.Pending;
         public ExtraPeople ExtraPeople { get; set; }
         public Cancellation Cancellation { get; set; }
         public int StarsCount { get; set; }
         public string Slug { get; set; }
-
-
-        public PersonalInformation PersonalInformation { get; set; }
-        public int? PersonalInformationId { get; set; }
 
         public Country Country { get; set; }
         public int CountryId { get; set; }
@@ -72,13 +67,6 @@ namespace T.Domain.Hotels
     {
         LessThanThreeNights,
         MoreThanThreeNights
-    }
-
-    public enum ConfirmStatus
-    {
-        Pending,
-        Reject,
-        Confirmed
     }
 
     public enum ExtraPeople

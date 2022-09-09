@@ -1,5 +1,13 @@
 namespace T.Application.Dtos.Rooms;
 
+public class SearchRoomDto
+{
+    public string Slug { get; set; }
+    public string CheckInCheckOutDate { get; set; }
+    public int BedCount { get; set; }
+
+}
+
 public class DetailRoomDto
 {
     public int Id { get; set; }

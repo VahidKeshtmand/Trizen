@@ -70,6 +70,10 @@ Version:        1.0
         var takeOffDate = $('input[name="TakeOffDate"]');
         var landingDate = $('input[name="LandingDate"]');
         var dateRangePicker = $('input[name="daterange"]');
+        var checkInCheckOutDate = $('input[name="CheckInCheckOutDate"]');
+        var returnTakeOffDate = $('input[name="ReturnTakeOffDate"]');
+        var returnLandingDate = $('input[name="ReturnLandingDate"]');
+        var discountDate = $('input[name="DiscountDate"]');
         var dateRangePickerTwo = $('input[name="daterange-single"]');
 
         var dateRangeCheckInDate = $('input[name="CheckInDate"]');
@@ -589,7 +593,14 @@ Version:        1.0
                 language: 'fa',
             });
         }
-
+        if ($(checkInCheckOutDate).length) {
+            $(checkInCheckOutDate).daterangepicker({
+                opens: 'left',
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+            });
+        }
         /*==== Daterangepicker =====*/
         if ($(dateRangePickerTwo).length) {
             $(dateRangePickerTwo).daterangepicker({
@@ -602,14 +613,45 @@ Version:        1.0
 
             });
         }
+        if ($(discountDate).length) {
+            $(discountDate).daterangepicker({
+                opens: 'left',
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+            });
+        }
 
         if ($(landingDate).length) {
             $(landingDate).daterangepicker({
+                opens: 'left',
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+            });
+        }
+
+
+        if ($(returnTakeOffDate).length) {
+            $(returnTakeOffDate).daterangepicker({
                 opens: 'left',
                 singleDatePicker: true,
                 format: 'DD-MM-YYYY',
                 jalaali: true,
                 language: 'fa',
+
+
+            });
+        }
+        if ($(returnLandingDate).length) {
+            $(returnLandingDate).daterangepicker({
+                opens: 'left',
+                singleDatePicker: true,
+                format: 'DD-MM-YYYY',
+                jalaali: true,
+                language: 'fa',
+
+
             });
         }
 

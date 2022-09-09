@@ -1,0 +1,17 @@
+@model T.Website.Endpoint.Models.Flights.ReserveFlightTicketPartOneForm
+<form method="post" asp-controller="Booking" asp-action="Index">
+    <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
+        <label class="font-size-16">تعداد صندلی</label>
+        <div class="qtyBtn d-flex align-items-center">
+            <div class="qtyDec"><i class="la la-minus"></i></div>
+            <input asp-for="SeatCount" type="text" value="0">
+            <input asp-for="FlightId" type="hidden">
+            <input asp-for="FlightSlug" type="hidden">
+            <div class="qtyInc"><i class="la la-plus"></i></div>
+        </div>
+    </div><!-- end qty-box -->
+    <div class="btn-box pt-2">
+        <button type="submit" class="theme-btn text-center w-100 mb-2"><i
+                class="la la-shopping-cart mr-2 font-size-18"></i>رزرو</button>
+    </div>
+</form>

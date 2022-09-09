@@ -27,4 +27,26 @@ public class FlightController : Controller
 
         return View(result.Data);
     }
+
+    // [TempData]
+    // public string Message { get; set; }
+    // public IActionResult Booking(ReserveFlightTicketPartOneForm model)
+    // {
+    //     if (!ModelState.IsValid)
+    //         return BadRequest();
+    //     var isOutOfSeatNumber = _flightService.CheckExistSeat(model.FlightId, model.SeatCount);
+    //     var slug = _flightService.GetSlug(model.FlightId);
+    //     if (!isOutOfSeatNumber)
+    //     {
+    //         Message = "تعداد صندلی درخواستی موجود نیست !";
+    //         return Redirect($"/Flight/Details/{slug}");
+    //     }
+    //     // var result = _flightService.GetBookingInformation(model.FlightId, model.SeatCount);
+    //     if (!result.IsSuccess)
+    //     {
+    //         Message = "پرواز مورد نظر یافت نشد!";
+    //         return Redirect($"/Flight/Details/{slug}");
+    //     }
+    //     return View(result.Data);
+    // }
 }

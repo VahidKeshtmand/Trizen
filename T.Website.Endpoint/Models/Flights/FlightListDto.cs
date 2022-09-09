@@ -34,11 +34,12 @@ public class FlightDetailViewModel
     public string Refundable { get; set; } = string.Empty;
     public int CancellationCharge { get; set; }
     public int BasePrice { get; set; }
+    public string PriceWithDiscount { get; set; }
     public int ExtraFee { get; set; }
     public string AirlineCompanyDescription { get; set; }
     public string Slug { get; set; }
     public string TotalTimeOfFlight { get; set; }
-
+    public List<int> Discounts { get; set; }
 
     public List<string> Amenities { get; set; }
     public List<CommentViewModel> Comments { get; set; }

@@ -10,10 +10,9 @@ namespace T.Application.Services.Baskets;
 public interface IBasketService
 {
     BasketDto GetOrCreateBasketForUser(string buyerId);
-    void AddRoomToBasket(int basketId, int roomId, string checkInDate, string checkOutDate, int guestsNumber, int quantity = 1);
+    void AddRoomToBasket(int basketId, int roomId, string checkInDate, string checkOutDate, int guestsNumber, int discountPercent, int quantity = 1);
     BaseDto DeleteItem(int id);
     void TransferBasket(string anonymousId, string userId);
-
 }
 
 public class BasketService : IBasketService
@@ -25,13 +24,13 @@ public class BasketService : IBasketService
         _databaseContext = databaseContext;
     }
 
-    public void AddRoomToBasket(int basketId, int roomId, string checkInDate, string checkOutDate, int guestsNumber, int quantity = 1)
+    public void AddRoomToBasket(int basketId, int roomId, string checkInDate, string checkOutDate, int guestsNumber, int discountPercent, int quantity = 1)
     {
         var basket = _databaseContext.Baskets.FirstOrDefault(x => x.Id == basketId);
         if (basket == null)
             throw new Exception("");
         var roomPrice = _databaseContext.Rooms.Select(x => new { x.Price, x.Id }).FirstOrDefault(x => x.Id == roomId).Price;
-        basket.Add(roomId, quantity, roomPrice, checkInDate.ToGeorgianDateTime(), checkOutDate.ToGeorgianDateTime(), guestsNumber);
+        basket.Add(roomId, quantity, roomPrice, checkInDate.ToGeorgianDateTime(), checkOutDate.ToGeorgianDateTime(), guestsNumber, discountPercent);
         _databaseContext.SaveChanges();
 
     }
@@ -60,7 +59,7 @@ public class BasketService : IBasketService
                 Id = newBasket.Id
             };
         }
-        return new BasketDto
+        var basketDto = new BasketDto
         {
             BuyerId = basket.BuyerId,
             Id = basket.Id,
@@ -73,17 +72,23 @@ public class BasketService : IBasketService
                 UnitPrice = x.UnitPrice,
                 CheckInDate = x.CheckInDate.ToFarsi(),
                 CheckOutDate = x.CheckOutDate.ToFarsi(),
-                Days = x.CheckOutDate.Day - x.CheckInDate.Day,
-                DiscountPercent = x.Room.Discounts.Select(x => x.Percent).LastOrDefault(),
+                Days = (x.CheckOutDate - x.CheckInDate).TotalDays,
+                DiscountPercent = x.Room.Discounts.Where(x => x.EndDate > DateTime.Now && x.StartDate < DateTime.Now).Select(x => x.Percent).LastOrDefault(),
                 TotalPrice = x.UnitPrice * x.Quantity,
                 BedNumber = x.GuestsNumber,
-                TotalPriceWithDiscount = ((x.UnitPrice * x.Quantity) * (100 - x.Room.Discounts.Select(x => x.Percent).LastOrDefault()) * 0.01).ToString("n0"),
+                TotalPriceWithDiscount = (x.UnitPrice * x.Quantity) - ((x.UnitPrice * x.Quantity) * (100 - x.Room.Discounts.Where(x => x.EndDate > DateTime.Now && x.StartDate < DateTime.Now).Select(x => x.Percent).LastOrDefault()) * 0.01),
                 ImageSrc = ComposeImageUri(x.Room.Images.Select(x => x.Src).FirstOrDefault() ?? ""),
                 Slug = x.Room.Slug,
-                HotelSlug = x.Room.Hotel.Slug
-            }).ToList()
+                HotelSlug = x.Room.Hotel.Slug,
+                Address = x.Room.Hotel.Address,
+                HotelName = x.Room.Hotel.Name
+            }).ToList(),
 
         };
+        basketDto.TotalPriceBasket = basketDto.BasketItems.Select(x => x.TotalPrice).Sum();
+        basketDto.TotalPriceDiscount = basketDto.BasketItems.Select(x => x.TotalPriceWithDiscount).Sum();
+        basketDto.TotalPricePayable = basketDto.BasketItems.Select(x => x.TotalPrice - (int)x.TotalPriceWithDiscount).Sum();
+        return basketDto;
     }
     private static string ComposeImageUri(string imageSrc)
     {
@@ -123,7 +128,7 @@ public class BasketService : IBasketService
 
         foreach (var item in anonymousBasket.BasketItems)
         {
-            userBasket.Add(item.RoomId, item.Quantity, item.UnitPrice, item.CheckInDate, item.CheckOutDate, item.GuestsNumber);
+            userBasket.Add(item.RoomId, item.Quantity, item.UnitPrice, item.CheckInDate, item.CheckOutDate, item.GuestsNumber, item.DiscountPercent);
         }
 
         _databaseContext.Baskets.Remove(anonymousBasket);

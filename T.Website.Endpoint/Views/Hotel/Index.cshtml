@@ -56,11 +56,6 @@
                             asp-route-city="@item.City" class="d-block">
                                 <img src="@item.ImageSrc" alt="hotel-img">
                             </a>
-                            <span class="badge">پرفروش ترین </span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                            title="نشان کردن">
-                                <i class="la la-heart-o"></i>
-                            </div>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title"><a asp-controller="Hotel" asp-action="Detail"
@@ -68,7 +63,6 @@
                             <p class="card-meta">@item.Address</p>
                             <div class="card-rating">
                                 <span class="badge text-white">@item.UserRate/5</span>
-                                <span class="review__text">متوسط</span>
                                 <span class="rating__text">(@item.CommentCount نظر)</span>
                             </div>
                             <div class="card-price d-flex align-items-center justify-content-between">

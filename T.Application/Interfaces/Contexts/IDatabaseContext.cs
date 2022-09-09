@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using T.Domain;
 using T.Domain.Baskets;
+using T.Domain.Bookings;
 using T.Domain.Comments;
 using T.Domain.Common;
 using T.Domain.Discounts;
 using T.Domain.Flights;
 using T.Domain.Hotels;
+using T.Domain.Payments;
+using T.Domain.Reserves;
 
 namespace OS.Application.Interfaces.Contexts
 {
@@ -16,8 +19,6 @@ namespace OS.Application.Interfaces.Contexts
         DbSet<Contact> Contacts { get; set; }
         DbSet<Country> Countries { get; set; }
         DbSet<Currency> Currencies { get; set; }
-        DbSet<PersonalInformation> PersonalInformations { get; set; }
-        DbSet<JobTitle> JobTitles { get; set; }
         DbSet<AmenityHotel> AmenityHotels { get; set; }
         DbSet<Image> Images { get; set; }
         DbSet<Room> Rooms { get; set; }
@@ -30,6 +31,10 @@ namespace OS.Application.Interfaces.Contexts
         DbSet<Flight> Flights { get; set; }
         DbSet<Seat> Seats { get; set; }
         DbSet<AmenityFlight> AmenityFlights { get; set; }
+        DbSet<Booking> Booking { get; set; }
+        DbSet<ReserveRoom> ReserveRooms { get; set; }
+        DbSet<Reserve> Reserves { get; set; }
+        DbSet<Payment> Payments { get; set; }
 
 
         int SaveChanges();

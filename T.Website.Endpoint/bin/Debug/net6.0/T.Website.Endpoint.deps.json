@@ -38,9 +38,11 @@
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.8",
           "Microsoft.EntityFrameworkCore.Design": "6.0.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.6",
+          "Newtonsoft.Json": "13.0.1",
           "T.Application": "1.0.0",
           "T.Infrastructure": "1.0.0",
           "UAParser": "3.1.47",
+          "ZarinPal": "3.0.1",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "6.0.0.0",
@@ -3250,6 +3252,27 @@
         },
         "compile": {
           "lib/netcoreapp2.0/UAParser.dll": {}
+        }
+      },
+      "ZarinPal/3.0.1": {
+        "runtime": {
+          "lib/netcoreapp2.2/Dto.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netcoreapp2.2/Service.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netcoreapp2.2/ZarinPal.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.2/Dto.dll": {},
+          "lib/netcoreapp2.2/Service.dll": {},
+          "lib/netcoreapp2.2/ZarinPal.dll": {}
         }
       },
       "T.Application/1.0.0": {
@@ -6570,6 +6593,13 @@
       "sha512": "sha512-I68Jl/Vs5RQZdz9BbmYtnXgujg0jVd61LhKbyNZOCm9lBxZFGxLbiQo6yFj21VYi7DzPvEvrVOmeC6v41AoLfw==",
       "path": "uaparser/3.1.47",
       "hashPath": "uaparser.3.1.47.nupkg.sha512"
+    },
+    "ZarinPal/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1XPTvVdTa+ywa61JOK7TXVNqzHfwg/8bnMqKh9ISvHWk8HEhhrFXhuC/F5c/xDz9smay7254gD6T4WicgS+FeQ==",
+      "path": "zarinpal/3.0.1",
+      "hashPath": "zarinpal.3.0.1.nupkg.sha512"
     },
     "T.Application/1.0.0": {
       "type": "project",

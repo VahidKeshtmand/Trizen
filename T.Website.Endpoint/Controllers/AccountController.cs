@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using T.Application.Dtos.Account;
 using T.Application.Services.Account;
 using T.Application.Services.Baskets;
+using T.Application.Services.Bookings;
 using T.Website.Endpoint.Utilities.Filters;
 
 namespace T.Website.Endpoint.Controllers
@@ -12,11 +13,13 @@ namespace T.Website.Endpoint.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly IBasketService _BasketService;
+        private readonly IBookingService _bookingService;
 
-        public AccountController(IAccountService accountService, IBasketService basketService)
+        public AccountController(IAccountService accountService, IBasketService basketService, IBookingService bookingService)
         {
             _accountService = accountService;
             _BasketService = basketService;
+            _bookingService = bookingService;
         }
 
         [HttpPost]
@@ -28,9 +31,10 @@ namespace T.Website.Endpoint.Controllers
             var registerResult = _accountService.Register(model);
             var signInResult = _accountService.Login(model.Email, model.Password, false);
             var user = _accountService.FindUserByName(model.Email);
-            if (registerResult.Succeeded && signInResult.Succeeded)
+            if (registerResult.Succeeded && signInResult.IsSuccess)
             {
                 TransferBasket(user.Id);
+                TransferBookings(user.Id);
                 return new JsonResult(new { status = "Success" });
             }
 
@@ -82,10 +86,16 @@ namespace T.Website.Endpoint.Controllers
 
             var user = _accountService.FindUserByName(model.Email);
             var result = _accountService.Login(model.Email, model.Password, model.RememberMe);
-            if (!result.Succeeded)
+            if (!result.IsSuccess)
                 return new JsonResult(new { status = "Error" });
             TransferBasket(user.Id);
+            TransferBookings(user.Id);
             return new JsonResult(new { status = "Success" });
+        }
+
+        public IActionResult UnAuthorize()
+        {
+            return View();
         }
 
         private void TransferBasket(string userId)
@@ -99,5 +109,15 @@ namespace T.Website.Endpoint.Controllers
             }
         }
 
+        private void TransferBookings(string userId)
+        {
+            var cookieName = "bookingId";
+            if (Request.Cookies.ContainsKey(cookieName))
+            {
+                var anonymousId = Request.Cookies[cookieName];
+                _bookingService.TransferBooking(anonymousId, userId);
+                Response.Cookies.Delete(cookieName);
+            }
+        }
     }
 }

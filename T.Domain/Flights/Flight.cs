@@ -2,6 +2,7 @@ using T.Domain.Attributes;
 using T.Domain.Comments;
 using T.Domain.Common;
 using T.Domain.Discounts;
+using T.Domain.Bookings;
 
 namespace T.Domain.Flights;
 
@@ -33,6 +34,7 @@ public class Flight
 
     public List<Image> Images { get; set; }
     public Currency Currency { get; set; }
+    public List<Booking> Booking { get; set; }
     public int CurrencyId { get; set; }
     public List<Seat> Seats { get; set; }
     public List<AmenityFlight> AmenityFlights { get; set; }

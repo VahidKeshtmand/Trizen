@@ -1,22 +1,30 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OS.Website.EndPoint.Utilities;
 using T.Application.Dtos.Baskets;
 using T.Application.Services.Baskets;
+using T.Application.Services.Orders;
+using T.Application.Services.PaymentServices;
 using T.Domain.Account;
+using T.Website.Endpoint.Models.Baskets;
 
 namespace T.Website.Endpoint.Controllers;
 
 public class BasketController : Controller
 {
     private readonly IBasketService _basketService;
+    private readonly IOrderService _orderService;
     private readonly SignInManager<User> _signInManager;
+    private readonly IPaymentService _paymentService;
     private string UserId = null;
 
-    public BasketController(IBasketService basketService, SignInManager<User> signInManager)
+    public BasketController(IBasketService basketService, SignInManager<User> signInManager, IOrderService orderService, IPaymentService paymentService)
     {
         _basketService = basketService;
         _signInManager = signInManager;
+        _orderService = orderService;
+        _paymentService = paymentService;
     }
 
     public IActionResult Index()
@@ -26,10 +34,10 @@ public class BasketController : Controller
     }
 
     [HttpPost]
-    public IActionResult Index(int id, string checkInDate, string checkOutDate, int bedNumber, int quantity = 1)
+    public IActionResult Index(int id, string checkInDate, string checkOutDate, int bedNumber, int discountPercent, int quantity = 1)
     {
         var basket = GetOrSetBasket();
-        _basketService.AddRoomToBasket(basket.Id, id, checkInDate, checkOutDate, bedNumber, quantity);
+        _basketService.AddRoomToBasket(basket.Id, id, checkInDate, checkOutDate, bedNumber, discountPercent, quantity);
         return RedirectToAction(nameof(Index));
     }
 
@@ -41,6 +49,27 @@ public class BasketController : Controller
         return new JsonResult(new { status = "success" });
 
     }
+
+    [Authorize]
+    public IActionResult ShippingPayment()
+    {
+        var model = new ShippingPaymentViewModel();
+        var userId = ClaimUtility.GetUserId(User);
+        model.Basket = _basketService.GetOrCreateBasketForUser(userId);
+        return View(model);
+    }
+
+    [Authorize]
+    public IActionResult ShippingPaymentPost()
+    {
+        var userId = ClaimUtility.GetUserId(User);
+        var basket = _basketService.GetOrCreateBasketForUser(userId);
+        var orderId = _orderService.Create(basket.Id);
+        var payment = _paymentService.PayForReserve(orderId);
+
+        return RedirectToAction("Index", "Pay", new { paymentId = payment.PaymentId });
+    }
+
     private BasketDto GetOrSetBasket()
     {
         if (_signInManager.IsSignedIn(User))
@@ -50,7 +79,6 @@ public class BasketController : Controller
         }
         SetCookieForBasket();
         return _basketService.GetOrCreateBasketForUser(UserId);
-
     }
 
     private void SetCookieForBasket()

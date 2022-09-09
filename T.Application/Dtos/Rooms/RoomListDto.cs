@@ -6,7 +6,6 @@ public class RoomListDto
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public bool IsReserve { get; set; }
     public int BedCount { get; set; }
     public int Price { get; set; }
     public int DiscountPercent { get; set; }

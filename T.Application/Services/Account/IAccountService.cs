@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using T.Application.Dtos.Account;
+using T.Application.Dtos.Common;
 using T.Domain.Account;
 namespace T.Application.Services.Account
 {
@@ -8,7 +9,7 @@ namespace T.Application.Services.Account
         IdentityResult Register(RegisterDto model);
         User FindUserByName(string name);
         string SetPhoneNumber(string phoneNumber, string userName);
-        SignInResult Login(string userName, string Password, bool isPersistent);
+        BaseDto Login(string userName, string Password, bool isPersistent);
         bool ConfirmPhoneNumber(string userName, string token, string phoneNumber);
         void Update(User user);
     }
@@ -17,7 +18,7 @@ namespace T.Application.Services.Account
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        
+
         public AccountService(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
@@ -50,11 +51,29 @@ namespace T.Application.Services.Account
             return token;
         }
 
-        public SignInResult Login(string userName, string Password, bool isPersistent)
+        public BaseDto Login(string userName, string Password, bool isPersistent)
         {
             var user = FindUserByName(userName);
+            if (user == null)
+            {
+                return new BaseDto
+                {
+                    IsSuccess = false,
+                    Message = "عملیات ناموفق"
+                };
+            }
             _signInManager.SignOutAsync();
-            return _signInManager.PasswordSignInAsync(user, Password, isPersistent, true).Result;
+            var result = _signInManager.PasswordSignInAsync(user, Password, isPersistent, true).Result;
+            if (result.Succeeded == false)
+                return new BaseDto
+                {
+                    IsSuccess = false,
+                    Message = "عملیات ناموفق"
+                };
+            return new BaseDto
+            {
+                IsSuccess = true
+            };
 
         }
 
@@ -68,7 +87,7 @@ namespace T.Application.Services.Account
         public void Update(User user)
         {
             var result = _userManager.UpdateAsync(user).Result;
-            
+
         }
     }
 }

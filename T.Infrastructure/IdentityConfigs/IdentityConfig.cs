@@ -24,7 +24,7 @@ namespace T.Infrastructure.IdentityConfigs
                 .AddRoles<Role>()
                 .AddErrorDescriber<CustomIdentityError>();
 
-            
+
             service.Configure<IdentityOptions>(options =>
             {
                 options.User.RequireUniqueEmail = true;
@@ -36,7 +36,7 @@ namespace T.Infrastructure.IdentityConfigs
                 options.Password.RequiredLength = 8;
 
             });
-            
+
             return service;
         }
     }

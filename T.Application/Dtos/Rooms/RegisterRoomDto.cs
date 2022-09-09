@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using T.Application.Dtos.Common;
+using T.Application.Dtos.Hotels;
 
 namespace T.Application.Dtos.Rooms;
 
@@ -14,6 +15,8 @@ public class RegisterRoomDto
     public int HotelId { get; set; }
     public List<IFormFile> Images { get; set; } = new();
     public List<string> ImagesSrc { get; set; } = new();
+    public List<ImageDto> ImagesModel { get; set; } = new();
+
 
     public Dictionary<int, string> AmenitiesValue { get; set; } = new();
     public Dictionary<int, string> ServiceAmenitiesValue { get; set; } = new();

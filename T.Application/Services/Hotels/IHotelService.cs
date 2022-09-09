@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
 using T.Application.Dtos.Common;
@@ -13,11 +13,9 @@ namespace T.Application.Services.Hotels
     public interface IHotelService
     {
         PaginatedItemsDto<ListDto> GetList(int page, int pageSize);
-        List<string> GetImages(int id);
+        List<ImageDto> GetImages(int id);
         InformationDto GetInformation();
         BaseDto Register(RegisterDto model);
-        bool ConfirmStatusMethod(int id);
-        bool RejectStatusMethod(int id);
         DetailDto GetDetail(int id);
         bool Remove(int id);
         EditDto GetHotel(int id);
@@ -38,11 +36,6 @@ namespace T.Application.Services.Hotels
 
         public InformationDto GetInformation()
         {
-            var jobsTitles = _databaseContext.JobTitles.Select(x => new JobTitleDto
-            {
-                Id = x.Id,
-                Title = x.Title
-            }).ToList();
             var countriesName = _databaseContext.Countries.Select(x => new CountryNameDto
             {
                 Id = x.Id,
@@ -58,7 +51,7 @@ namespace T.Application.Services.Hotels
                 Id = x.Id,
                 Name = x.Name
             }).ToList();
-            var amenities = _databaseContext.Amenities.Select(x => new AmenityDto
+            var amenities = _databaseContext.Amenities.Where(x => x.AmenityType == AmenityType.Hotel).Select(x => new AmenityDto
             {
                 Id = x.Id,
                 Title = x.Title,
@@ -71,7 +64,6 @@ namespace T.Application.Services.Hotels
                 CountriesCode = countriesCode,
                 CountriesName = countriesName,
                 Currencies = currencies,
-                JobTitles = jobsTitles
             };
 
         }
@@ -81,21 +73,13 @@ namespace T.Application.Services.Hotels
             var contact = new Contact
             {
                 Email = model.Email,
-                Facebook = model.Email,
+                Facebook = model.Facebook,
                 PhoneNumber = model.PhoneNumber,
                 Linkedin = model.Linkedin,
                 Twitter = model.Twitter,
                 Website = model.Website,
             };
             _databaseContext.Contacts.Add(contact);
-            _databaseContext.SaveChanges();
-            var personalInformation = new PersonalInformation
-            {
-                Email = model.Email,
-                JobTitleId = model.PersonalJobTitle,
-                Name = model.Name,
-            };
-            _databaseContext.PersonalInformations.Add(personalInformation);
             _databaseContext.SaveChanges();
             var hotel = new Hotel
             {
@@ -113,7 +97,6 @@ namespace T.Application.Services.Hotels
                 CurrencyId = model.Currency,
                 CountryId = model.Country,
                 ContactId = contact.Id,
-                PersonalInformationId = personalInformation.Id,
                 StarsCount = model.StarsCount,
                 Cancellation = model.Cancellation,
                 ExtraPeople = model.ExtraPeople,
@@ -151,28 +134,6 @@ namespace T.Application.Services.Hotels
             };
         }
 
-        public bool ConfirmStatusMethod(int id)
-        {
-            var hotel = _databaseContext.Hotels.FirstOrDefault(x => x.Id == id);
-
-            if (hotel == null) return false;
-
-            hotel.ConfirmStatus = ConfirmStatus.Confirmed;
-            _databaseContext.SaveChanges();
-            return true;
-        }
-
-        public bool RejectStatusMethod(int id)
-        {
-            var hotel = _databaseContext.Hotels.FirstOrDefault(x => x.Id == id);
-
-            if (hotel == null) return false;
-
-            hotel.ConfirmStatus = ConfirmStatus.Reject;
-            _databaseContext.SaveChanges();
-            return true;
-        }
-
         public DetailDto GetDetail(int id)
         {
             var hotel = _databaseContext.Hotels
@@ -181,8 +142,6 @@ namespace T.Application.Services.Hotels
                 .Include(x => x.Country)
                 .Include(x => x.Currency)
                 .Include(x => x.Contact)
-                .Include(x => x.PersonalInformation)
-                .ThenInclude(x => x.JobTitle)
                 .Include(x => x.Images)
                 .Select(x => new DetailDto
                 {
@@ -205,11 +164,8 @@ namespace T.Application.Services.Hotels
                     MinimumDaysStayValue = x.MinimumDaysStay,
                     MinimumRoomPrice = x.MinimumRoomPrice,
                     Name = x.Name,
-                    PersonalEmail = x.PersonalInformation.Email,
-                    PersonalName = x.PersonalInformation.Name,
                     RoomsCount = x.RoomsCount,
                     PhoneNumber = x.Contact.PhoneNumber,
-                    PersonalJobTitle = x.PersonalInformation.JobTitle.Title,
                     Amenities = x.AmenityHotels.Select(x => x.Amenity.Title).ToList(),
                     ImagesSrc = ComposeImageUri(x.Images.Select(x => x.Src).ToList())
                 }).FirstOrDefault(x => x.Id == id);
@@ -244,7 +200,6 @@ namespace T.Application.Services.Hotels
                     PhoneNumber = x.Contact.PhoneNumber,
                     Location = x.Country.Name + " - " + x.City,
                     Website = x.Contact.Website,
-                    ConfirmStatus = x.ConfirmStatus
 
                 }).ToList();
 
@@ -269,8 +224,6 @@ namespace T.Application.Services.Hotels
                 .Include(x => x.Country)
                 .Include(x => x.Currency)
                 .Include(x => x.Contact)
-                .Include(x => x.PersonalInformation)
-                .ThenInclude(x => x.JobTitle)
                 .Include(x => x.Images)
                 .Select(x => new EditDto
                 {
@@ -293,16 +246,14 @@ namespace T.Application.Services.Hotels
                     MinimumDaysStayValue = x.MinimumDaysStay,
                     MinimumRoomPrice = x.MinimumRoomPrice,
                     Name = x.Name,
-                    PersonalEmail = x.PersonalInformation.Email,
-                    PersonalName = x.PersonalInformation.Name,
                     RoomsCount = x.RoomsCount,
                     PhoneNumber = x.Contact.PhoneNumber,
-                    PersonalJobTitle = x.PersonalInformation.JobTitle.Id,
                     AmenitiesValue = GetAmenities(x.AmenityHotels.Select(x => x.Amenity.Id).ToList()),
                     Cancellation = x.Cancellation,
                     ExtraPeople = x.ExtraPeople,
                     StarsCount = x.StarsCount,
-                    ImagesSrc = x.Images.Select(x => x.Src).ToList()
+                    ImagesSrc = x.Images.Select(x => x.Src).ToList(),
+                    Slug = x.Slug
                 }).FirstOrDefault(x => x.Id == id);
 
             if (hotel == null) return new EditDto();
@@ -330,8 +281,6 @@ namespace T.Application.Services.Hotels
                 .Include(x => x.Country)
                 .Include(x => x.Currency)
                 .Include(x => x.Contact)
-                .Include(x => x.PersonalInformation)
-                .ThenInclude(x => x.JobTitle)
                 .Include(x => x.Images)
                 .FirstOrDefault(x => x.Id == model.Id);
             if (hotel == null) return new BaseDto { IsSuccess = false, Message = "هتل مورد نظر یافت نشد !" };
@@ -351,9 +300,6 @@ namespace T.Application.Services.Hotels
             hotel.CurrencyId = model.Currency;
             hotel.Description = model.Description;
             hotel.ExtraPeople = model.ExtraPeople;
-            hotel.PersonalInformation.Email = model.Email;
-            hotel.PersonalInformation.JobTitleId = model.PersonalJobTitle;
-            hotel.PersonalInformation.Name = model.PersonalName;
             hotel.Description = model.Description;
             hotel.Cancellation = model.Cancellation;
             hotel.CurrencyId = model.Currency;
@@ -365,7 +311,7 @@ namespace T.Application.Services.Hotels
             hotel.StarsCount = model.StarsCount;
             hotel.Name = model.Name;
             hotel.RoomsCount = model.RoomsCount;
-
+            hotel.Slug = model.Slug;
             foreach (var dic in model.AmenitiesValue.Keys)
             {
                 if (!_databaseContext.AmenityHotels.Where(x => x.HotelId == model.Id && x.AmenityId == dic).Any())
@@ -399,14 +345,13 @@ namespace T.Application.Services.Hotels
 
         }
 
-        public List<string> GetImages(int id)
+        public List<ImageDto> GetImages(int id)
         {
-            var hotel = _databaseContext.Hotels.Include(x => x.Images)
-                .Select(x => new { x.Id, x.Images }).FirstOrDefault(x => x.Id == id);
-
-            if (hotel != null)
-                return ComposeImageUri(hotel.Images.Select(x => x.Src).ToList());
-            return new List<string>();
+            return _databaseContext.Images.Where(x => x.HotelId == id).Select(x => new ImageDto
+            {
+                Id = x.Id,
+                Src = x.Src
+            }).ToList();
 
         }
 

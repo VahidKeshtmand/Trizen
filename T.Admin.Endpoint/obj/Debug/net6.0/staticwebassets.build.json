@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+ISjAL0+SXyHs6Xl+wCWT6ECPvROM3udn7QSSelSzJg=",
+  "Hash": "CP5uPtE40kaYJhmiIOB1iS0uayTC9MnszFKVVkjfnvc=",
   "Source": "T.Admin.Endpoint",
   "BasePath": "_content/T.Admin.Endpoint",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "e:\\Trizen\\T.Admin.Endpoint\\obj\\Debug\\net6.0\\scopedcss\\bundle\\T.Admin.Endpoint.styles.css",
-      "SourceId": "T.Admin.Endpoint",
-      "SourceType": "Computed",
-      "ContentRoot": "e:\\Trizen\\T.Admin.Endpoint\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/T.Admin.Endpoint",
-      "RelativePath": "T.Admin.Endpoint.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "e:\\Trizen\\T.Admin.Endpoint\\obj\\Debug\\net6.0\\scopedcss\\bundle\\T.Admin.Endpoint.styles.css"
-    },
-    {
-      "Identity": "e:\\Trizen\\T.Admin.Endpoint\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\T.Admin.Endpoint.bundle.scp.css",
-      "SourceId": "T.Admin.Endpoint",
-      "SourceType": "Computed",
-      "ContentRoot": "e:\\Trizen\\T.Admin.Endpoint\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/T.Admin.Endpoint",
-      "RelativePath": "T.Admin.Endpoint.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "e:\\Trizen\\T.Admin.Endpoint\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\T.Admin.Endpoint.bundle.scp.css"
-    },
     {
       "Identity": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\css\\site.css",
       "SourceId": "T.Admin.Endpoint",
@@ -117,23 +83,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\custom-alert.js"
-    },
-    {
-      "Identity": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\js\\custom-chart.js",
-      "SourceId": "T.Admin.Endpoint",
-      "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\",
-      "BasePath": "_content/T.Admin.Endpoint",
-      "RelativePath": "js/custom-chart.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\custom-chart.js"
     },
     {
       "Identity": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\js\\site.js",
@@ -1154,23 +1103,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\jquery.unobtrusive-ajax.js"
-    },
-    {
-      "Identity": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\lib\\jquery\\jquery.unobtrusive-ajax.min.js",
-      "SourceId": "T.Admin.Endpoint",
-      "SourceType": "Discovered",
-      "ContentRoot": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\",
-      "BasePath": "_content/T.Admin.Endpoint",
-      "RelativePath": "lib/jquery/jquery.unobtrusive-ajax.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\jquery.unobtrusive-ajax.min.js"
     },
     {
       "Identity": "e:\\Trizen\\T.Admin.Endpoint\\wwwroot\\lib\\jquery\\LICENSE.txt",

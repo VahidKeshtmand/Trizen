@@ -385,6 +385,9 @@ e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\System.Security.Cryptography.Prote
 e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\System.Security.Permissions.dll
 e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\System.Windows.Extensions.dll
 e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\UAParser.dll
+e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\Dto.dll
+e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\Service.dll
+e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\ZarinPal.dll
 e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
 e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
 e:\Trizen\T.Website.Endpoint\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -586,6 +589,7 @@ e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\T.Website.Endpoint.RazorAssemblyIn
 e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\T.Website.Endpoint.RazorAssemblyInfo.cs
 e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\staticwebassets.build.json
 e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\staticwebassets.development.json
+e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\scopedcss\Areas\Administration\Views\Shared\_Layout.cshtml.rz.scp.css
 e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\scopedcss\bundle\T.Website.Endpoint.styles.css
 e:\Trizen\T.Website.Endpoint\obj\Debug\net6.0\scopedcss\projectbundle\T.Website.Endpoint.bundle.scp.css

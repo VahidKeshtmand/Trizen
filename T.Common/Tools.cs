@@ -39,7 +39,7 @@ namespace T.Common
             return "";
         }
 
-        public static string? ToFarsi(this DateTime date)
+        public static string ToFarsi(this DateTime date)
         {
             if (date == null)
                 return null;

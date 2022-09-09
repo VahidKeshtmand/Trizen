@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vzLUQbv3mtNaZMzjI3sPo3kg5A4TpGJ0nqwHeqC2Q6xluQO80CGlQR3Zp+8+i21IcnL+6CJrQ27kph40RJz4Mg==",
+  "dgSpecHash": "HSzfzs886rwHpy+He2XiJ/fixQvbZ9i0NtRA509bYU79CEKZuxDF81Mm+dheko3iB32Ap/hjEUejmlLRY0gCKQ==",
   "success": true,
-  "projectFilePath": "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
+  "projectFilePath": "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Iranian\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -219,7 +219,8 @@
     "C:\\Users\\Iranian\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Iranian\\.nuget\\packages\\uaparser\\3.1.47\\uaparser.3.1.47.nupkg.sha512"
+    "C:\\Users\\Iranian\\.nuget\\packages\\uaparser\\3.1.47\\uaparser.3.1.47.nupkg.sha512",
+    "C:\\Users\\Iranian\\.nuget\\packages\\zarinpal\\3.0.1\\zarinpal.3.0.1.nupkg.sha512"
   ],
   "logs": []
 }

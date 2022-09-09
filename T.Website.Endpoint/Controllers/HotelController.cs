@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using T.Application.Dtos.Rooms;
 using T.Website.Endpoint.Models.Hotel;
 using T.Website.Endpoint.Services;
 
@@ -25,10 +26,10 @@ public class HotelController : Controller
         return View(hotel.Data);
     }
 
-    public IActionResult RoomsList(string hotelSlug, int pageIndex = 1, int pageSize = 1)
+    public IActionResult RoomsList(SearchRoomDto model, int pageIndex = 1, int pageSize = 1)
     {
-        ViewBag.hotelName = _hotelService.GetHotelName(hotelSlug).Data;
-        var roomsList = _hotelService.GetRoomsList(hotelSlug, pageIndex, pageSize);
+        ViewBag.hotelName = _hotelService.GetHotelName(model.Slug).Data;
+        var roomsList = _hotelService.GetRoomsList(model.Slug, pageIndex, pageSize);
         return View(roomsList);
     }
 

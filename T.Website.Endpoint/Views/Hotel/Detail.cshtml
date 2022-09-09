@@ -11,7 +11,7 @@
                     <ul class="list-items bg-transparent radius-none p-0">
                         <li><a asp-action="Index" asp-controller="Home">صفحه اصلی</a></li>
                         <li>@Model.City</li>
-                        <li>هتل و استراحتگاه @Model.Name</li>
+                        <li>@Model.Name</li>
                     </ul>
                 </div><!-- end breadcrumb-list -->
             </div><!-- end col-lg-12 -->
@@ -89,7 +89,7 @@
                                 <div class="d-flex align-items-center pt-2">
                                     <p class="mr-2">@Model.Address</p>
                                     <p>
-                                        <span class="badge badge-warning text-white font-size-16">4.7</span>
+                                        <span class="badge badge-warning text-white font-size-16">@Model.Rate</span>
                                         <span>(@Model.Comments.Count() نظر)</span>
                                     </p>
                                 </div>
@@ -167,149 +167,63 @@
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>
                             <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">درباره هتل و استراحتگاه @Model.Name</h3>
-                                <p class="py-3">@Model.Description</p>
+                                <h3 class="title font-size-20">درباره @Model.Name</h3>
+                                <p class="py-3">@Html.Raw(@Model.Description)</p>
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>
                         </div><!-- end description -->
                         <div id="availability" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-30px">
-                                <h3 class="title font-size-20">موجودی</h3>
-                                <div class="contact-form-action padding-bottom-35px">
-                                    <form method="post">
-                                        <div class="row">
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">تاریخ ورود - تاریخ خروج</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-calendar form-icon"></span>
-                                                        <input class="date-range form-control" type="text"
-                                                            name="daterange">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">اتاق ها</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="0">تعداد اتاق</option>
-                                                                <option value="1">1 اتاق</option>
-                                                                <option value="2">2 اتاق</option>
-                                                                <option value="3">3 اتاق </option>
-                                                                <option value="4">4 اتاق </option>
-                                                                <option value="5">5 اتاق </option>
-                                                                <option value="6">6 اتاق </option>
-                                                                <option value="7">7 اتاق </option>
-                                                                <option value="8">8 اتاق </option>
-                                                                <option value="9">9 اتاق </option>
-                                                                <option value="10">10 اتاق </option>
-                                                                <option value="11">11 اتاق </option>
-                                                                <option value="12">12 اتاق </option>
-                                                                <option value="13">13 اتاق </option>
-                                                                <option value="14">14 اتاق </option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">بزرگسال (18+)</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="0">تعداد بزرگسال</option>
-                                                                <option value="1">1 بزرگسال</option>
-                                                                <option value="2">2 بزرگسال</option>
-                                                                <option value="3">3 بزرگسال</option>
-                                                                <option value="4">4 بزرگسال</option>
-                                                                <option value="5">5 بزرگسال</option>
-                                                                <option value="6">6 بزرگسال</option>
-                                                                <option value="7">7 بزرگسال</option>
-                                                                <option value="8">8 بزرگسال</option>
-                                                                <option value="9">9 بزرگسال</option>
-                                                                <option value="10">10 بزرگسال</option>
-                                                                <option value="11">11 بزرگسال</option>
-                                                                <option value="12">12 بزرگسال</option>
-                                                                <option value="13">13 بزرگسال</option>
-                                                                <option value="14">14 بزرگسال</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">کودک (17-0)</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="0">تعداد کودک </option>
-                                                                <option value="1">1 کودک </option>
-                                                                <option value="2">2 کودک </option>
-                                                                <option value="3">3 کودک </option>
-                                                                <option value="4">4 کودک </option>
-                                                                <option value="5">5 کودک </option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                            <h3 class="title font-size-20">اتاق های موجود</h3>
+                            @foreach (var item in Model.Rooms)
+                            {
+                                <div class="cabin-type padding-top-30px">
+                                    <div class="cabin-type-item seat-selection-item d-flex">
+                                        <div class="cabin-type-img flex-shrink-0">
+                                            <img src="@item.ImageSrc" alt="">
                                         </div>
-                                    </form>
-                                </div><!-- end contact-form-action -->
-                                <h3 class="title font-size-20">اتاق های موجود</h3>
-                                @foreach (var item in Model.Rooms)
-                                {
-                                    <div class="cabin-type padding-top-30px">
-                                        <div class="cabin-type-item seat-selection-item d-flex">
-                                            <div class="cabin-type-img flex-shrink-0">
-                                                <img src="@item.ImageSrc" alt="">
-                                            </div>
-                                            <div class="cabin-type-detail">
-                                                <h3 class="title">@item.Name</h3>
-                                                <div class="row padding-top-20px">
-                                                    @foreach (var amenity in Model.Amenities)
-                                                    {
-                                                        <div class="col-lg-6 responsive-column">
-                                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                                <div
-                                                            class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                                    <i class="la la-circle-o"></i>
-                                                                </div>
-                                                                <div class="single-feature-titles">
-                                                                    <h3 class="title font-size-15 font-weight-medium"> @amenity
-                                                                    </h3>
-                                                                </div>
+                                        <div class="cabin-type-detail">
+                                            <h3 class="title">@item.Name</h3>
+                                            <div class="row padding-top-20px">
+                                                @foreach (var amenity in Model.Amenities)
+                                                {
+                                                    <div class="col-lg-6 responsive-column">
+                                                        <div class="single-tour-feature d-flex align-items-center mb-3">
+                                                            <div
+                                                        class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
+                                                                <i class="la la-circle-o"></i>
                                                             </div>
-                                                        </div><!-- end col-lg-6 -->
-                                                    }
-                                                </div><!-- end row -->
-                                        </div>
-                                            <div class="cabin-price">
-                                                <p class="text-uppercase font-size-14">برای یک شب<strong
-                                                    class="mt-n1 text-black font-size-18 font-weight-black d-block">121
-                                                        تومان </strong></p>
-                                                <div class="custom-checkbox mb-0">
-                                                    <a asp-action="RoomDetails" asp-controller="Hotel"
-                                                    asp-route-hotelSlug="@Model.Slug" asp-route-roomSlug="@item.Slug"
-                                                    class="theme-btn theme-btn-small">جزئیات اتاق</a>
-                                                </div>
+                                                            <div class="single-feature-titles">
+                                                                <h3 class="title font-size-15 font-weight-medium"> @amenity
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- end col-lg-6 -->
+                                                }
+                                            </div><!-- end row -->
+                                    </div>
+                                        <div class="cabin-price">
+                                            <p class="text-uppercase font-size-14">برای یک شب<strong
+                                                class="mt-n1 text-black font-size-18 font-weight-black d-block">121
+                                                    تومان </strong></p>
+                                            <div class="custom-checkbox mb-0">
+                                                <a asp-action="RoomDetails" asp-controller="Hotel"
+                                                asp-route-hotelSlug="@Model.Slug" asp-route-roomSlug="@item.Slug"
+                                                class="theme-btn theme-btn-small">جزئیات اتاق</a>
                                             </div>
-                                        </div><!-- end cabin-type-item -->
-                                </div><!-- end cabin-type -->
-                                }
-                            </div><!-- end single-content-item -->
-                            <div class="col-lg-12">
-                                <div class="btn-box">
-                                    <a asp-action="RoomsList" asp-controller="Hotel" asp-route-hotelSlug="@Model.Slug"
+                                        </div>
+                                    </div><!-- end cabin-type-item -->
+                            </div><!-- end cabin-type -->
+                            }
+                            @if (Model.Rooms.Count() > 0)
+                            {
+                                <div class="col-lg-12">
+                                    <div class="btn-box">
+                                        <a asp-action="RoomsList" asp-controller="Hotel" asp-route-hotelSlug="@Model.Slug"
                                         class="theme-btn theme-btn-small">مشاهده همه اتاق های هتل
-                                        @Model.Name</a>
+                                            @Model.Name</a>
+                                    </div>
                                 </div>
-                            </div>
+                            }
                             <div class="section-block"></div>
                         </div><!-- end location-map -->
                         <div id="amenities" class="page-scroll">
@@ -438,104 +352,6 @@
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>
                         </div><!-- end faq -->
-                        <div id="reviews" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">نظرات</h3>
-                                <div class="review-container padding-top-30px">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-4">
-                                            <div class="review-summary">
-                                                <h2>4.5<span>/5</span></h2>
-                                                <p>عالی</p>
-                                                <span>بر اساس @Model.Comments.Count() نظر</span>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-8">
-                                            <div class="review-bars">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">خدمات</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="70%">
-                                                                        <div class="progressbar-line-item bar-bg-1">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">4.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">مکان </h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="55%">
-                                                                        <div class="progressbar-line-item bar-bg-2">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">4.7</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">سرویس دوره ای</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="40%">
-                                                                        <div class="progressbar-line-item bar-bg-3">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">2.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">پاکیزگی</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="60%">
-                                                                        <div class="progressbar-line-item bar-bg-4">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">3.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">امکانات رفاهی</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="50%">
-                                                                        <div class="progressbar-line-item bar-bg-5">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">2.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                </div><!-- end row -->
-                                            </div>
-                                        </div><!-- end col-lg-8 -->
-                                    </div>
-                                </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end reviews -->
                         <div class="review-box">
                             <div class="single-content-item padding-top-40px">
                                 <h3 class="title font-size-20">نمایش @Model.Comments.Count() نظر</h3>
@@ -544,8 +360,7 @@
                                     {
                                         <div class="comment">
                                             <div class="comment-avatar">
-                                                <img class="avatar__img" alt=""
-                                                src="https://localhost:7235/Resources/Images/images.png">
+                                                <img class="avatar__img" alt="" src="/Images/User.png">
                                             </div>
                                             <div class="comment-body">
                                                 <div class="meta-data">
@@ -578,7 +393,7 @@
                                         <div class="form-content">
                                             <div class="contact-form-action">
                                                 <form method="post" asp-action="AddComment" asp-controller="Home"
-                                                    data-ajax="true" data-ajax-success="OperationResult">
+                                                    data-ajax="true" data-ajax-success="AddCommentResult">
                                                     <div class="row">
                                                         <div class="col-lg-4 responsive-column">
                                                             <div class="rate-option-item">
@@ -743,136 +558,14 @@
                         <div class="sidebar-widget single-content-widget">
                             <div class="sidebar-widget-item">
                                 <div class="sidebar-book-title-wrap mb-3">
-                                    <h3>محبوب</h3>
                                     <p><span class="text-form">از </span><span
                                             class="text-value ml-2 mr-1">@Model.LowestPrice
-                                            تومان</span> <span class="before-price">412,000 تومان</span></p>
+                                            تومان</span></p>
                                 </div>
                             </div><!-- end sidebar-widget-item -->
-                            <div class="sidebar-widget-item">
-                                <div class="contact-form-action">
-                                    <form action="#">
-                                        <div class="input-box">
-                                            <label class="label-text">تاریخ ورود - تاریخ خروج</label>
-                                            <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text" name="daterange">
-                                            </div>
-                                        </div>
-                                        <div class="input-box">
-                                            <label class="label-text">اتاق ها</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <select class="select-contain-select">
-                                                        <option value="0">تعداد اتاق</option>
-                                                        <option value="1">1 اتاق</option>
-                                                        <option value="2">2 اتاق</option>
-                                                        <option value="3">3 اتاق </option>
-                                                        <option value="4">4 اتاق </option>
-                                                        <option value="5">5 اتاق </option>
-                                                        <option value="6">6 اتاق </option>
-                                                        <option value="7">7 اتاق </option>
-                                                        <option value="8">8 اتاق </option>
-                                                        <option value="9">9 اتاق </option>
-                                                        <option value="10">10 اتاق </option>
-                                                        <option value="11">11 اتاق </option>
-                                                        <option value="12">12 اتاق </option>
-                                                        <option value="13">13 اتاق </option>
-                                                        <option value="14">14 اتاق </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div><!-- end sidebar-widget-item -->
-                            <div class="sidebar-widget-item">
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">بزرگسال<span>سن 18+</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">کودک <span>2-12 سال</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">نوزاد <span>0-2 سال</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                            </div><!-- end sidebar-widget-item -->
-                            <div class="btn-box pt-2">
-                                <a href="tour-booking.html" class="theme-btn text-center w-100 mb-2"><i
-                                        class="la la-shopping-cart mr-2 font-size-18"></i>رزرو</a>
-                                <a href="#" class="theme-btn text-center w-100 theme-btn-transparent"><i
-                                        class="la la-heart-o mr-2"></i>افزودن به لیست علاقه مندی </a>
-                                <div class="d-flex align-items-center justify-content-between pt-2">
-                                    <a href="#" class="btn theme-btn-hover-gray font-size-15" data-toggle="modal"
-                                        data-target="#sharePopupForm"><i class="la la-share mr-1"></i>اشتراک گذاری</a>
-                                    <p><i class="la la-eye mr-1 font-size-15 color-text-2"></i>3456</p>
-                                </div>
-                            </div>
-                        </div><!-- end sidebar-widget -->
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">فرم درخواست</h3>
-                            <div class="enquiry-forum">
-                                <div class="form-box">
-                                    <div class="form-content">
-                                        <div class="contact-form-action">
-                                            <form method="post">
-                                                <div class="input-box">
-                                                    <label class="label-text">نام شما</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-user form-icon"></span>
-                                                        <input class="form-control" type="text" name="text"
-                                                            placeholder="نام شما">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <label class="label-text">ایمیل شما</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-envelope-o form-icon"></span>
-                                                        <input class="form-control" type="email" name="email"
-                                                            placeholder="آدرس ایمیل">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <label class="label-text">پیام</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-pencil form-icon"></span>
-                                                        <textarea class="message-control form-control" name="message"
-                                                            placeholder="پیامی بنویس"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <div class="form-group">
-                                                        <div class="custom-checkbox mb-0">
-                                                            <input type="checkbox" id="agreeChb">
-                                                            <label for="agreeChb">من با<a href="#"> شرایط خدمات</a> و
-                                                                <a href="#"> قوانین حریم خصوصی </a> موافقم .
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="btn-box">
-                                                    <button type="button" class="theme-btn">ارسال درخواست</button>
-                                                </div>
-                                            </form>
-                                        </div><!-- end contact-form-action -->
-                                    </div><!-- end form-content -->
-                                </div><!-- end form-box -->
-                            </div><!-- end enquiry-forum -->
+                            @await Component.InvokeAsync("SearchForHotelRooms", new {
+                            Slug = Model.Slug
+                            });
                         </div><!-- end sidebar-widget -->
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">وجه تمایز ما چیست ؟</h3>
@@ -900,30 +593,6 @@
                                 </ul>
                             </div><!-- end sidebar-list -->
                         </div><!-- end sidebar-widget -->
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">مدیریت توسط</h3>
-                            <div class="author-content d-flex">
-                                <div class="author-img">
-                                    <a href="#"><img src="images/team8.jpg" alt="testimonial image"></a>
-                                </div>
-                                <div class="author-bio">
-                                    <h4 class="author__title"><a href="#">آژانس مسافرتی رویال</a></h4>
-                                    <span class="author__meta">عضو از سال 1395</span>
-                                    <span class="ratings d-flex align-items-center">
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star-o"></i>
-                                        <span class="ml-2">305 نظر</span>
-                                    </span>
-                                    <div class="btn-box pt-3">
-                                        <a href="#" class="theme-btn theme-btn-small theme-btn-transparent">سوالی بپرس
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- end sidebar-widget -->
                     </div><!-- end sidebar -->
                 </div><!-- end col-lg-4 -->
             </div><!-- end row -->
@@ -936,120 +605,6 @@
 
 <div class="section-block"></div>
 
-<!-- ================================
-    START RELATE TOUR AREA
-================================= -->
-<section class="related-tour-area section--padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h2 class="sec__title">ممکنه دوست داشته باشی </h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row padding-top-50px">
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item">
-                    <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
-                            <img src="images/img1.jpg" alt="hotel-img">
-                        </a>
-                        <span class="badge">پرفروش ترین </span>
-                        <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                            title="نشان کردن">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html"> هتل هزاره هیلتون نیویورک</a></h3>
-                        <p class="card-meta">خیابان 124 لا ویستا، نیویورک</p>
-                        <div class="card-rating">
-                            <span class="badge text-white">4.4/5</span>
-                            <span class="review__text">متوسط</span>
-                            <span class="rating__text">(30 نظر)</span>
-                        </div>
-                        <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__from">از </span>
-                                <span class="price__num">88,000 تومان </span>
-                                <span class="price__text">برای یک شب</span>
-                            </p>
-                            <a href="hotel-single.html" class="btn-text">مشاهده جزئیات<i
-                                    class="la la-angle-left"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item">
-                    <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
-                            <img src="images/img2.jpg" alt="hotel-img">
-                        </a>
-                        <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                            title="نشان کردن">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html">هتل بست وسترن گرنت پارک</a></h3>
-                        <p class="card-meta">خیابان 124 لا ویستا، نیویورک</p>
-                        <div class="card-rating">
-                            <span class="badge text-white">4.4/5</span>
-                            <span class="review__text">متوسط</span>
-                            <span class="rating__text">(30 نظر)</span>
-                        </div>
-                        <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__from">از </span>
-                                <span class="price__num">58,000 تومان </span>
-                                <span class="price__text">برای یک شب</span>
-                            </p>
-                            <a href="hotel-single.html" class="btn-text">مشاهده جزئیات<i
-                                    class="la la-angle-left"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item">
-                    <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
-                            <img src="images/img3.jpg" alt="hotel-img">
-                        </a>
-                        <span class="badge">ویژه</span>
-                        <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                            title="نشان کردن">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html">هتل حیات رجنسی مائویی</a></h3>
-                        <p class="card-meta">خیابان 124 لا ویستا، نیویورک</p>
-                        <div class="card-rating">
-                            <span class="badge text-white">4.4/5</span>
-                            <span class="review__text">متوسط</span>
-                            <span class="rating__text">(30 نظر)</span>
-                        </div>
-                        <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__from">از </span>
-                                <span class="price__num">88,000 تومان </span>
-                                <span class="price__text">برای یک شب</span>
-                            </p>
-                            <a href="hotel-single.html" class="btn-text">مشاهده جزئیات<i
-                                    class="la la-angle-left"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end related-tour-area -->
-<!-- ================================
-    END RELATE TOUR AREA
-================================= -->
 
 <!-- ================================
     START CTA AREA

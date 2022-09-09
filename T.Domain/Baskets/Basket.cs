@@ -18,11 +18,11 @@ public class Basket
         BuyerId = buyerId;
     }
 
-    public void Add(int roomId, int quantity, int unitPrice, DateTime checkIn, DateTime checkOut, int guestsNumber)
+    public void Add(int roomId, int quantity, int unitPrice, DateTime checkIn, DateTime checkOut, int guestsNumber, int discountPercent)
     {
         if (!BasketItems.Any(x => x.RoomId == roomId))
         {
-            _BasketItems.Add(new BasketItem(roomId, unitPrice, checkIn, checkOut, guestsNumber));
+            _BasketItems.Add(new BasketItem(roomId, unitPrice, checkIn, checkOut, guestsNumber, discountPercent));
         }
         var basketItem = BasketItems.FirstOrDefault(x => x.RoomId == roomId);
         basketItem.AddQuantity(quantity);
@@ -35,6 +35,7 @@ public class BasketItem
 {
     public int Id { get; private set; }
     public int UnitPrice { get; private set; }
+    public int DiscountPercent { get; private set; }
     public int Quantity { get; private set; }
     public int GuestsNumber { get; set; }
     public DateTime CheckInDate { get; set; }
@@ -46,7 +47,7 @@ public class BasketItem
     public Basket Basket { get; private set; }
     public int BasketId { get; private set; }
 
-    public BasketItem(int roomId, int unitPrice, DateTime checkInDate, DateTime checkOutDate, int guestsNumber)
+    public BasketItem(int roomId, int unitPrice, DateTime checkInDate, DateTime checkOutDate, int guestsNumber, int discountPercent)
     {
         RoomId = roomId;
         UnitPrice = unitPrice;
@@ -54,6 +55,7 @@ public class BasketItem
         CheckInDate = checkInDate;
         CheckOutDate = checkOutDate;
         GuestsNumber = guestsNumber;
+        DiscountPercent = discountPercent;
     }
 
     public void AddQuantity(int quantity)

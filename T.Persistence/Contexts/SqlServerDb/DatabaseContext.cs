@@ -2,13 +2,15 @@
 using OS.Application.Interfaces.Contexts;
 using T.Domain.Attributes;
 using T.Domain.Baskets;
+using T.Domain.Bookings;
 using T.Domain.Comments;
 using T.Domain.Common;
 using T.Domain.Discounts;
 using T.Domain.Flights;
 using T.Domain.Hotels;
+using T.Domain.Payments;
+using T.Domain.Reserves;
 using T.Persistence.ConfigTables.Comments;
-using T.Persistence.ConfigTables.Common;
 using T.Persistence.ConfigTables.Hotels;
 
 namespace T.Persistence.Contexts.SqlServerDb
@@ -22,8 +24,6 @@ namespace T.Persistence.Contexts.SqlServerDb
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Currency> Currencies { get; set; }
-        public DbSet<PersonalInformation> PersonalInformations { get; set; }
-        public DbSet<JobTitle> JobTitles { get; set; }
         public DbSet<AmenityHotel> AmenityHotels { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Room> Rooms { get; set; }
@@ -36,14 +36,16 @@ namespace T.Persistence.Contexts.SqlServerDb
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Seat> Seats { get; set; }
         public DbSet<AmenityFlight> AmenityFlights { get; set; }
-
+        public DbSet<Booking> Booking { get; set; }
+        public DbSet<Reserve> Reserves { get; set; }
+        public DbSet<ReserveRoom> ReserveRooms { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             AddShadowPropertyToEachTable(modelBuilder);
             modelBuilder.ApplyConfiguration(new HotelConfig());
-            modelBuilder.ApplyConfiguration(new PersonalInformationConfig());
             modelBuilder.ApplyConfiguration(new CommentConfig());
             modelBuilder.Entity<AirlineCompany>().HasOne(x => x.Image).WithOne(x => x.AirlineCompany).HasForeignKey<Image>(x => x.AirlineCompanyId);
             modelBuilder.Entity<Room>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
@@ -53,6 +55,8 @@ namespace T.Persistence.Contexts.SqlServerDb
             modelBuilder.Entity<AirlineCompany>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
             modelBuilder.Entity<Flight>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
             modelBuilder.Entity<Comment>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+            modelBuilder.Entity<Image>().HasQueryFilter(c => EF.Property<bool>(c, "IsRemoved") == false);
+
 
 
             //modelBuilder.ApplyConfiguration(new AmenityHotelConfig());

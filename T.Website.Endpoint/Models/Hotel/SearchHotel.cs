@@ -5,7 +5,7 @@ namespace T.Website.Endpoint.Models.Hotel;
 public class SearchHotel
 {
     public string City { get; set; }
-    public string dateRange { get; set; }
+    public string CheckInCheckOutDate { get; set; }
     public string LowestPrice { get; set; }
     public string HighestPrice { get; set; }
     public int StarNumber { get; set; }

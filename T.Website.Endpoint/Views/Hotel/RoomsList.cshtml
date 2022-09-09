@@ -12,10 +12,11 @@
                         <div class="section-heading">
                             <h2 class="sec__title text-white">لیست اتاق های هتل @ViewBag.hotelName</h2>
                         </div>
-                        <span class="arrow-blink">
-                            <i class="la la-arrow-down"></i>
-                        </span>
+                        @await Component.InvokeAsync("SearchRoomsContainer", new {
+                        Slug = Model.Data.Select(x => x.HotelSlug).FirstOrDefault()
+                        });
                     </div><!-- end breadcrumb-content -->
+
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
         </div><!-- end container -->

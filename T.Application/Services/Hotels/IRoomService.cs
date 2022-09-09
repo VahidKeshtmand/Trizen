@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
 using T.Application.Dtos.Common;
+using T.Application.Dtos.Hotels;
 using T.Application.Dtos.Rooms;
 using T.Common;
 using T.Domain.Common;
@@ -13,11 +14,11 @@ public interface IRoomService
     BaseDto<RoomIndexDto> GetList(int hotelId, int page, int pageSize);
     BaseDto<InformationRoomDto> GetInformation(int id);
     BaseDto Register(RegisterRoomDto model);
-    List<string> GetImages(int id);
     BaseDto<RoomEditDto> GetRoom(int id);
     BaseDto Edit(RoomEditDto model);
     BaseDto Delete(int id);
     BaseDto<DetailRoomDto> GetDetail(int id);
+    List<ImageDto> GetImages(int id);
 }
 
 public class RoomService : IRoomService
@@ -42,7 +43,6 @@ public class RoomService : IRoomService
                 Id = x.Id,
                 Name = x.Name,
                 BedCount = x.BedCount,
-                IsReserve = x.IsReserve,
                 Price = x.Price,
                 DiscountPercent = x.Discounts.Where(x => x.EndDate > DateTime.Now).Select(x => x.Percent).FirstOrDefault(),
                 DiscountId = x.Discounts.Where(x => x.EndDate > DateTime.Now).Select(x => x.Id).FirstOrDefault(),
@@ -86,8 +86,8 @@ public class RoomService : IRoomService
                 Id = x.Id,
                 Title = x.Title
             }).ToList();
-        var hotel = _databaseContext.Hotels.Select(x => new { x.Id, x.Name }).FirstOrDefault(x => x.Id == id);
-        if (hotel == null || amenities == null || serviceAmenities == null)
+        var room = _databaseContext.Rooms.Include(x => x.Hotel).FirstOrDefault(x => x.Id == id);
+        if (room == null || amenities == null || serviceAmenities == null)
             return new BaseDto<InformationRoomDto>
             {
                 IsSuccess = false
@@ -98,8 +98,8 @@ public class RoomService : IRoomService
             {
                 Amenities = amenities,
                 ServiceAmenities = serviceAmenities,
-                HotelName = hotel.Name,
-                HotelId = hotel.Id
+                HotelName = room.Hotel.Name,
+                HotelId = room.Hotel.Id
             },
             IsSuccess = true
         };
@@ -161,17 +161,6 @@ public class RoomService : IRoomService
 
     }
 
-    public List<string> GetImages(int id)
-    {
-        var room = _databaseContext.Rooms.Include(x => x.Images)
-            .Select(x => new { x.Id, x.Images }).FirstOrDefault(x => x.Id == id);
-
-        if (room != null)
-            return ComposeImageUri(room.Images.Select(x => x.Src).ToList());
-        return new List<string>();
-
-    }
-
     public static List<string> ComposeImageUri(List<string> imagesSrc)
     {
         var srcs = new List<string>();
@@ -201,10 +190,10 @@ public class RoomService : IRoomService
             AmenitiesValue = GetAmenities(x.AmenityRooms
                 .Where(x => x.Amenity.AmenityType == AmenityType.Room)
                 .Select(x => x.Amenity.Id).ToList()),
-            ImagesSrc = ComposeImageUri(x.Images.Select(x => x.Src).ToList()),
+            ImagesSrc = x.Images.Select(x => x.Src).ToList(),
             ServiceAmenitiesValue = GetAmenities(x.AmenityRooms
                 .Where(x => x.Amenity.AmenityType == AmenityType.RoomService)
-                .Select(x => x.Amenity.Id).ToList())
+                .Select(x => x.Amenity.Id).ToList()),
         }).FirstOrDefault(x => x.Id == id);
 
         if (room == null)
@@ -337,10 +326,21 @@ public class RoomService : IRoomService
             {
                 IsSuccess = false
             };
+
         return new BaseDto<DetailRoomDto>
         {
             Data = room,
             IsSuccess = true
         };
+    }
+
+    public List<ImageDto> GetImages(int id)
+    {
+        return _databaseContext.Images.Where(x => x.RoomId == id).Select(x => new ImageDto
+        {
+            Id = x.Id,
+            Src = x.Src
+        }).ToList();
+
     }
 }

@@ -59,6 +59,7 @@
 <!-- ================================
     START TOUR DETAIL AREA
 ================================= -->
+
 <section class="tour-detail-area padding-bottom-90px">
     <div class="single-content-navbar-wrap menu section-bg" id="single-content-navbar">
         <div class="container">
@@ -1007,76 +1008,40 @@
                     <div class="sidebar single-content-sidebar mb-0">
                         <div class="sidebar-widget single-content-widget">
                             <div class="sidebar-widget-item">
-                                <div class="sidebar-book-title-wrap mb-3">
-                                    <h3>محبوب</h3>
-                                    <p><span class="text-form">از </span><span class="text-value ml-2 mr-1">399,000
-                                            تومان</span> <span class="before-price">412,000 تومان</span></p>
-                                </div>
+                                 <div class="sidebar-book-title-wrap mb-3">
+                                        @if (Model.PriceWithDiscount != null)
+                                        {
+                                            <p><span class="text-form">از </span><span
+                                                class="text-value ml-2 mr-1">@Model.PriceWithDiscount
+                                                    تومان</span>
+
+                                                <span class="before-price">@Model.BasePrice.ToString("n0") تومان</span>
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p><span class="text-form">از </span><span
+                                                class="text-value ml-2 mr-1">@Model.BasePrice.ToString("n0")
+                                                    تومان</span>
+                                            </p>
+                                        }
+                                    </div>
                             </div><!-- end sidebar-widget-item -->
                             <div class="sidebar-widget-item">
                                 <div class="contact-form-action">
-                                    <form action="#">
-                                        <div class="input-box">
-                                            <label class="label-text">تاريخ</label>
-                                            <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text"
-                                                    name="daterange-single" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="input-box">
-                                            <label class="label-text">کلاس پروازی</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <select class="select-contain-select">
-                                                        <option value="first">فرست کلاس</option>
-                                                        <option value="business">بیزینس</option>
-                                                        <option value="premium">اکونومی ویژه</option>
-                                                        <option value="economy/coach">اکونومی</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    @await Component.InvokeAsync("ReservePlaneTicketForm", new {
+                                        Id = Model.Id
+                                    })
                                 </div>
                             </div><!-- end sidebar-widget-item -->
                             <div class="sidebar-widget-item">
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">بزرگسال<span>سن 18+</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">کودک <span>2-12 سال</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">نوزاد <span>0-2 سال</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                            </div><!-- end sidebar-widget-item -->
-                            <div class="btn-box pt-2">
-                                <a href="flight-booking.html" class="theme-btn text-center w-100 mb-2"><i
-                                        class="la la-shopping-cart mr-2 font-size-18"></i>رزرو</a>
-                                <a href="#" class="theme-btn text-center w-100 theme-btn-transparent"><i
-                                        class="la la-heart-o mr-2"></i>افزودن به لیست علاقه مندی </a>
-                                <div class="d-flex align-items-center justify-content-between pt-2">
-                                    <a href="#" class="btn theme-btn-hover-gray font-size-15" data-toggle="modal"
-                                        data-target="#sharePopupForm"><i class="la la-share mr-1"></i>اشتراک گذاری</a>
-                                    <p><i class="la la-eye mr-1 font-size-15 color-text-2"></i>3456</p>
+                                @if(TempData["Message"] != null)
+                                {
+                                    <div class="alert alert-danger">
+                                    @TempData["Message"]
                                 </div>
-                            </div>
+                                }
+                            </div><!-- end sidebar-widget-item -->
                         </div><!-- end sidebar-widget -->
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">فرم درخواست</h3>

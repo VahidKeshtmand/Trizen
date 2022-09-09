@@ -37,7 +37,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 100, DateTimeKind.Local).AddTicks(7261));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 110, DateTimeKind.Local).AddTicks(7611));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -72,13 +72,16 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("CheckOutDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DiscountPercent")
+                        .HasColumnType("int");
+
                     b.Property<int>("GuestsNumber")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 100, DateTimeKind.Local).AddTicks(8942));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 110, DateTimeKind.Local).AddTicks(9244));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -109,6 +112,47 @@ namespace T.Persistence.Migrations.Database
                     b.ToTable("BasketItems");
                 });
 
+            modelBuilder.Entity("T.Domain.Bookings.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("BuyerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FlightId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 111, DateTimeKind.Local).AddTicks(1113));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SeatCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FlightId");
+
+                    b.ToTable("Booking");
+                });
+
             modelBuilder.Entity("T.Domain.Comments.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -136,7 +180,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 101, DateTimeKind.Local).AddTicks(768));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 111, DateTimeKind.Local).AddTicks(2694));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -197,7 +241,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 101, DateTimeKind.Local).AddTicks(2444));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 111, DateTimeKind.Local).AddTicks(4582));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -237,7 +281,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 101, DateTimeKind.Local).AddTicks(4196));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 111, DateTimeKind.Local).AddTicks(6378));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -261,7 +305,6 @@ namespace T.Persistence.Migrations.Database
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Website")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -284,7 +327,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 101, DateTimeKind.Local).AddTicks(5701));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 111, DateTimeKind.Local).AddTicks(8077));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -317,7 +360,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 101, DateTimeKind.Local).AddTicks(7259));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 111, DateTimeKind.Local).AddTicks(9640));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -359,7 +402,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 101, DateTimeKind.Local).AddTicks(9245));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 112, DateTimeKind.Local).AddTicks(1731));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -394,81 +437,6 @@ namespace T.Persistence.Migrations.Database
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("T.Domain.Common.JobTitle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("InsertDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 102, DateTimeKind.Local).AddTicks(1398));
-
-                    b.Property<bool>("IsRemoved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
-                    b.Property<DateTime?>("RemoveDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("JobTitles");
-                });
-
-            modelBuilder.Entity("T.Domain.Common.PersonalInformation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("InsertDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 102, DateTimeKind.Local).AddTicks(2845));
-
-                    b.Property<bool>("IsRemoved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
-                    b.Property<int>("JobTitleId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("RemoveDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("JobTitleId");
-
-                    b.ToTable("PersonalInformations");
-                });
-
             modelBuilder.Entity("T.Domain.Discounts.Discount", b =>
                 {
                     b.Property<int>("Id")
@@ -492,7 +460,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 102, DateTimeKind.Local).AddTicks(4719));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 112, DateTimeKind.Local).AddTicks(4220));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -544,7 +512,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 102, DateTimeKind.Local).AddTicks(6758));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 112, DateTimeKind.Local).AddTicks(6176));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -646,7 +614,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 102, DateTimeKind.Local).AddTicks(9045));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 112, DateTimeKind.Local).AddTicks(8357));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -721,7 +689,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 103, DateTimeKind.Local).AddTicks(1577));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 113, DateTimeKind.Local).AddTicks(1003));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -817,9 +785,6 @@ namespace T.Persistence.Migrations.Database
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ConfirmStatus")
-                        .HasColumnType("int");
-
                     b.Property<int>("ContactId")
                         .HasColumnType("int");
 
@@ -844,7 +809,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 103, DateTimeKind.Local).AddTicks(3848));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 113, DateTimeKind.Local).AddTicks(3313));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -863,10 +828,6 @@ namespace T.Persistence.Migrations.Database
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PersonalInformationId")
-                        .IsRequired()
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("RemoveDate")
                         .HasColumnType("datetime2");
@@ -892,9 +853,6 @@ namespace T.Persistence.Migrations.Database
                     b.HasIndex("CountryId");
 
                     b.HasIndex("CurrencyId");
-
-                    b.HasIndex("PersonalInformationId")
-                        .IsUnique();
 
                     b.ToTable("Hotels");
                 });
@@ -923,7 +881,7 @@ namespace T.Persistence.Migrations.Database
                     b.Property<DateTime>("InsertDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 8, 25, 14, 26, 20, 103, DateTimeKind.Local).AddTicks(7276));
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 113, DateTimeKind.Local).AddTicks(6516));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -960,6 +918,146 @@ namespace T.Persistence.Migrations.Database
                     b.ToTable("Rooms");
                 });
 
+            modelBuilder.Entity("T.Domain.Payments.Payment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Authority")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DatePay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 113, DateTimeKind.Local).AddTicks(8875));
+
+                    b.Property<bool>("IsPay")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<long>("RefId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ReserveId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReserveId");
+
+                    b.ToTable("Payments");
+                });
+
+            modelBuilder.Entity("T.Domain.Reserves.Reserve", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 114, DateTimeKind.Local).AddTicks(570));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("PaymentStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reserves");
+                });
+
+            modelBuilder.Entity("T.Domain.Reserves.ReserveRoom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CheckIn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOut")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DiscountPercent")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("InsertDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 9, 9, 16, 37, 32, 114, DateTimeKind.Local).AddTicks(2497));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ReserveId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnitPrice")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReserveId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("ReserveRooms");
+                });
+
             modelBuilder.Entity("T.Domain.Baskets.BasketItem", b =>
                 {
                     b.HasOne("T.Domain.Baskets.Basket", "Basket")
@@ -977,6 +1075,17 @@ namespace T.Persistence.Migrations.Database
                     b.Navigation("Basket");
 
                     b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("T.Domain.Bookings.Booking", b =>
+                {
+                    b.HasOne("T.Domain.Flights.Flight", "Flight")
+                        .WithMany("Booking")
+                        .HasForeignKey("FlightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Flight");
                 });
 
             modelBuilder.Entity("T.Domain.Comments.Comment", b =>
@@ -1019,17 +1128,6 @@ namespace T.Persistence.Migrations.Database
                     b.Navigation("Hotel");
 
                     b.Navigation("Room");
-                });
-
-            modelBuilder.Entity("T.Domain.Common.PersonalInformation", b =>
-                {
-                    b.HasOne("T.Domain.Common.JobTitle", "JobTitle")
-                        .WithMany("PersonalInformations")
-                        .HasForeignKey("JobTitleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("JobTitle");
                 });
 
             modelBuilder.Entity("T.Domain.Discounts.Discount", b =>
@@ -1166,19 +1264,11 @@ namespace T.Persistence.Migrations.Database
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("T.Domain.Common.PersonalInformation", "PersonalInformation")
-                        .WithOne("Hotel")
-                        .HasForeignKey("T.Domain.Hotels.Hotel", "PersonalInformationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Contact");
 
                     b.Navigation("Country");
 
                     b.Navigation("Currency");
-
-                    b.Navigation("PersonalInformation");
                 });
 
             modelBuilder.Entity("T.Domain.Hotels.Room", b =>
@@ -1190,6 +1280,32 @@ namespace T.Persistence.Migrations.Database
                         .IsRequired();
 
                     b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("T.Domain.Payments.Payment", b =>
+                {
+                    b.HasOne("T.Domain.Reserves.Reserve", "Reserve")
+                        .WithMany()
+                        .HasForeignKey("ReserveId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Reserve");
+                });
+
+            modelBuilder.Entity("T.Domain.Reserves.ReserveRoom", b =>
+                {
+                    b.HasOne("T.Domain.Reserves.Reserve", null)
+                        .WithMany("ReserveRooms")
+                        .HasForeignKey("ReserveId");
+
+                    b.HasOne("T.Domain.Hotels.Room", "Room")
+                        .WithMany()
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("T.Domain.Baskets.Basket", b =>
@@ -1220,17 +1336,6 @@ namespace T.Persistence.Migrations.Database
                     b.Navigation("Hotels");
                 });
 
-            modelBuilder.Entity("T.Domain.Common.JobTitle", b =>
-                {
-                    b.Navigation("PersonalInformations");
-                });
-
-            modelBuilder.Entity("T.Domain.Common.PersonalInformation", b =>
-                {
-                    b.Navigation("Hotel")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("T.Domain.Flights.AirlineCompany", b =>
                 {
                     b.Navigation("Flights");
@@ -1242,6 +1347,8 @@ namespace T.Persistence.Migrations.Database
             modelBuilder.Entity("T.Domain.Flights.Flight", b =>
                 {
                     b.Navigation("AmenityFlights");
+
+                    b.Navigation("Booking");
 
                     b.Navigation("Comments");
 
@@ -1272,6 +1379,11 @@ namespace T.Persistence.Migrations.Database
                     b.Navigation("Discounts");
 
                     b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("T.Domain.Reserves.Reserve", b =>
+                {
+                    b.Navigation("ReserveRooms");
                 });
 #pragma warning restore 612, 618
         }

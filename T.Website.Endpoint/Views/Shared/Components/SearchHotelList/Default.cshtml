@@ -2,9 +2,8 @@
 @model T.Website.Endpoint.Models.Hotel.SearchHotel
 
 <div class="search-fields-container margin-top-30px ">
-    <form method="post" asp-action="Index" asp-controller="Hotel">
+    <form method="get" asp-action="Index" asp-controller="Hotel">
         <div class="contact-form-action row">
-
             <div class="col-lg-3 col-sm-6 pr-0">
                 <div class="input-box">
                     <label class="label-text">کجا میخوای بری؟ (نام شهر)</label>
@@ -17,10 +16,10 @@
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 col-sm-6 pr-0">
                 <div class="input-box">
-                    <label class="label-text">تاریخ ورود - تاریخ خروج</label>
+                    <label asp-for="CheckInCheckOutDate" class="label-text">تاریخ ورود - تاریخ خروج</label>
                     <div class="form-group">
                         <span class="la la-calendar form-icon"></span>
-                        <input class="date-range form-control" type="text" name="daterange">
+                        <input asp-for="CheckInCheckOutDate" class="date-range form-control" type="text">
                     </div>
                 </div>
             </div><!-- end col-lg-3 -->

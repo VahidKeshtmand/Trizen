@@ -3722,6 +3722,19 @@
           "lib/netcoreapp2.0/UAParser.dll": {}
         }
       },
+      "ZarinPal/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.2/Dto.dll": {},
+          "lib/netcoreapp2.2/Service.dll": {},
+          "lib/netcoreapp2.2/ZarinPal.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.2/Dto.dll": {},
+          "lib/netcoreapp2.2/Service.dll": {},
+          "lib/netcoreapp2.2/ZarinPal.dll": {}
+        }
+      },
       "T.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -11003,6 +11016,20 @@
         "uaparser.nuspec"
       ]
     },
+    "ZarinPal/3.0.1": {
+      "sha512": "1XPTvVdTa+ywa61JOK7TXVNqzHfwg/8bnMqKh9ISvHWk8HEhhrFXhuC/F5c/xDz9smay7254gD6T4WicgS+FeQ==",
+      "type": "package",
+      "path": "zarinpal/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.2/Dto.dll",
+        "lib/netcoreapp2.2/Service.dll",
+        "lib/netcoreapp2.2/ZarinPal.dll",
+        "zarinpal.3.0.1.nupkg.sha512",
+        "zarinpal.nuspec"
+      ]
+    },
     "T.Application/1.0.0": {
       "type": "project",
       "path": "../T.Application/T.Application.csproj",
@@ -11035,9 +11062,11 @@
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.6",
+      "Newtonsoft.Json >= 13.0.1",
       "T.Application >= 1.0.0",
       "T.Infrastructure >= 1.0.0",
-      "UAParser >= 3.1.47"
+      "UAParser >= 3.1.47",
+      "Zarinpal >= 3.0.1"
     ]
   },
   "packageFolders": {
@@ -11076,8 +11105,8 @@
             "E:\\Trizen\\T.Application\\T.Application.csproj": {
               "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
             },
-            "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
-              "projectPath": "E:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
+            "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
+              "projectPath": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj"
             }
           }
         }
@@ -11110,9 +11139,17 @@
             "target": "Package",
             "version": "[6.0.6, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "UAParser": {
             "target": "Package",
             "version": "[3.1.47, )"
+          },
+          "Zarinpal": {
+            "target": "Package",
+            "version": "[3.0.1, )"
           }
         },
         "imports": [

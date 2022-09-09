@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using OS.Application.Interfaces.Contexts;
 using T.Application.Dtos.Hotels;
 using T.Application.Interfaces.Contexts;
-using T.Application.Services.Comment;
+using T.Application.Services.Comments;
 using T.Application.Services.Discounts;
 using T.Application.Services.Flights;
 using T.Application.Services.Hotels;
