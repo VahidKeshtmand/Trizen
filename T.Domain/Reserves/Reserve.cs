@@ -25,7 +25,7 @@ public class Reserve
     }
     public double TotalPrice()
     {
-        return _reserveRooms.Sum(x => (x.UnitPrice * x.Count) * (100 - x.DiscountPercent) * 0.01);
+        return _reserveRooms.Sum(x => (x.UnitPrice * x.Count * (x.CheckOut - x.CheckIn).TotalDays) * (100 - x.DiscountPercent) * 0.01);
     }
 
 }

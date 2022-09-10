@@ -235,7 +235,7 @@ public class HotelServiceUI : IHotelServiceUI
                 Amenities = x.AmenityRooms.Select(x => x.Amenity.Title).ToList(),
                 HotelSlug = x.Hotel.Slug,
                 RoomSlug = x.Slug,
-                Description = x.Description
+                Description = x.Description,
             }).Where(x => x.HotelSlug == hotelSlug).ToList();
 
         return new PaginatedItemsDto<RoomListViewModel>(page, pageSize, rowCount, rooms);

@@ -31,7 +31,7 @@ function ShowAlertHotel(id, action) {
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: `/HotelManagement/${action}?id=${id}`,
+                url: `/Administration/HotelManagement/${action}?id=${id}`,
                 type: "post"
                 , success: function (response) {
                     if (response.status === "success") {
@@ -104,7 +104,7 @@ function ShowAlertRoom(id, action) {
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: `/RoomManagement/${action}?id=${id}`,
+                url: `/Administration/RoomManagement/${action}?id=${id}`,
                 type: "post"
                 , success: function (response) {
                     if (response.status === "success") {
@@ -176,7 +176,7 @@ function ShowAlertDiscount(id, action) {
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: `/DiscountManagement/${action}?id=${id}`,
+                url: `/Administration/DiscountManagement/${action}?id=${id}`,
                 type: "post"
                 , success: function (response) {
                     if (response.status === "success") {
@@ -465,7 +465,7 @@ function ShowAlertFlight(id, action) {
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: `/FlightManagement/${action}?id=${id}`,
+                url: `/Administration/FlightManagement/${action}?id=${id}`,
                 type: "post"
                 , success: function (response) {
                     if (response.status === "success") {

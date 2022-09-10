@@ -36,7 +36,8 @@ public class RoomManagementController : Controller
     public IActionResult Register(int hotelId)
     {
         var information = _roomService.GetInformation(hotelId);
-        ViewBag.hotelId = information.Data.HotelId;
+        if (!information.IsSuccess)
+            return NotFound();
         var registerRoom = new RegisterRoomDto
         {
             Information = information.Data,
@@ -69,7 +70,7 @@ public class RoomManagementController : Controller
 
     public IActionResult Edit(int id)
     {
-        var information = _roomService.GetInformation(id);
+        var information = _roomService.GetInformationForEdit(id);
         if (!information.IsSuccess)
             return RedirectToAction(nameof(NotFoundPage));
         ViewBag.hotelId = information.Data.HotelId;

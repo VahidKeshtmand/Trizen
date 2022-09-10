@@ -11076,11 +11076,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
+      "projectUniqueName": "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
       "projectName": "T.Website.Endpoint",
-      "projectPath": "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
+      "projectPath": "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
       "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-      "outputPath": "E:\\Trizen\\T.Website.Endpoint\\obj\\",
+      "outputPath": "e:\\Trizen\\T.Website.Endpoint\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

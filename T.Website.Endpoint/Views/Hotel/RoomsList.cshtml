@@ -68,7 +68,7 @@
                                 <h3 class="card-title font-size-26"><a asp-action="RoomDetails" asp-controller="Hotel"
                                     asp-route-roomSlug="@item.RoomSlug"
                                     asp-route-hotelSlug="@item.HotelSlug">@item.Name</a></h3>
-                                <p class="card-text pt-2">@item.Description</p>
+                                <p class="card-text pt-2">@Html.Raw(item.Description)</p>
                                 <div class="card-attributes pt-3 pb-4">
                                     <ul class="d-flex align-items-center">
                                         <li class="d-flex align-items-center"><i class="la la-bed"></i><span>@item.BedCount

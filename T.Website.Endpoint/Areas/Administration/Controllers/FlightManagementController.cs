@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using T.Application.Dtos.Flights;
+using T.Application.Images;
 using T.Application.Services.Flights;
 using T.Infrastructure.ImageServer;
 
@@ -9,11 +10,11 @@ namespace T.Admin.Endpoint.Controllers;
 public class FlightManagementController : Controller
 {
     private readonly IFlightService _flightService;
-    private readonly IImageUploadService _imageUploadService;
-    public FlightManagementController(IFlightService flightService, IImageUploadService imageUploadService)
+    private readonly IImageService _imageService;
+    public FlightManagementController(IFlightService flightService, IImageService imageService)
     {
         _flightService = flightService;
-        _imageUploadService = imageUploadService;
+        _imageService = imageService;
     }
 
     public IActionResult Index(string searchKey, int page = 1, int pageSize = 20)
@@ -35,7 +36,7 @@ public class FlightManagementController : Controller
         list.Add(model.Logo);
         if (model.Logo != null)
         {
-            var uploadResult = _imageUploadService.Upload(list, "AirlineCompany", model.Name);
+            var uploadResult = _imageService.Upload(list, "AirlineCompany");
             foreach (var src in uploadResult)
             {
                 imagesSrc.Add(src);
@@ -45,7 +46,7 @@ public class FlightManagementController : Controller
         var result = _flightService.AddAirlineCompany(model);
         if (!result.IsSuccess)
             return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
-        return new JsonResult(new { status = "success", redirectAction = "/FlightManagement/Index" });
+        return new JsonResult(new { status = "success", redirectAction = "/Administration/FlightManagement/Index" });
     }
 
     public IActionResult DeleteAirlineCompany(int id)
@@ -60,6 +61,7 @@ public class FlightManagementController : Controller
     public IActionResult EditAirlineCompany(int id)
     {
         var airlineCompany = _flightService.FindAirlineCompany(id);
+        airlineCompany.Data.ImagesModel = _flightService.GetImagesAirlineCompany(id);
         return View(airlineCompany.Data);
     }
 
@@ -71,7 +73,12 @@ public class FlightManagementController : Controller
         list.Add(model.Logo);
         if (model.Logo != null)
         {
-            var uploadResult = _imageUploadService.Upload(list, "AirlineCompany", model.Name);
+            var checkLogo = _flightService.CheckLogo(model.Id);
+            if (checkLogo > 0)
+            {
+                _imageService.Remove(checkLogo);
+            }
+            var uploadResult = _imageService.Upload(list, "AirlineCompany");
             foreach (var src in uploadResult)
             {
                 imagesSrc.Add(src);
@@ -82,7 +89,7 @@ public class FlightManagementController : Controller
         if (!result.IsSuccess)
             return new JsonResult(new { status = "error", message = result.Message });
 
-        return new JsonResult(new { status = "success", redirectAction = "/FlightManagement/Index" });
+        return new JsonResult(new { status = "success", redirectAction = "/Administration/FlightManagement/Index" });
     }
 
     public IActionResult FlightList(int airlineCompanyId, string searchKey, int pageIndex = 1, int pageSize = 20)
@@ -126,7 +133,7 @@ public class FlightManagementController : Controller
         {
             var list = new List<IFormFile>();
             list.AddRange(model.Images);
-            var uploadResult = _imageUploadService.Upload(list, "Flight", "0");
+            var uploadResult = _imageService.Upload(list, "Flight");
             foreach (var src in uploadResult)
             {
                 imagesSrc.Add(src);
@@ -137,7 +144,7 @@ public class FlightManagementController : Controller
         if (!flight.IsSuccess)
             return new JsonResult(new { status = "error", message = flight.Message });
 
-        return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={model.AirlineCompanyId}" });
+        return new JsonResult(new { status = "success", redirectAction = $"/Administration/FlightManagement/FlightList?airlineCompanyId={model.AirlineCompanyId}" });
     }
 
     public IActionResult EditFlight(int id, int airlineCompanyId)
@@ -150,6 +157,7 @@ public class FlightManagementController : Controller
             return NotFound();
         flight.Data.Information = _flightService.GetInformation();
         flight.Data.AirlineCompanyId = airlineCompanyId;
+        flight.Data.ImagesModel = _flightService.GetImages(id);
         return View(flight.Data);
     }
 
@@ -161,7 +169,7 @@ public class FlightManagementController : Controller
         {
             var list = new List<IFormFile>();
             list.AddRange(model.Images);
-            var uploadResult = _imageUploadService.Upload(list, "Flight", "0");
+            var uploadResult = _imageService.Upload(list, "Flight");
             foreach (var src in uploadResult)
             {
                 imagesSrc.Add(src);

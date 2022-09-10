@@ -11,7 +11,10 @@ namespace T.Application.Services.Flights;
 
 public interface IFlightService
 {
+    List<ImageDto> GetImages(int id);
+    List<ImageDto> GetImagesAirlineCompany(int id);
     BaseDto AddAirlineCompany(AddAirlineCompanyDto model);
+    int CheckLogo(int id);
     PaginatedItemsDto<AirlineCompanyListDto> GetAirlineCompanyList(string searchKey, int pageIndex, int pageSize);
     BaseDto DeleteAirlineCompany(int id);
     BaseDto<EditAirlineCompanyDto> FindAirlineCompany(int id);
@@ -78,7 +81,7 @@ public class FlightService : IFlightService
                 Description = x.Description,
                 PhoneNumber = x.PhoneNumber,
                 Website = x.Website,
-                ImageSrc = ComposeImageUri(x.Image.Src)
+                ImageSrc = x.Image.Src
             }).AsQueryable();
 
 
@@ -88,22 +91,6 @@ public class FlightService : IFlightService
         }
 
         return new PaginatedItemsDto<AirlineCompanyListDto>(pageIndex, pageSize, rowCount, airlineCompanies.ToList());
-    }
-
-    private static string ComposeImageUri(string imageSrc)
-    {
-        return "https://localhost:7235/" + imageSrc.Replace("\\", "//");
-    }
-
-    public static List<string> ComposeImagesUri(List<string> imagesSrc)
-    {
-        var srcs = new List<string>();
-        foreach (var src in imagesSrc)
-        {
-            srcs.Add("https://localhost:7235/" + src.Replace("\\", "//"));
-        }
-
-        return srcs;
     }
 
     public BaseDto DeleteAirlineCompany(int id)
@@ -135,7 +122,7 @@ public class FlightService : IFlightService
                 Name = x.Name,
                 PhoneNumber = x.PhoneNumber,
                 Website = x.Website,
-                ImageSrc = ComposeImageUri(x.Image.Src)
+                ImageSrc = x.Image.Src
             }).FirstOrDefault(x => x.Id == id);
 
         if (airlineCompany == null)
@@ -168,13 +155,15 @@ public class FlightService : IFlightService
         airlineCompany.Address = model.Address;
         airlineCompany.PhoneNumber = model.PhoneNumber;
         airlineCompany.Website = model.Website;
-        _databaseContext.Images.Remove(airlineCompany.Image);
-        var logo = new Image
+        if (model.Logo != null && model.Logo.Length > 0)
         {
-            Src = model.ImageSrc,
-            AirlineCompanyId = airlineCompany.Id,
-        };
-        _databaseContext.Images.Add(logo);
+            var logo = new Image
+            {
+                Src = model.ImageSrc,
+                AirlineCompanyId = airlineCompany.Id,
+            };
+            _databaseContext.Images.Add(logo);
+        }
         _databaseContext.SaveChanges();
         return new BaseDto
         {
@@ -317,7 +306,6 @@ public class FlightService : IFlightService
     {
         return new DateTime(date.Year, date.Month, date.Day, int.Parse(time.Substring(0, 2)), int.Parse(time.Substring(3)), 0);
     }
-
     public BaseDto<EditFlightDto> FindFlight(int id)
     {
         var flight = _databaseContext.Flights
@@ -351,7 +339,7 @@ public class FlightService : IFlightService
                 TakeOffTime = $"{x.TakeOffDate.Hour}:{x.TakeOffDate.Minute}",
                 TaxesAndFees = x.TaxesAndFees,
                 TotalTimeOfFlight = x.TotalTimeOfFlight,
-                ImagesSrc = ComposeImagesUri(x.Images.Select(x => x.Src).ToList()),
+                ImagesSrc = x.Images.Select(x => x.Src).ToList(),
                 AmenitiesValue = GetAmenities(x.AmenityFlights.Where(x => x.Amenity.AmenityType == AmenityType.Flight).Select(x => x.Amenity.Id).ToList()),
             }).FirstOrDefault(x => x.Id == id);
 
@@ -461,5 +449,33 @@ public class FlightService : IFlightService
             IsSuccess = true,
             Message = "پرواز با موفقیت حذف شد !"
         };
+    }
+
+    public List<ImageDto> GetImages(int id)
+    {
+        return _databaseContext.Images.Where(x => x.FlightId == id).Select(x => new ImageDto
+        {
+            Id = x.Id,
+            Src = x.Src
+        }).ToList();
+
+    }
+
+    public List<ImageDto> GetImagesAirlineCompany(int id)
+    {
+        return _databaseContext.Images.Where(x => x.AirlineCompanyId == id).Select(x => new ImageDto
+        {
+            Id = x.Id,
+            Src = x.Src
+        }).ToList();
+    }
+
+    public int CheckLogo(int id)
+    {
+        var logo = _databaseContext.Images.FirstOrDefault(x => x.AirlineCompanyId == id);
+        if (logo == null)
+            return 0;
+        return logo.Id;
+
     }
 }

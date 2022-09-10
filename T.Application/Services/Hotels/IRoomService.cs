@@ -13,6 +13,7 @@ public interface IRoomService
 {
     BaseDto<RoomIndexDto> GetList(int hotelId, int page, int pageSize);
     BaseDto<InformationRoomDto> GetInformation(int id);
+    BaseDto<InformationRoomDto> GetInformationForEdit(int id);
     BaseDto Register(RegisterRoomDto model);
     BaseDto<RoomEditDto> GetRoom(int id);
     BaseDto Edit(RoomEditDto model);
@@ -86,8 +87,8 @@ public class RoomService : IRoomService
                 Id = x.Id,
                 Title = x.Title
             }).ToList();
-        var room = _databaseContext.Rooms.Include(x => x.Hotel).FirstOrDefault(x => x.Id == id);
-        if (room == null || amenities == null || serviceAmenities == null)
+        var hotel = _databaseContext.Hotels.FirstOrDefault(x => x.Id == id);
+        if (hotel == null || amenities == null || serviceAmenities == null)
             return new BaseDto<InformationRoomDto>
             {
                 IsSuccess = false
@@ -98,14 +99,11 @@ public class RoomService : IRoomService
             {
                 Amenities = amenities,
                 ServiceAmenities = serviceAmenities,
-                HotelName = room.Hotel.Name,
-                HotelId = room.Hotel.Id
+                HotelName = hotel.Name,
+                HotelId = hotel.Id
             },
             IsSuccess = true
         };
-
-
-
     }
 
     public BaseDto Register(RegisterRoomDto model)
@@ -118,7 +116,8 @@ public class RoomService : IRoomService
             Price = model.Price,
             BedCount = model.BedCount,
             Size = model.Size,
-            Slug = model.Slug
+            Slug = model.Slug,
+            Count = model.BedCount
         };
         _databaseContext.Rooms.Add(room);
         _databaseContext.SaveChanges();
@@ -187,6 +186,8 @@ public class RoomService : IRoomService
             Price = x.Price,
             Size = x.Size,
             HotelId = x.Hotel.Id,
+            RoomCount = x.Count,
+            Slug = x.Slug,
             AmenitiesValue = GetAmenities(x.AmenityRooms
                 .Where(x => x.Amenity.AmenityType == AmenityType.Room)
                 .Select(x => x.Amenity.Id).ToList()),
@@ -240,6 +241,8 @@ public class RoomService : IRoomService
         room.BedCount = model.BedCount;
         room.Price = model.Price;
         room.Size = model.Price;
+        room.Count = model.RoomCount;
+        room.Slug = model.Slug;
         var amenitiesRoom = _databaseContext.AmenityRooms
             .Where(x => x.RoomId == model.Id).ToList();
         _databaseContext.AmenityRooms.RemoveRange(amenitiesRoom);
@@ -342,5 +345,40 @@ public class RoomService : IRoomService
             Src = x.Src
         }).ToList();
 
+    }
+
+    public BaseDto<InformationRoomDto> GetInformationForEdit(int id)
+    {
+        var amenities = _databaseContext.Amenities.Where(x => x.AmenityType == AmenityType.Room)
+            .Select(x => new AmenityDto
+            {
+                Display = x.Display,
+                Id = x.Id,
+                Title = x.Title
+            }).ToList();
+        var serviceAmenities = _databaseContext.Amenities.Where(x => x.AmenityType == AmenityType.RoomService)
+            .Select(x => new AmenityDto
+            {
+                Display = x.Display,
+                Id = x.Id,
+                Title = x.Title
+            }).ToList();
+        var room = _databaseContext.Rooms.Include(x => x.Hotel).FirstOrDefault(x => x.Id == id);
+        if (room == null || amenities == null || serviceAmenities == null)
+            return new BaseDto<InformationRoomDto>
+            {
+                IsSuccess = false
+            };
+        return new BaseDto<InformationRoomDto>
+        {
+            Data = new InformationRoomDto
+            {
+                Amenities = amenities,
+                ServiceAmenities = serviceAmenities,
+                HotelName = room.Hotel.Name,
+                HotelId = room.Hotel.Id
+            },
+            IsSuccess = true
+        };
     }
 }

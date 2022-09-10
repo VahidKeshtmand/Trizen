@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HSzfzs886rwHpy+He2XiJ/fixQvbZ9i0NtRA509bYU79CEKZuxDF81Mm+dheko3iB32Ap/hjEUejmlLRY0gCKQ==",
+  "dgSpecHash": "Y/mihxUxRDLJZ0QMspKQuH+msA9yOE5dzQvxSOlXQzl5brUheNXIJOdvDJSliTENcJauy9uD8U0Y+v56XJ43nQ==",
   "success": true,
-  "projectFilePath": "E:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
+  "projectFilePath": "e:\\Trizen\\T.Website.Endpoint\\T.Website.Endpoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Iranian\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

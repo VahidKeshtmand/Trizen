@@ -47,7 +47,7 @@ public class BasketService : IBasketService
             .Include(x => x.BasketItems)
             .ThenInclude(x => x.Room)
             .ThenInclude(x => x.Hotel)
-            .SingleOrDefault(x => x.BuyerId == buyerId);
+            .FirstOrDefault(x => x.BuyerId == buyerId);
         if (basket == null)
         {
             var newBasket = new Basket(buyerId);
@@ -63,6 +63,7 @@ public class BasketService : IBasketService
         {
             BuyerId = basket.BuyerId,
             Id = basket.Id,
+
             BasketItems = basket.BasketItems.Select(x => new BasketItemDto
             {
                 Id = x.Id,
@@ -73,22 +74,34 @@ public class BasketService : IBasketService
                 CheckInDate = x.CheckInDate.ToFarsi(),
                 CheckOutDate = x.CheckOutDate.ToFarsi(),
                 Days = (x.CheckOutDate - x.CheckInDate).TotalDays,
-                DiscountPercent = x.Room.Discounts.Where(x => x.EndDate > DateTime.Now && x.StartDate < DateTime.Now).Select(x => x.Percent).LastOrDefault(),
-                TotalPrice = x.UnitPrice * x.Quantity,
+                DiscountPercent = x.DiscountPercent,
+                TotalPrice = x.UnitPrice * x.Quantity * (x.CheckOutDate - x.CheckInDate).TotalDays,
                 BedNumber = x.GuestsNumber,
-                TotalPriceWithDiscount = (x.UnitPrice * x.Quantity) - ((x.UnitPrice * x.Quantity) * (100 - x.Room.Discounts.Where(x => x.EndDate > DateTime.Now && x.StartDate < DateTime.Now).Select(x => x.Percent).LastOrDefault()) * 0.01),
-                ImageSrc = ComposeImageUri(x.Room.Images.Select(x => x.Src).FirstOrDefault() ?? ""),
+                TotalPriceWithDiscount = GetTotalPriceWithDiscount(x.UnitPrice, x.Quantity, x.DiscountPercent, (x.CheckOutDate - x.CheckInDate).TotalDays),
+                ImageSrc = x.Room.Images.Select(x => x.Src).FirstOrDefault() ?? "",
                 Slug = x.Room.Slug,
                 HotelSlug = x.Room.Hotel.Slug,
                 Address = x.Room.Hotel.Address,
                 HotelName = x.Room.Hotel.Name
+
             }).ToList(),
 
         };
-        basketDto.TotalPriceBasket = basketDto.BasketItems.Select(x => x.TotalPrice).Sum();
-        basketDto.TotalPriceDiscount = basketDto.BasketItems.Select(x => x.TotalPriceWithDiscount).Sum();
-        basketDto.TotalPricePayable = basketDto.BasketItems.Select(x => x.TotalPrice - (int)x.TotalPriceWithDiscount).Sum();
+        double totalPriceBasket = 0;
+        double totalPricePayable = 0;
+        foreach (var item in basketDto.BasketItems)
+        {
+            totalPriceBasket += item.TotalPrice;
+            totalPricePayable += item.TotalPriceWithDiscount;
+        }
+        basketDto.TotalPriceBasket = totalPriceBasket;
+        basketDto.TotalPriceDiscount = totalPriceBasket - totalPricePayable;
+        basketDto.TotalPricePayable = totalPricePayable;
         return basketDto;
+    }
+    public static double GetTotalPriceWithDiscount(int unitPrice, int quantity, int percent, double days)
+    {
+        return (unitPrice * quantity) * (100 - percent) * 0.01 * days;
     }
     private static string ComposeImageUri(string imageSrc)
     {
@@ -113,12 +126,12 @@ public class BasketService : IBasketService
 
     public void TransferBasket(string anonymousId, string userId)
     {
-        var anonymousBasket = _databaseContext.Baskets
+        var anonymousBasket = _databaseContext.Baskets.Include(x => x.BasketItems)
             .SingleOrDefault(x => x.BuyerId == anonymousId);
 
         if (anonymousBasket == null) return;
-        var userBasket = _databaseContext.Baskets
-            .SingleOrDefault(x => x.BuyerId == userId);
+        var userBasket = _databaseContext.Baskets.Include(x => x.BasketItems)
+            .FirstOrDefault(x => x.BuyerId == userId);
 
         if (userBasket == null)
         {

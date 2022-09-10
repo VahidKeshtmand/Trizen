@@ -33,11 +33,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Common\\T.Common.csproj": {
-                "projectPath": "E:\\Trizen\\T.Common\\T.Common.csproj"
+              "e:\\Trizen\\T.Common\\T.Common.csproj": {
+                "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj"
               },
-              "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -92,14 +92,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Common\\T.Common.csproj": {
+    "e:\\Trizen\\T.Common\\T.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Common\\T.Common.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Common\\T.Common.csproj",
         "projectName": "T.Common",
-        "projectPath": "E:\\Trizen\\T.Common\\T.Common.csproj",
+        "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Common\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -151,14 +151,14 @@
         }
       }
     },
-    "E:\\Trizen\\T.Domain\\T.Domain.csproj": {
+    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectUniqueName": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "projectName": "T.Domain",
-        "projectPath": "E:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Domain\\obj\\",
+        "outputPath": "e:\\Trizen\\T.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

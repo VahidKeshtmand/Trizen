@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using T.Application.Dtos.Hotels;
 using T.Domain.Flights;
 
 namespace T.Application.Dtos.Flights;
@@ -28,6 +29,7 @@ public class AddFlightDto
     public string AirportDestination { get; set; }
     public List<IFormFile> Images { get; set; }
     public List<string>? ImagesSrc { get; set; }
+    public List<ImageDto>? ImagesModel { get; set; }
     public Dictionary<int, string> AmenitiesValue { get; set; }
     public int CurrencyValue { get; set; }
     public InformationForAddFlightDto Information { get; set; }

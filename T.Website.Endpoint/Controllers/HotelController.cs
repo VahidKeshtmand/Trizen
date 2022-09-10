@@ -26,7 +26,7 @@ public class HotelController : Controller
         return View(hotel.Data);
     }
 
-    public IActionResult RoomsList(SearchRoomDto model, int pageIndex = 1, int pageSize = 1)
+    public IActionResult RoomsList(SearchRoomDto model, int pageIndex = 1, int pageSize = 20)
     {
         ViewBag.hotelName = _hotelService.GetHotelName(model.Slug).Data;
         var roomsList = _hotelService.GetRoomsList(model.Slug, pageIndex, pageSize);

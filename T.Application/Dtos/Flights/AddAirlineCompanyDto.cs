@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using T.Application.Dtos.Hotels;
 
 namespace T.Application.Dtos.Flights;
 
@@ -17,6 +18,8 @@ public class AirlineCompanyListDto
     public string Address { get; set; }
     public string PhoneNumber { get; set; }
     public string Website { get; set; }
+    public List<ImageDto>? ImagesModel { get; set; }
+
 }
 
 public class EditAirlineCompanyDto : AirlineCompanyListDto

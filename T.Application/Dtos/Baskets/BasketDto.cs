@@ -4,7 +4,7 @@ public class BasketDto
 {
     public int Id { get; set; }
     public string BuyerId { get; set; }
-    public int TotalPriceBasket { get; set; }
+    public double TotalPriceBasket { get; set; }
     public double TotalPriceDiscount { get; set; }
     public double TotalPricePayable { get; set; }
     public List<BasketItemDto> BasketItems { get; set; }
@@ -22,7 +22,7 @@ public class BasketItemDto
     public int BedNumber { get; set; }
     public string CheckInDate { get; set; }
     public string CheckOutDate { get; set; }
-    public int TotalPrice { get; set; }
+    public double TotalPrice { get; set; }
     public double TotalPriceWithDiscount { get; set; }
     public string ImageSrc { get; set; }
     public string Slug { get; set; }

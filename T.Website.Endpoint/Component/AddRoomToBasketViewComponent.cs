@@ -13,14 +13,15 @@ public class AddRoomToBasketViewComponent : ViewComponent
         _databaseContext = databaseContext;
     }
 
-    public IViewComponentResult Invoke(int id)
+    public IViewComponentResult Invoke(int id, int discountPerscent)
     {
         var room = _databaseContext.Rooms.FirstOrDefault(x => x.Id == id);
         var basketInfo = new BasketItemDto
         {
             Quantity = room.Count,
             Id = room.Id,
-            BedNumber = room.BedCount
+            BedNumber = room.BedCount,
+            DiscountPercent = discountPerscent
         };
         return View(basketInfo);
     }
