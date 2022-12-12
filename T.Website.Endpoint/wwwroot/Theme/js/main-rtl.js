@@ -625,9 +625,12 @@ Version:        1.0
         if ($(landingDate).length) {
             $(landingDate).daterangepicker({
                 opens: 'left',
+                singleDatePicker: true,
                 format: 'DD-MM-YYYY',
                 jalaali: true,
                 language: 'fa',
+
+
             });
         }
 

@@ -194,6 +194,7 @@ public class FlightService : IFlightService
             FlyingFrom = model.FlyingFrom,
             Description = model.Description,
             CurrencyId = model.CurrencyValue,
+            Slug = model.Slug,
             TotalTimeOfFlight = model.TotalTimeOfFlight,
             ReturnLandingDate = model.ReturnLandingDate.ToGeorgianDateTime(),
             ReturnTakeOffDate = SetTime(model.ReturnTakeOffTime, model.ReturnTakeOffDate.ToGeorgianDateTime()),
@@ -339,6 +340,7 @@ public class FlightService : IFlightService
                 TakeOffTime = $"{x.TakeOffDate.Hour}:{x.TakeOffDate.Minute}",
                 TaxesAndFees = x.TaxesAndFees,
                 TotalTimeOfFlight = x.TotalTimeOfFlight,
+                Slug = x.Slug,
                 ImagesSrc = x.Images.Select(x => x.Src).ToList(),
                 AmenitiesValue = GetAmenities(x.AmenityFlights.Where(x => x.Amenity.AmenityType == AmenityType.Flight).Select(x => x.Amenity.Id).ToList()),
             }).FirstOrDefault(x => x.Id == id);
@@ -403,6 +405,7 @@ public class FlightService : IFlightService
         flight.TotalTimeOfFlight = model.TotalTimeOfFlight;
         flight.TaxesAndFees = model.TaxesAndFees;
         flight.TakeOffDate = SetTime(model.TakeOffTime, model.TakeOffDate.ToGeorgianDateTime());
+        flight.Slug = model.Slug;
         var amenitiesFlight = _databaseContext.AmenityFlights
                     .Where(x => x.FlightId == model.Id).ToList();
         _databaseContext.AmenityFlights.RemoveRange(amenitiesFlight);

@@ -100,7 +100,8 @@
                                     <div class="col-lg-4 col-sm-4">
                                         <div class="single-feature-titles text-center mb-3">
                                             <h3 class="title font-size-15 font-weight-medium">تاریخ پرواز</h3>
-                                            <span class="font-size-13">@Model.TakeOff.ToFarsi() ساعت @Model.TakeOffTime</span>
+                                            <span class="font-size-13">@Model.TakeOff.ToFarsi() ساعت
+                                                @Model.TakeOffTime</span>
                                         </div>
                                     </div><!-- end col-lg-4 -->
                                     <div class="col-lg-4 col-sm-4">
@@ -115,7 +116,8 @@
                                         <div
                                             class="single-feature-titles text-center border-top border-bottom py-3 mb-4">
                                             <h3 class="title font-size-15 font-weight-medium">کل زمان پرواز:<span
-                                                    class="font-size-13 d-inline-block ml-1 text-gray">@Model.TotalTimeOfFlight</span></h3>
+                                                    class="font-size-13 d-inline-block ml-1 text-gray">@Model.TotalTimeOfFlight</span>
+                                            </h3>
                                         </div>
                                     </div><!-- end col-lg-12 -->
                                     <div class="col-lg-4 responsive-column">
@@ -124,7 +126,8 @@
                                                 <i class="la la-plane"></i>
                                             </div>
                                             <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">@Model.AirlineCompanyName</h3>
+                                                <h3 class="title font-size-15 font-weight-medium">
+                                                    @Model.AirlineCompanyName</h3>
                                             </div>
                                         </div><!-- end single-tour-feature -->
                                     </div><!-- end col-lg-4 -->
@@ -157,7 +160,8 @@
                                             </div>
                                             <div class="single-feature-titles">
                                                 <h3 class="title font-size-15 font-weight-medium">لغو</h3>
-                                                <span class="font-size-13">@Model.CancellationCharge تومان برای هر نفر</span>
+                                                <span class="font-size-13">@Model.CancellationCharge تومان برای هر
+                                                    نفر</span>
                                             </div>
                                         </div><!-- end single-tour-feature -->
                                     </div><!-- end col-lg-4 -->
@@ -225,14 +229,14 @@
                                         @foreach (var item in Model.Amenities)
                                         {
                                             <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">@item</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
+                                                <div class="single-tour-feature d-flex align-items-center mb-3">
+                                                    <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
+                                                        <i class="la la-check"></i>
+                                                    </div>
+                                                    <div class="single-feature-titles">
+                                                        <h3 class="title font-size-15 font-weight-medium">@item</h3>
+                                                    </div>
+                                                </div><!-- end single-tour-feature -->
                                         </div><!-- end col-lg-4 -->
                                         }
                                     </div><!-- end row -->
@@ -240,568 +244,7 @@
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>
                         </div><!-- end inflight-features -->
-                        <div id="seat-selection" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">انتخاب صندلی</h3>
-                                <p class="pt-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است.</p>
-                                <div class="cabin-type padding-top-30px">
-                                    <div class="cabin-type-item seat-selection-item d-flex">
-                                        <div class="cabin-type-img flex-shrink-0">
-                                            <img src="images/seat1.png" alt="">
-                                        </div>
-                                        <div class="cabin-type-detail">
-                                            <h3 class="title">انتخاب صندلی پیشرفته استاندارد</h3>
-                                            <p class="font-size-15 pt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                        </div>
-                                        <div class="cabin-price text-center">
-                                            <p class="text-uppercase font-size-14">شروع قیمت از<strong
-                                                    class="mt-n1 text-black font-size-18 d-block">15 تومان </strong></p>
-                                            <div class="custom-checkbox text-center mb-0">
-                                                <input type="checkbox" id="selectChb1">
-                                                <label for="selectChb1" class="theme-btn theme-btn-small">انتخاب</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- end cabin-type-item -->
-                                </div><!-- end cabin-type -->
-                                <div class="cabin-type padding-top-30px">
-                                    <div class="cabin-type-item seat-selection-item d-flex">
-                                        <div class="cabin-type-img flex-shrink-0">
-                                            <img src="images/seat2.png" alt="">
-                                        </div>
-                                        <div class="cabin-type-detail">
-                                            <h3 class="title">انتخاب صندلی پیشرفته استاندارد</h3>
-                                            <p class="font-size-15 pt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                        </div>
-                                        <div class="cabin-price text-center">
-                                            <p class="text-uppercase font-size-14">شروع قیمت از<strong
-                                                    class="mt-n1 text-black font-size-18 d-block">15 تومان </strong></p>
-                                            <div class="custom-checkbox text-center mb-0">
-                                                <input type="checkbox" id="selectChb2">
-                                                <label for="selectChb2" class="theme-btn theme-btn-small">انتخاب</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- end cabin-type-item -->
-                                </div><!-- end cabin-type -->
-                                <div class="cabin-type padding-top-30px">
-                                    <div class="cabin-type-item seat-selection-item d-flex">
-                                        <div class="cabin-type-img flex-shrink-0">
-                                            <img src="images/seat3.png" alt="">
-                                        </div>
-                                        <div class="cabin-type-detail">
-                                            <h3 class="title">انتخاب صندلی پیشرفته استاندارد</h3>
-                                            <p class="font-size-15 pt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                        </div>
-                                        <div class="cabin-price text-center">
-                                            <p class="text-uppercase font-size-14">شروع قیمت از<strong
-                                                    class="mt-n1 text-black font-size-18 d-block">15 تومان </strong></p>
-                                            <div class="custom-checkbox text-center mb-0">
-                                                <input type="checkbox" id="selectChb3">
-                                                <label for="selectChb3" class="theme-btn theme-btn-small">انتخاب</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- end cabin-type-item -->
-                                </div><!-- end cabin-type -->
-                                <div class="cabin-type padding-top-30px">
-                                    <div class="cabin-type-item seat-selection-item d-flex">
-                                        <div class="cabin-type-img flex-shrink-0">
-                                            <img src="images/seat4.png" alt="">
-                                        </div>
-                                        <div class="cabin-type-detail">
-                                            <h3 class="title">انتخاب صندلی پیشرفته استاندارد</h3>
-                                            <p class="font-size-15 pt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                        </div>
-                                        <div class="cabin-price text-center">
-                                            <p class="text-uppercase font-size-14">شروع قیمت از<strong
-                                                    class="mt-n1 text-black font-size-18 d-block">15 تومان </strong></p>
-                                            <div class="custom-checkbox text-center mb-0">
-                                                <input type="checkbox" id="selectChb4">
-                                                <label for="selectChb4" class="theme-btn theme-btn-small">انتخاب</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- end cabin-type-item -->
-                                </div><!-- end cabin-type -->
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end seat-selection -->
-                        <div id="baggage" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">چمدان</h3>
-                                <div class="contact-form-action padding-top-30px">
-                                    <form method="post">
-                                        <div class="row">
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">از </label>
-                                                    <div class="form-group">
-                                                        <span class="la la-map-marker form-icon"></span>
-                                                        <input class="form-control" type="text" name="text"
-                                                            placeholder="نام شهر، فرودگاه یا کشور">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">به</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-map-marker form-icon"></span>
-                                                        <input class="form-control" type="text" name="text"
-                                                            placeholder="نام شهر، فرودگاه یا کشور">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">وضعیت ردیف بالا</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="1" selected="selected">سوپر الیت 50 هزار
-                                                                </option>
-                                                                <option value="2">سوپر الیت 60 هزار</option>
-                                                                <option value="3">سوپر الیت 80 هزار</option>
-                                                                <option value="4">سوپر الیت 100 هزار</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">وزن بسته</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="1" selected="selected">20 کیلوگرم (40
-                                                                    پوند)</option>
-                                                                <option value="2">30 کیلوگرم (60 پوند)</option>
-                                                                <option value="3">40 کیلوگرم (80 پوند)</option>
-                                                                <option value="4">50 کیلوگرم (100 پوند)</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="input-box">
-                                                    <label class="label-text">کلاس خدمات</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-briefcase form-icon"></span>
-                                                        <input class="form-control" type="text" name="text"
-                                                            placeholder="کلاس اکونومی">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="input-box">
-                                                    <div class="form-group">
-                                                        <div class="custom-checkbox">
-                                                            <input type="checkbox" id="chbocupying">
-                                                            <label for="chbocupying">شیرخوار/کودک (0 تا 11 سال) در یک
-                                                                صندلی (با بلیط شخصی)</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="btn-box">
-                                                    <button type="button" class="theme-btn">مشاهده میزان مجاز
-                                                        چمدان</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div><!-- end contact-form-action -->
-                                <div class="baggage-feature-item py-4">
-                                    <p class="pb-3">در این بخش اطلاعاتی در مورد وزن چمدان، تجهیزات ویژه و اقلام ورزشی و
-                                        همچنین اقلام ممنوعه میبینید. ما همچنین مواردی رو برای لذت بخشیدن به سفر شما
-                                        فراهم کردیم.
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-shopping-cart"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">خدمات کمک بارداری
-                                                    </h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-briefcase"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">اجازه بار</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-briefcase"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">بار با تاخیر</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-briefcase"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">چمدان آسیب دیده
-                                                    </h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-briefcase"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">وضعیت چمدان</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-briefcase"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">خدمات چمدان</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-briefcase"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">نکات چمدان</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-user-times"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">اقلام ممنوعه</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-file"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">محدودیت های
-                                                        مسئولیت</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-gift"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">گم شدن و پیدا شدن
-                                                    </h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                    </div><!-- end row -->
-                                </div>
-                                <h3 class="title font-size-20">اطلاعات اولیه</h3>
-                                <p class="pt-3"> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
-                                    می باشد. </p>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end faq -->
-                        <div id="fare-rules" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">قوانین قیمت برای پرواز شما</h3>
-                                <div class="fare-feature-item padding-top-30px pb-2">
-                                    <div class="row">
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">قوانین و سیاست ها
-                                                    </h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">تغییرات پرواز</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">بازپرداخت</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">جریمه های ایرلاین
-                                                    </h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">لغو پرواز</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">شرایط استفاده از
-                                                        ایرلاین</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                    </div><!-- end row -->
-                                </div><!-- end fare-feature-item -->
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                                <div class="accordion accordion-item padding-top-30px" id="accordionExample2">
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingOne">
-                                            <h2 class="mb-0">
-                                                <button
-                                                    class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16"
-                                                    type="button" data-toggle="collapse" data-target="#faqCollapseOne"
-                                                    aria-expanded="true" aria-controls="faqCollapseOne">
-                                                    <span class="ml-3">هزینه کنسلی پرواز</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne"
-                                            data-parent="#accordionExample2">
-                                            <div class="card-body">
-                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                                    استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-                                                    ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingTwo">
-                                            <h2 class="mb-0">
-                                                <button
-                                                    class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16"
-                                                    type="button" data-toggle="collapse" data-target="#faqCollapseTwo"
-                                                    aria-expanded="false" aria-controls="faqCollapseTwo">
-                                                    <span class="ml-3">تعدیل هزینه کلاس بالاتر</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo"
-                                            data-parent="#accordionExample2">
-                                            <div class="card-body">
-                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                                    استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-                                                    ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingThree">
-                                            <h2 class="mb-0">
-                                                <button
-                                                    class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16"
-                                                    type="button" data-toggle="collapse" data-target="#faqCollapseThree"
-                                                    aria-expanded="false" aria-controls="faqCollapseThree">
-                                                    <span class="ml-3">تنظیم هزینه ها به همان درجه</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseThree" class="collapse" aria-labelledby="faqHeadingThree"
-                                            data-parent="#accordionExample2">
-                                            <div class="card-body">
-                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                                    استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-                                                    ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingFour">
-                                            <h2 class="mb-0">
-                                                <button
-                                                    class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16"
-                                                    type="button" data-toggle="collapse" data-target="#faqCollapseFour"
-                                                    aria-expanded="false" aria-controls="faqCollapseFour">
-                                                    <span class="ml-3">هزینه رزرو مجدد / کنسلی</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseFour" class="collapse" aria-labelledby="faqHeadingFour"
-                                            data-parent="#accordionExample2">
-                                            <div class="card-body">
-                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                                    استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-                                                    ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end faq -->
-                        <div id="reviews" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">نظرات</h3>
-                                <div class="review-container padding-top-30px">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-4">
-                                            <div class="review-summary">
-                                                <h2>4.5<span>/5</span></h2>
-                                                <p>عالی</p>
-                                                <span>بر اساس 4 نظر</span>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-8">
-                                            <div class="review-bars">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">خدمات</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="70%">
-                                                                        <div class="progressbar-line-item bar-bg-1">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">4.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">مکان </h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="55%">
-                                                                        <div class="progressbar-line-item bar-bg-2">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">4.7</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">سرویس دوره ای</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="40%">
-                                                                        <div class="progressbar-line-item bar-bg-3">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">2.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">پاکیزگی</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="60%">
-                                                                        <div class="progressbar-line-item bar-bg-4">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">3.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">امکانات رفاهی</h3>
-                                                            <div
-                                                                class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="50%">
-                                                                        <div class="progressbar-line-item bar-bg-5">
-                                                                        </div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">2.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                </div><!-- end row -->
-                                            </div>
-                                        </div><!-- end col-lg-8 -->
-                                    </div>
-                                </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end reviews -->
+
                         <div class="review-box">
                             <div class="single-content-item padding-top-40px">
                                 <h3 class="title font-size-20">نمایش @Model.Comments.Count() نظر</h3>
@@ -810,8 +253,7 @@
                                     {
                                         <div class="comment">
                                             <div class="comment-avatar">
-                                                <img class="avatar__img" alt=""
-                                                src="https://localhost:7235/Resources/Images/images.png">
+                                                <img class="avatar__img" alt="" src="/Images/images.png">
                                             </div>
                                             <div class="comment-body">
                                                 <div class="meta-data">
@@ -844,7 +286,7 @@
                                         <div class="form-content">
                                             <div class="contact-form-action">
                                                 <form method="post" asp-action="AddComment" asp-controller="Home"
-                                                    data-ajax="true" data-ajax-success="OperationResult">
+                                                    data-ajax="true" data-ajax-success="AddCommentResult">
                                                     <div class="row">
                                                         <div class="col-lg-4 responsive-column">
                                                             <div class="rate-option-item">
@@ -1008,91 +450,42 @@
                     <div class="sidebar single-content-sidebar mb-0">
                         <div class="sidebar-widget single-content-widget">
                             <div class="sidebar-widget-item">
-                                 <div class="sidebar-book-title-wrap mb-3">
-                                        @if (Model.PriceWithDiscount != null)
-                                        {
-                                            <p><span class="text-form">از </span><span
-                                                class="text-value ml-2 mr-1">@Model.PriceWithDiscount
-                                                    تومان</span>
+                                <div class="sidebar-book-title-wrap mb-3">
+                                    @if (Model.PriceWithDiscount != null)
+                                    {
+                                        <p><span class="text-form">از </span><span
+                                            class="text-value ml-2 mr-1">@Model.PriceWithDiscount
+                                                تومان</span>
 
-                                                <span class="before-price">@Model.BasePrice.ToString("n0") تومان</span>
-                                            </p>
-                                        }
-                                        else
-                                        {
-                                            <p><span class="text-form">از </span><span
-                                                class="text-value ml-2 mr-1">@Model.BasePrice.ToString("n0")
-                                                    تومان</span>
-                                            </p>
-                                        }
-                                    </div>
+                                            <span class="before-price">@Model.BasePrice.ToString("n0") تومان</span>
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p><span class="text-form">از </span><span
+                                            class="text-value ml-2 mr-1">@Model.BasePrice.ToString("n0")
+                                                تومان</span>
+                                        </p>
+                                    }
+                                </div>
                             </div><!-- end sidebar-widget-item -->
                             <div class="sidebar-widget-item">
                                 <div class="contact-form-action">
                                     @await Component.InvokeAsync("ReservePlaneTicketForm", new {
-                                        Id = Model.Id
+                                    Id = Model.Id
                                     })
                                 </div>
                             </div><!-- end sidebar-widget-item -->
                             <div class="sidebar-widget-item">
-                                @if(TempData["Message"] != null)
+                                @if (TempData["Message"] != null)
                                 {
                                     <div class="alert alert-danger">
-                                    @TempData["Message"]
-                                </div>
+                                        @TempData["Message"]
+                                    </div>
                                 }
                             </div><!-- end sidebar-widget-item -->
                         </div><!-- end sidebar-widget -->
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">فرم درخواست</h3>
-                            <div class="enquiry-forum">
-                                <div class="form-box">
-                                    <div class="form-content">
-                                        <div class="contact-form-action">
-                                            <form method="post">
-                                                <div class="input-box">
-                                                    <label class="label-text">نام شما</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-user form-icon"></span>
-                                                        <input class="form-control" type="text" name="text"
-                                                            placeholder="نام شما">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <label class="label-text">ایمیل شما</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-envelope-o form-icon"></span>
-                                                        <input class="form-control" type="email" name="email"
-                                                            placeholder="آدرس ایمیل">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <label class="label-text">پیام</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-pencil form-icon"></span>
-                                                        <textarea class="message-control form-control" name="message"
-                                                            placeholder="پیامی بنویس"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <div class="form-group">
-                                                        <div class="custom-checkbox mb-0">
-                                                            <input type="checkbox" id="agreeChb">
-                                                            <label for="agreeChb">من با<a href="#"> شرایط خدمات</a> و
-                                                                <a href="#"> قوانین حریم خصوصی </a> موافقم .
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="btn-box">
-                                                    <button type="button" class="theme-btn">ارسال درخواست</button>
-                                                </div>
-                                            </form>
-                                        </div><!-- end contact-form-action -->
-                                    </div><!-- end form-content -->
-                                </div><!-- end form-box -->
-                            </div><!-- end enquiry-forum -->
-                        </div><!-- end sidebar-widget -->
+
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">وجه تمایز ما چیست ؟</h3>
                             <div class="sidebar-list">
@@ -1154,170 +547,6 @@
 ================================= -->
 
 <div class="section-block"></div>
-
-<!-- ================================
-    START RELATE TOUR AREA
-================================= -->
-<section class="related-tour-area section--padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h2 class="sec__title">ممکنه دوست داشته باشی </h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row padding-top-50px">
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item flight-card flight--card">
-                    <div class="card-img">
-                        <img src="images/airline-img7.png" alt="flight-logo-img">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-top-title d-flex justify-content-between">
-                            <div>
-                                <h3 class="card-title font-size-17">پکن</h3>
-                                <p class="card-meta font-size-14">یک طرفه</p>
-                            </div>
-                            <div>
-                                <div class="text-right">
-                                    <span class="font-weight-regular font-size-14 d-block">قیمت برای هر نفر</span>
-                                    <h6 class="font-weight-bold color-text">350,000 تومان</h6>
-                                </div>
-                            </div>
-                        </div><!-- end card-top-title -->
-                        <div class="flight-details py-3">
-                            <div class="flight-time pb-3">
-                                <div class="flight-time-item take-off d-flex">
-                                    <div class="flex-shrink-0 mr-2">
-                                        <i class="la la-plane"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">ساعت پرواز</h3>
-                                        <p class="card-meta font-size-14">چهارشنبه 12 آبان ساعت 6:50 صبح</p>
-                                    </div>
-                                </div>
-                                <div class="flight-time-item landing d-flex">
-                                    <div class="flex-shrink-0 mr-2">
-                                        <i class="la la-plane"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">فرود</h3>
-                                        <p class="card-meta font-size-14">پنجشنبه 13 آبان ساعت 8:50 صبح</p>
-                                    </div>
-                                </div>
-                            </div><!-- end flight-time -->
-                            <p class="font-size-14 text-center"><span class="color-text-2 mr-1">مدت زمان سفر : </span>
-                                12 ساعت 30 دقیقه</p>
-                        </div><!-- end flight-details -->
-                        <div class="btn-box text-center">
-                            <a href="flight-single.html" class="theme-btn theme-btn-small w-100">مشاهده جزئیات</a>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item flight-card flight--card">
-                    <div class="card-img">
-                        <img src="images/airline-img8.png" alt="flight-logo-img">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-top-title d-flex justify-content-between">
-                            <div>
-                                <h3 class="card-title font-size-17">پاریس</h3>
-                                <p class="card-meta font-size-14">رفت و برگشت</p>
-                            </div>
-                            <div>
-                                <div class="text-right">
-                                    <span class="font-weight-regular font-size-14 d-block">قیمت برای هر نفر</span>
-                                    <h6 class="font-weight-bold color-text">650,000 تومان</h6>
-                                </div>
-                            </div>
-                        </div><!-- end card-top-title -->
-                        <div class="flight-details py-3">
-                            <div class="flight-time pb-3">
-                                <div class="flight-time-item take-off d-flex">
-                                    <div class="flex-shrink-0 mr-2">
-                                        <i class="la la-plane"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">ساعت پرواز</h3>
-                                        <p class="card-meta font-size-14">چهارشنبه 12 آبان ساعت 6:50 صبح</p>
-                                    </div>
-                                </div>
-                                <div class="flight-time-item landing d-flex">
-                                    <div class="flex-shrink-0 mr-2">
-                                        <i class="la la-plane"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">فرود</h3>
-                                        <p class="card-meta font-size-14">پنجشنبه 13 آبان ساعت 8:50 صبح</p>
-                                    </div>
-                                </div>
-                            </div><!-- end flight-time -->
-                            <p class="font-size-14 text-center"><span class="color-text-2 mr-1">مدت زمان سفر : </span>
-                                12 ساعت 30 دقیقه</p>
-                        </div><!-- end flight-details -->
-                        <div class="btn-box text-center">
-                            <a href="flight-single.html" class="theme-btn theme-btn-small w-100">مشاهده جزئیات</a>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item flight-card flight--card">
-                    <div class="card-img">
-                        <img src="images/airline-img9.png" alt="flight-logo-img">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-top-title d-flex justify-content-between">
-                            <div>
-                                <h3 class="card-title font-size-17">دبی</h3>
-                                <p class="card-meta font-size-14">یک طرفه</p>
-                            </div>
-                            <div>
-                                <div class="text-right">
-                                    <span class="font-weight-regular font-size-14 d-block">قیمت برای هر نفر</span>
-                                    <h6 class="font-weight-bold color-text">350,000 تومان</h6>
-                                </div>
-                            </div>
-                        </div><!-- end card-top-title -->
-                        <div class="flight-details py-3">
-                            <div class="flight-time pb-3">
-                                <div class="flight-time-item take-off d-flex">
-                                    <div class="flex-shrink-0 mr-2">
-                                        <i class="la la-plane"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">ساعت پرواز</h3>
-                                        <p class="card-meta font-size-14">چهارشنبه 12 آبان ساعت 6:50 صبح</p>
-                                    </div>
-                                </div>
-                                <div class="flight-time-item landing d-flex">
-                                    <div class="flex-shrink-0 mr-2">
-                                        <i class="la la-plane"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">فرود</h3>
-                                        <p class="card-meta font-size-14">پنجشنبه 13 آبان ساعت 8:50 صبح</p>
-                                    </div>
-                                </div>
-                            </div><!-- end flight-time -->
-                            <p class="font-size-14 text-center"><span class="color-text-2 mr-1">مدت زمان سفر : </span>
-                                12 ساعت 30 دقیقه</p>
-                        </div><!-- end flight-details -->
-                        <div class="btn-box text-center">
-                            <a href="flight-single.html" class="theme-btn theme-btn-small w-100">مشاهده جزئیات</a>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end related-tour-area -->
-<!-- ================================
-    END RELATE TOUR AREA
-================================= -->
 
 <!-- ================================
     START CTA AREA

@@ -32,5 +32,16 @@ namespace T.Website.Endpoint.Controllers
                 return new JsonResult(new { status = "error", message = result.Message });
             return new JsonResult(new { status = "success", message = result.Message });
         }
+
+        [HttpPost]
+        public IActionResult AddCommentFlight(AddCommentViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return new JsonResult(new { status = "error", message = "فرم ارسال نظر را به درستی پر کنید !" });
+            var result = _commentController.AddComment(model);
+            if (!result.IsSuccess)
+                return new JsonResult(new { status = "error", message = result.Message });
+            return new JsonResult(new { status = "success", message = result.Message });
+        }
     }
 }

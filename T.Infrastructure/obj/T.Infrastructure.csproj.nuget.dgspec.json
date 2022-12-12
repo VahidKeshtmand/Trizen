@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {}
+    "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {}
   },
   "projects": {
-    "E:\\Trizen\\T.Application\\T.Application.csproj": {
+    "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\T.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Trizen\\T.Application\\T.Application.csproj",
+        "projectUniqueName": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\T.Application.csproj",
         "projectName": "T.Application",
-        "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj",
+        "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\T.Application.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "E:\\Trizen\\T.Application\\obj\\",
+        "outputPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "e:\\Trizen\\T.Common\\T.Common.csproj": {
-                "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj"
+              "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Common\\T.Common.csproj": {
+                "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Common\\T.Common.csproj"
               },
-              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -79,7 +79,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -88,18 +89,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\Trizen\\T.Common\\T.Common.csproj": {
+    "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Common\\T.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Trizen\\T.Common\\T.Common.csproj",
+        "projectUniqueName": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Common\\T.Common.csproj",
         "projectName": "T.Common",
-        "projectPath": "e:\\Trizen\\T.Common\\T.Common.csproj",
+        "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Common\\T.Common.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "e:\\Trizen\\T.Common\\obj\\",
+        "outputPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -138,7 +139,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -147,18 +149,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
+    "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectUniqueName": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj",
         "projectName": "T.Domain",
-        "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj",
+        "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "e:\\Trizen\\T.Domain\\obj\\",
+        "outputPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -207,7 +209,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -216,18 +219,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
+    "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
+        "projectUniqueName": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
         "projectName": "T.Infrastructure",
-        "projectPath": "e:\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
+        "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Infrastructure\\T.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "e:\\Trizen\\T.Infrastructure\\obj\\",
+        "outputPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -249,8 +252,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
-                "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj"
+              "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+                "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Persistence\\T.Persistence.csproj"
               }
             }
           }
@@ -300,7 +303,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -309,18 +313,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "e:\\Trizen\\T.Persistence\\T.Persistence.csproj": {
+    "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Persistence\\T.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj",
+        "projectUniqueName": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Persistence\\T.Persistence.csproj",
         "projectName": "T.Persistence",
-        "projectPath": "e:\\Trizen\\T.Persistence\\T.Persistence.csproj",
+        "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Persistence\\T.Persistence.csproj",
         "packagesPath": "C:\\Users\\Iranian\\.nuget\\packages\\",
-        "outputPath": "e:\\Trizen\\T.Persistence\\obj\\",
+        "outputPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -342,11 +346,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Trizen\\T.Application\\T.Application.csproj": {
-                "projectPath": "E:\\Trizen\\T.Application\\T.Application.csproj"
+              "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\T.Application.csproj": {
+                "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\T.Application.csproj"
               },
-              "e:\\Trizen\\T.Domain\\T.Domain.csproj": {
-                "projectPath": "e:\\Trizen\\T.Domain\\T.Domain.csproj"
+              "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj": {
+                "projectPath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Domain\\T.Domain.csproj"
               }
             }
           }
@@ -390,7 +394,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -399,7 +404,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

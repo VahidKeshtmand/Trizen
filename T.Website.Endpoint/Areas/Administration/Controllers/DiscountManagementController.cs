@@ -37,16 +37,16 @@ public class DiscountManagementController : Controller
         if (result.IsSuccess == false)
             return new JsonResult(new { status = "error", message = result.Message });
         if (model.HotelId != null && model.HotelId != 0)
-            return new JsonResult(new { status = "success", redirectAction = $"/RoomManagement/Index?hotelId={model.HotelId}" });
+            return new JsonResult(new { status = "success", redirectAction = $"/Administration/RoomManagement/Index?hotelId={model.HotelId}" });
         if (model.RoomId != null && model.RoomId != 0)
         {
             var roomHotelId = _discountService.GetHotelId(model.RoomId);
-            return new JsonResult(new { status = "success", redirectAction = $"/RoomManagement/Index?hotelId={roomHotelId}" });
+            return new JsonResult(new { status = "success", redirectAction = $"/Administration/RoomManagement/Index?hotelId={roomHotelId}" });
         }
         if (model.FlightId != null)
         {
             var airlineCompanyId = _discountService.GetAirlineCompanyId(model.FlightId);
-            return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={airlineCompanyId}" });
+            return new JsonResult(new { status = "success", redirectAction = $"/Administration/FlightManagement/FlightList?airlineCompanyId={airlineCompanyId}" });
         }
         return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
 
@@ -74,11 +74,11 @@ public class DiscountManagementController : Controller
         if (result.IsSuccess == false)
             return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
         if (model.HotelId != 0 && model.HotelId != null)
-            return new JsonResult(new { status = "success", redirectAction = $"/RoomManagement/Index?hotelId={model.HotelId}" });
+            return new JsonResult(new { status = "success", redirectAction = $"/Administration/RoomManagement/Index?hotelId={model.HotelId}" });
         if (model.FlightId != null)
         {
             var airlineCompanyId = _discountService.GetAirlineCompanyId(model.FlightId);
-            return new JsonResult(new { status = "success", redirectAction = $"/FlightManagement/FlightList?airlineCompanyId={airlineCompanyId}" });
+            return new JsonResult(new { status = "success", redirectAction = $"/Administration/FlightManagement/FlightList?airlineCompanyId={airlineCompanyId}" });
         }
         return new JsonResult(new { status = "error", message = "عملیات ناموفق !" });
 

@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using OS.Application.Interfaces.Contexts;
+using T.Application.Dtos.Bookings;
 using T.Application.Dtos.Common;
 using T.Common;
 using T.Domain.Comments;
@@ -15,7 +16,7 @@ public interface IFlightServiceUI
     PaginatedItemsDto<FlightListViewModel> GetList(int pageIndex, int pageSize, FlightSearchModelDto searchModel);
     BaseDto<FlightDetailViewModel> GetDetail(string slug);
     bool CheckExistSeat(int flightId, int requestNumber);
-    // BaseDto<BookingViewModel> GetBookingInformation(int flightId, int seatNumber);
+    BaseDto<BookingViewModel> GetBookingInformation(int flightId, int seatNumber);
     string GetSlug(int id);
 }
 
@@ -42,7 +43,7 @@ public class FlightServiceUI : IFlightServiceUI
                 Destination = x.FlyingTo,
                 FlightType = x.FlightType,
                 Landing = x.LandingDate,
-                LogoSrc = ComposeImageUri(x.AirlineCompany.Image.Src),
+                LogoSrc = x.AirlineCompany.Image.Src,
                 Price = x.PriceRange,
                 TakeOff = x.TakeOffDate,
                 TotalTimeOfFlight = SetHourAndMinute(x.TotalTimeOfFlight),
@@ -69,26 +70,10 @@ public class FlightServiceUI : IFlightServiceUI
 
     }
 
-    private static List<string> ComposeImagesUri(List<string> imagesSrc)
-    {
-        var srcs = new List<string>();
-        foreach (var src in imagesSrc)
-        {
-            srcs.Add("https://localhost:7235/" + src.Replace("\\", "//"));
-        }
-
-        return srcs;
-    }
-
     private static string SetHourAndMinute(int minute)
     {
         var hours = (minute - minute % 60) / 60;
         return hours + ":" + (minute - hours * 60);
-    }
-
-    private static string ComposeImageUri(string imageSrc)
-    {
-        return "https://localhost:7235/" + imageSrc.Replace("\\", "//");
     }
 
     public BaseDto<FlightDetailViewModel> GetDetail(string slug)
@@ -115,8 +100,8 @@ public class FlightServiceUI : IFlightServiceUI
                 Origin = x.FlyingFrom,
                 Refundable = x.Refundable,
                 TakeOffTime = x.TakeOffDate.Minute + " : " + x.TakeOffDate.Hour,
-                FirstImage = ComposeImageUri(x.Images.Select(x => x.Src).FirstOrDefault() ?? ""),
-                Images = ComposeImagesUri(x.Images.Select(x => x.Src).Skip(1).ToList()),
+                FirstImage = x.Images.Select(x => x.Src).FirstOrDefault() ?? "",
+                Images = x.Images.Select(x => x.Src).Skip(1).ToList(),
                 Amenities = x.AmenityFlights.Select(x => x.Amenity.Title).ToList(),
                 Id = x.Id,
                 TotalTimeOfFlight = SetHourAndMinute(x.TotalTimeOfFlight),
@@ -164,54 +149,54 @@ public class FlightServiceUI : IFlightServiceUI
         return true;
     }
 
-    // public BaseDto<BookingViewModel> GetBookingInformation(int flightId, int seatNumber)
-    // {
-    //     var flight = _databaseContext.Flights
-    //         .Include(x => x.AirlineCompany)
-    //         .ThenInclude(x => x.Image)
-    //         .Include(x => x.Discounts)
-    //         .Include(x => x.Comments)
-    //         .Select(x => new BookingViewModel
-    //         {
-    //             BasePrice = x.BasePrice,
-    //             Discounts = x.Discounts.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x => x.Percent).ToList(),
-    //             Coach = GetDisplayName(x.Coach),
-    //             AirlineCompanyName = x.AirlineCompany.Name,
-    //             Destination = x.FlyingFrom,
-    //             Origin = x.FlyingTo,
-    //             ExtraFee = x.TaxesAndFees,
-    //             FlightType = GetDisplayName(x.FlightType),
-    //             ImageSrc = ComposeImageUri(x.AirlineCompany.Image.Src),
-    //             Landing = x.LandingDate.ToFarsi(),
-    //             TakeOff = x.TakeOffDate.ToFarsi(),
-    //             TakeOffTime = x.TakeOffDate.Minute + " : " + x.TakeOffDate.Hour,
-    //             TotalTimeOfFlight = SetHourAndMinute(x.TotalTimeOfFlight),
-    //             FlightId = x.Id,
-    //             SeatCount = seatNumber,
-    //             TotalPrice = (x.TaxesAndFees + x.BasePrice) * seatNumber,
-    //             Rate = GetAverageRate(x.Comments.ToList()),
-    //             CommentCount = x.Comments.Count()
-    //         }).FirstOrDefault(x => x.FlightId == flightId);
+    public BaseDto<BookingViewModel> GetBookingInformation(int flightId, int seatNumber)
+    {
+        var flight = _databaseContext.Flights
+            .Include(x => x.AirlineCompany)
+            .ThenInclude(x => x.Image)
+            .Include(x => x.Discounts)
+            .Include(x => x.Comments)
+            .Select(x => new BookingViewModel
+            {
+                BasePrice = x.BasePrice,
+                Discounts = x.Discounts.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x => x.Percent).ToList(),
+                Coach = GetDisplayName(x.Coach),
+                AirlineCompanyName = x.AirlineCompany.Name,
+                Destination = x.FlyingFrom,
+                Origin = x.FlyingTo,
+                ExtraFee = x.TaxesAndFees,
+                FlightType = GetDisplayName(x.FlightType),
+                ImageSrc = x.AirlineCompany.Image.Src,
+                Landing = x.LandingDate.ToFarsi(),
+                TakeOff = x.TakeOffDate.ToFarsi(),
+                TakeOffTime = x.TakeOffDate.Minute + " : " + x.TakeOffDate.Hour,
+                TotalTimeOfFlight = SetHourAndMinute(x.TotalTimeOfFlight),
+                FlightId = x.Id,
+                SeatCount = seatNumber,
+                TotalPrice = (x.TaxesAndFees + x.BasePrice) * seatNumber,
+                Rate = GetAverageRate(x.Comments.ToList()),
+                CommentCount = x.Comments.Count()
+            }).FirstOrDefault(x => x.FlightId == flightId);
 
-    //     if (flight == null)
-    //         return new BaseDto<BookingViewModel>
-    //         {
-    //             IsSuccess = false
-    //         };
+        if (flight == null)
+            return new BaseDto<BookingViewModel>
+            {
+                IsSuccess = false
+            };
 
-    //     if (flight.Discounts.Count() > 0)
-    //     {
-    //         var discount = flight.Discounts.LastOrDefault();
-    //         flight.TotalPriceWithDiscount = (((100 - discount) * 0.01) * (flight.BasePrice + flight.ExtraFee)) * seatNumber;
-    //     }
+        if (flight.Discounts.Count() > 0)
+        {
+            var discount = flight.Discounts.LastOrDefault();
+            flight.TotalPriceWithDiscount = (((100 - discount) * 0.01) * (flight.BasePrice + flight.ExtraFee)) * seatNumber;
+        }
 
-    //     return new BaseDto<BookingViewModel>
-    //     {
-    //         Data = flight,
-    //         IsSuccess = true
-    //     };
+        return new BaseDto<BookingViewModel>
+        {
+            Data = flight,
+            IsSuccess = true
+        };
 
-    // }
+    }
 
     public static double GetAverageRate(List<Comment> model)
     {

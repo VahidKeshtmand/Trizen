@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M2E5zCc2FhS7zDYQPU9VT8zOoKQvSVJ9Xre/dyUcF/Wx1kT8RKm6GUNf6TrTYuekPwpdLBWi5XSn3m489a1WXQ==",
+  "dgSpecHash": "hCPjsCu8qSk7wqqN6mSJdm9EiwiHmiRwzLP4FiKMiRhbMUUnSL6MA2c711S/g+H7xa4WI1fBXUNPHmCaOaLi3Q==",
   "success": true,
-  "projectFilePath": "E:\\Trizen\\T.Application\\T.Application.csproj",
+  "projectFilePath": "d:\\Programming\\Projects\\C# project on VS\\Trizen\\T.Application\\T.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Iranian\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Iranian\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

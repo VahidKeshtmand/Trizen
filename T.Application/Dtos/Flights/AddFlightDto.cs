@@ -7,6 +7,7 @@ namespace T.Application.Dtos.Flights;
 public class AddFlightDto
 {
     public string FlyingFrom { get; set; }
+    public string Slug { get; set; }
     public string FlyingTo { get; set; }
     public FlightType FlightType { get; set; }
     public string TakeOffDate { get; set; }

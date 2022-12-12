@@ -72,14 +72,14 @@ public class BookingService : IBookingService
                     Origin = x.Flight.FlyingTo,
                     ExtraFee = x.Flight.TaxesAndFees,
                     FlightType = GetDisplayName(x.Flight.FlightType),
-                    ImageSrc = ComposeImageUri(x.Flight.AirlineCompany.Image.Src),
+                    ImageSrc = x.Flight.AirlineCompany.Image.Src,
                     Landing = x.Flight.LandingDate.ToFarsi(),
                     TakeOff = x.Flight.TakeOffDate.ToFarsi(),
                     TakeOffTime = x.Flight.TakeOffDate.Minute + " : " + x.Flight.TakeOffDate.Hour,
                     TotalTimeOfFlight = SetHourAndMinute(x.Flight.TotalTimeOfFlight),
                     FlightId = x.Flight.Id,
                     SeatCount = x.SeatCount,
-                    TotalPrice = (x.Flight.TaxesAndFees + x.Flight.BasePrice) * quantity,
+                    TotalPrice = (x.Flight.TaxesAndFees + x.Flight.BasePrice) * (quantity + x.SeatCount),
                     Rate = GetAverageRate(x.Flight.Comments.ToList()),
                     CommentCount = x.Flight.Comments.Count()
                 }).SingleOrDefault(x => x.Id == newBooking.Id);
@@ -112,7 +112,7 @@ public class BookingService : IBookingService
             TotalTimeOfFlight = SetHourAndMinute(booking.Flight.TotalTimeOfFlight),
             FlightId = booking.Flight.Id,
             SeatCount = booking.SeatCount,
-            TotalPrice = (booking.Flight.TaxesAndFees + booking.Flight.BasePrice) * quantity,
+            TotalPrice = (booking.Flight.TaxesAndFees + booking.Flight.BasePrice) * booking.SeatCount,
             Rate = GetAverageRate(booking.Flight.Comments.ToList()),
             CommentCount = booking.Flight.Comments.Count()
         };

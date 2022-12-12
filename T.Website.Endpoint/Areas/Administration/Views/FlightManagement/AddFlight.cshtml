@@ -39,7 +39,15 @@
                             <h3 class="title"><i class="la la-gear mr-2 text-gray"></i>لیست اطلاعات پرواز شما</h3>
                         </div><!-- form-title-wrap -->
                         <div class="row form-content contact-form-action">
-
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label asp-for="Slug" class="label-text">اسلاگ</label>
+                                    <div class="form-group">
+                                        <span class="la la-map-marker form-icon"></span>
+                                        <input asp-for="Slug" class="form-control">
+                                    </div>
+                                </div>
+                            </div><!-- end col-lg-6 -->
                             <div class="col-lg-6 responsive-column">
                                 <div class="input-box">
                                     <label asp-for="FlyingFrom" class="label-text">مبدأ (شهر و کشور)</label>
